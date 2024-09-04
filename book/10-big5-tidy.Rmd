@@ -23,11 +23,10 @@ There is a walkthrough video of this chapter available via [Zoom](https://uofgla
 
 ## Activity 1: Set-up {#sec-setup-big5}
 
-Login to the server and then:
-
-* Open your Big Five project;
+* Open your Big Five project. If you can't remember how to open a project, refer back to section\ \@ref(sec-open-project)
 * Create a new Markdown document named "Big Five 2". Delete the default text and then create a new code chunk.
 * Your environment should be clear but if there are objects in it, remove them by pressing the brush icon. 
+
 
 ## Activity 2: Loading the data
 
@@ -326,4 +325,4 @@ facet_means
 
 ## Finished
 
-Finally, try knitting the file to HTML and remember to  make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session on the server. 
+Finally, try knitting the file to HTML and remember to  make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session RStudio completely. 

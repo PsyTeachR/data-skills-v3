@@ -154,7 +154,7 @@ Figure A.2: RStudio Code settings
 <span class="header-section-number">A.4</span> Installing LaTeX<a class="anchor" aria-label="anchor" href="#installing-latex"><i class="fas fa-link"></i></a>
 </h2>
 <p>You can install the LaTeX typesetting system to produce PDF reports from RStudio. Without this additional installation, you will be able to produce reports in HTML but not PDF. This course will not require you to make PDFs. To generate PDF reports, you will additionally need to install <code class="package">tinytex</code> <span class="citation">(<a href="references.html#ref-R-tinytex">Xie, 2023</a>)</span> and run the following code:</p>
-<div class="sourceCode" id="cb225"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb226"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">tinytex</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tinytex/man/install_tinytex.html">install_tinytex</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="installing-packages" class="section level2" number="17.5">
@@ -163,7 +163,7 @@ Figure A.2: RStudio Code settings
 </h2>
 <p>Whilst Base R comes with built-in functions, you will also need to install any additional packages you want to use.</p>
 <p>You can install packages using the <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code> function. <strong>Only ever run this command in the console, never save it in a script or Markdown</strong>. This is because if you save it in a script, everytime you run that script it will install the package again. At best, this will be a waste of time and at work, it might install a more recent version of the package that no longer works with your code.</p>
-<div class="sourceCode" id="cb226"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb227"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span></code></pre></div>
 <p>When you run this code it will produce a bunch of text until it eventually installs. You're looking for something that says "package ‘tidyverse’ successfully unpacked and MD5 sums checked" which confirms that the installation has been successful. Once you've done this, you can then run <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code> as usual. You only need to install packages once but remember you need to load them each time you use them.</p>
 <p>If you ever get an error message saying "No package called X", check you've spelled the name of the package right and if so, it might be that you need to install it using the same method.</p>
@@ -487,7 +487,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-09-03.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-09-04.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

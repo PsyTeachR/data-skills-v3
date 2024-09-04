@@ -105,7 +105,7 @@ knitr::include_graphics("images/stroop/new-project.gif")
 
 ```
 
-## Activity 2: Setting check
+## Activity 3: Setting check
 
 Now you need to download the data files we're going to use. Before you do, we need to check some settings on your browser because the biggest issue new students face with R is not learning to code, it's knowing where your files are.
 
@@ -115,17 +115,17 @@ We're going to ask you to download **zip files**. A zip file is a folder that co
 
 * If you're on a Mac and using Safari as your browser, it has a very annoying default habit of unzipping files when you download them. It's trying to be useful but it means you don't learn about different file types and this is important. We'd strongly recommend just not using Safari at all because it seems to cause a few issues with R and using Chrome or Firefox instead  but if you are particularly attached to it, [change the settings](https://apple.stackexchange.com/questions/961/how-to-stop-safari-from-unzipping-files-after-download) to stop it unzipping files.
 
-## Activity 3: Data files
+## Activity 4: Data files {#sec-unzip}
 
 Once you've done all this, it's time to download the files we need and unzip them. 
 
 * First, download the <a href="data/stroop/stroop_data.zip" download>Stroop data zip file</a> to your computer and **save it in your Stroop Effect project folder**.
 * In RStudio, in the Files tab, click on "stroop_data.zip". This will open up the zip folder.
-* If you're a [Mac](https://support.apple.com/en-qa/guide/mac-help/mchlp2528/mac) double-click on the zip folder and it will automatically unzip them into a regular folder. If you're on [Windows](https://support.microsoft.com/en-gb/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5), you need to click "Extract all" then ok.
+* If you're using a [Mac](https://support.apple.com/en-qa/guide/mac-help/mchlp2528/mac) double-click on the zip folder and it will automatically unzip them into a regular folder. If you're on [Windows](https://support.microsoft.com/en-gb/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5), you need to click "Extract all" then ok.
 
 We then need to make sure that the unzipped files are in the main project folder, not in a sub-folder. If you're comfortable with computers, move the files over and delete any other copies including the zip file with whichever method your prefer.
 
-If you're not sure how to do this, follow these instructions.There are other ways of achieving this, but this method will work for both Mac and Windows.
+If you're not sure how to do this, follow these instructions.There are other, potentially faster ways of achieving this, but this method will work for both Mac and Windows.
 
 * In the RStudio Files tab, navigate back to the Stroop Effect folder.
 * Then open the new unzipped stroop_data folder.
@@ -169,7 +169,7 @@ Add-on packages are not included with base R, but have to be downloaded and inst
 
 There is an important distinction between **installing** a package and **loading** a package.
 
-### Installing a package {#sec-install-package}
+## Activity 5: Install packages {#sec-install-package}
 
 This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store; you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not *loaded*) every time you open up R.
 
@@ -179,15 +179,21 @@ To install the `tidyverse`:
 
 * In the Files pane in the bottom right, click "Packages", then click "Install".
 * In the "Packages" box type "tidyverse". It provide auto-complete suggestions to save you time. Click on "tidyverse" and then click install.
-* It will start installing the package and produce a lot of text that might look like an error but isn't. If you get a message that says something like `package ‘tidyverse’ successfully unpacked and MD5 sums checked`, the installation was successful. If you get an error and the package wasn't installed, check the troubleshooting section of @sec-package-install-troubleshooting or come to office hours or a GTA session.
+* It will start installing the package and produce a lot of text that might look like an error but isn't. If you get a message that says something like `package ‘tidyverse’ successfully unpacked and MD5 sums checked`, the installation was successful. If you get an error and the package wasn't installed, come to office hours or a GTA session.
 
-Now do the same but install a package named "cowsay".
+Now do the same but install the package "cowsay" and then `rmarkdown`.
+
+```{r img-install, echo=FALSE, fig.cap="Installing packages"}
+
+knitr::include_graphics("images/stroop/install.gif")
+
+```
 
 ### Loading a package
 
 This is done using the `library()` function. This is like **launching** an app on your phone: the functionality is only there when the app is launched and remains there until you close the app or restart. For example, when you run `library(tidyverse)` within a session, the functions in the package `cowsay` will be made available for your R session. The next time you start R, you will need to run `library(tidyverse)` again if you want to access that package.
 
-## Activity 4: Packages and function
+## Activity 6: Packages and function
 
 As an example, let's load the `r pkg("cowsay")` package that you installed above. The `r pkg("cowsay")` package is just for fun - it will print a message with an animal - but it's useful to show you how packages work. To load a package, you use the function `library()` and include the name of the package you want to load in parentheses.
 
@@ -206,7 +212,7 @@ Now you can use the function `say()`. A `r glossary("function")` is a name that 
 * In code chunk 2, write and run the below code to use the function `say()`.
 * If you get the error `could not find function` it means you have not loaded the package properly, try running `library(cowsay)` again and make sure everything is spelled exactly right.
 
-```{r beepr-demo, filename="Using a function"}
+```{r cowsay-demo, filename="Using a function"}
 say()
 ```
 
@@ -222,7 +228,7 @@ The help documentation can be a little hard to read - scrolling to the bottom an
 
 * In code chunk 2, add the below code to produce a different message and animal - below is an example but try your own.
 
-```{r beepr-demo-2, eval = FALSE, filename="Adding an argument"}
+```{r cowsay-demo-2, eval = FALSE, filename="Adding an argument"}
 say(what = "Do or do not, there is no try",
     by = "yoda")
 ```
@@ -259,7 +265,7 @@ Use the help documentation to find the answers to this question:
 * What is the first argument to the `mean` function? `r mcq(c("trim", "na.rm", "mean", answer="x"))``
 :::
 
-## Activity 5: Loading data
+## Activity 7: Loading data
 
 OK, let's get back to looking at our data. In order to load and work with our Stroop data, we need to load another that very important package, the `r pkg("tidyverse")`.
 
@@ -309,7 +315,7 @@ In order to load the file successfully, the name of the file needs to be in doub
 Additionally, if you get the message `could not find function "read_csv()"` it means that you have not loaded the `r pkg("tidyverse")` - a common error is to write the code but not run it! To fix it, run the code that loads the tidyverse. Another reason you might see this message is if you've made a typo in the name of the function, so check that you've spelled `read_csv` exactly right.
 :::
 
-## Activity 6: Check your data
+## Activity 8: Check your data
 
 You should now see that the objects `dat` and `ppt_info` have appeared in the environment pane. Whenever you read data into R you should always do an initial check to see that your data looks like how you expected. There are several ways you can do this, try them all out to see how the results differ.
 
@@ -322,7 +328,7 @@ What is the **mean** age pf participants to 1 decimal place? `r fitb(24.4)`
 
 What is the **mean** overall reaction time to 1 decimal place? `r fitb(c(817.7))`
 
-## Activity 7: Visualise the data
+## Activity 9: Visualise the data
 
 As you're going to learn about more over this course, data visualisation is extremely important. Visualisations can be used to give you more information about your dataset, but they can also be used to mislead. 
 

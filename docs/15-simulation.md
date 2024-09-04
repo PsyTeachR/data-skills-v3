@@ -6,7 +6,13 @@ Before we finish up by analysing your project data, we're going to introduce a f
 
 One of the most powerful features of R is that you can use it for data simulation. Data simulation is the act of generating random numbers that follow a certain distribution or have known properties. This might not sound particularly impressive, but simulating data means that you can do things such as plan your statistical analyses, understand and demonstrate how probability works, or estimate how many participants you need to test in your experiment based upon what you think the data will look like. Data simulation uses the different types of distributions that we covered in Probability to generate data, so make sure that you're happy with the probability chapter before you move on. 
 
-## Activity 1: `sample()`
+## Activity 1: Set-up {#sec-setup-sim}
+
+* Open RStudio and create a new project named "Simulation"
+* Open a new R Markdown document, name it "Simulation" and save it in your project folder.
+* There is no data to download this chapter so it's a nice and simple set-up.
+
+## Activity 2: `sample()`
 
 Just like Probability, all the functions we need for simulation are contained in Base R, however, we'll also load the `tidyverse` so that we can wrangle our simulated data.
 
@@ -18,7 +24,6 @@ Let’s start by introducing the `sample()` function, which samples elements (da
 * `size` = how many samples do you want to take, i.e., how many times do you want R to flip the coin?  
 * `replace` = specifies whether we should sample with replacement or not. In the last lab we used the example of pulling names out of a hat. If you put the name back in the hat each time you pulled one out this would be with replacement, if you don't put the name back in this would be sampling without replacement. Basically, do you want to be able to get the same outcome on different samples? For a coin flip, it should be possible to get the same outcome more than once, so we specify `TRUE`. If we specified `FALSE` you could only draw as many samples as there were unique values, so in our case we could only flip the coin twice: once it would land on heads, once on tails, and then we would run out of outcomes.  
 
-* Open a new R Markdown document, name it "Simulation" and save it in your Data Skills folder.
 * Copy, paste, and run the below code in a new code chunk to simulate flipping a coin 4 times (and load the `tidyverse`). 
 
 
@@ -30,7 +35,7 @@ sample(x = c("HEADS", "TAILS"), size = 4, replace = TRUE)
 ```
 
 ```
-## [1] "HEADS" "HEADS" "HEADS" "HEADS"
+## [1] "HEADS" "TAILS" "TAILS" "HEADS"
 ```
 
 How many heads did you get? Don't worry if it's different to our example. Run the code again. How many heads did you get this time? How many do you get on each turn if you run the code five more times? 
@@ -48,10 +53,10 @@ sample(x = 0:1, size = 4, replace = TRUE)
 ```
 
 ```
-## [1] 0 1 0 1
+## [1] 0 0 1 1
 ```
 
-## Activity 2: `sum()`
+## Activity 3: `sum()`
 
 Now that we're using ones and zeroes we can count the number of heads by summing the values of the outcomes. The below code will sample our coin flips as above, and then count up the outcomes. Because we've coded heads = 1 and tails = 0, we can interpret the sum of all the outcomes as the number of heads.
 
@@ -65,12 +70,12 @@ sample(x = 0:1, size = 4, replace = TRUE) %>% sum()
 ```
 
 ```
-## [1] 1
+## [1] 3
 ```
  
 Run this function multiple times (you can use the green markdown play arrow at the top right of the code chunk to make this easy). In our simulation of five sets of four flips we got 1, 3, 2, 2, and 3 heads. So in only one out of the five simulations did we get exactly one heads, i.e., a proportion of .2 or 20% of the time.
 
-## Activity 3: `replicate()` 1
+## Activity 4: `replicate()` 1
 
 Let’s repeat the experiment a whole bunch more times. We can have R do this over and over again using the `replicate()` function. `replicate()` requires two arguments (although there are other optional arguments if you want to do more complicated tasks):
 
@@ -85,14 +90,14 @@ replicate(n = 20, expr = sample(0:1, 4, TRUE) %>% sum())
 ```
 
 ```
-##  [1] 1 3 3 3 2 2 2 3 2 1 1 2 3 1 0 2 1 2 1 2
+##  [1] 2 3 1 4 2 3 3 2 0 1 2 1 1 2 2 2 1 1 2 1
 ```
 
 
 ## Monte Carlo simulation
 Every year, the city of Monte Carlo is the site of innumerable games of chance played in its casinos by people from all over the world. This notoriety is reflected in the use of the term “Monte Carlo simulation” among statisticians to refer to using a computer simulation to estimate statistical properties of a random process. In a Monte Carlo simulations, the random process is repeated over and over again in order to assess its performance over a very large number of trials. It is usually used in situations where mathematical solutions are unknown or hard to compute. Now we are ready to use Monte Carlo simulation to demonstrate the probability of various outcomes. 
 
-## Activity 4: `replicate()` 2
+## Activity 5: `replicate()` 2
 
 We are going to run our coin flip experiment again but this time we are going to run the experiment 50 times (each including 4 coin tosses), and use the same principles to predict the number of heads we will get.
 
@@ -105,11 +110,11 @@ heads50
 ```
 
 ```
-##  [1] 1 2 2 1 2 1 1 3 2 3 3 2 2 1 2 0 2 1 1 3 2 2 0 3 1 1 0 2 3 3 1 3 1 3 1 2 4 3
-## [39] 1 2 1 0 1 2 2 2 3 3 1 2
+##  [1] 3 3 2 3 2 3 3 1 4 1 1 3 1 1 3 3 3 2 3 3 0 2 0 3 4 3 2 2 1 3 1 3 2 2 2 1 2 1
+## [39] 4 3 2 2 2 2 2 2 1 3 2 1
 ```
 
-## Activity 5: probability
+## Activity 6: probability
 
 We can estimate the probability of each of the outcomes (0, 1, 2, 3, 4 heads after 4 coin tosses) by counting them up and dividing by the number of experiments. We will do this by putting the results of the replications in a tibble() and then using count().
 
@@ -124,15 +129,15 @@ data50 <- tibble(heads = heads50) %>%   # convert to a table
 
 | heads|  n|    p|
 |-----:|--:|----:|
-|     0|  4| 0.08|
-|     1| 16| 0.32|
+|     0|  2| 0.04|
+|     1| 11| 0.22|
 |     2| 17| 0.34|
-|     3| 12| 0.24|
-|     4|  1| 0.02|
+|     3| 17| 0.34|
+|     4|  3| 0.06|
 
 Your numbers may be slightly different to the ones presented in this book - remember that by default, each time you run a simulation, you will get a different random sample.
 
-## Activity 6: visualisation
+## Activity 7: visualisation
 
 We can then plot a histogram of the outcomes using `geom_bar()`.
 
@@ -161,7 +166,7 @@ ggplot(data50, aes(x = heads,y = p)) +
 
 Unfortunately sometimes this calculation will estimate that the probability of an outcome is zero since this outcome never came up when the simulation is run. If you want reliable estimates, you need a **bigger sample** to minimise the probability that a possible outcome won't occur.
 
-## Activity 7: big data
+## Activity 8: big data
 
 Let's repeat the Monte Carlo simulation, but with 10,000 trials instead of just 50. All we need to do is change `n` from 50 to 10000. 
 
@@ -208,7 +213,7 @@ data10K %>%
 
 |     p2|
 |------:|
-| 0.6925|
+| 0.6905|
 
 </div>
 
@@ -216,7 +221,7 @@ You can add probabilities for various outcomes together as long as the outcomes 
 
 This is the basis of how we can calculate the probability of an outcome using a known distribution - by simulating a large number of trials we can use this as an estimate for how our data will look in the real world.
 
-## Activity 8: `rnorm()`
+## Activity 9: `rnorm()`
 
 We can also use R to simulate continuous data that follow a normal distribution using `rnorm()`. You've actually used `rnorm()` before, all the way back in Intro to R from Psych 1A but we'll go over it again. 
 
@@ -240,8 +245,8 @@ sd(normal)
 ```
 
 ```
-## [1] 9.760568
-## [1] 2.11539
+## [1] 9.818569
+## [1] 2.474479
 ```
 
 Finally, you can visualise your data with a density plot. Try changing the number of data points generated by `rnorm()` from 50 to 500 to 5000 and then see how the shape of the distribution changes.
@@ -260,7 +265,7 @@ tibble(normal = normal) %>% #turn the variable normal into a table and then
 </div>
 
 
-## Activity 9: Simulate a dataset
+## Activity 10: Simulate a dataset
 
 Finally, we can put all of this together to simulate a full dataset. Let's imagine that we're going to run an experiment to see whether 120 people will roll a higher number on a die if their IQ is higher. This is obviously a stupid experiment but psychology does occasionally do stupid things.
 

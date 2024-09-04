@@ -36,8 +36,6 @@ There is a walkthrough video of this chapter available via [Echo360](https://ech
 
 ## Activity 1: Set-up {#sec-setup-resil2}
 
-Login to the server and then:
-
 * Open your Resilience project.
 * Create a new Markdown document named "Resilience 2". Delete the default text and then create a new code chunk.
 * Your environment should be clear but if there are objects in it, remove them by pressing the brush icon. 
@@ -182,7 +180,6 @@ For example, we can create a new categorical variable that assigns participants 
 * You can read `~` as `then`, i.e., if age is less than or equal to 30, then write "Younger".
 * You can have as many conditions as you like, just separate them with commas.
 * `TRUE` isn't always necessary but it controls what value is entered if a value doesn't meet any of the conditions. In this case, it will return the text "Missing" for all the NA values in age.
-* **Fun fact**: If you're working on your own computer and have recently installed the tidyverse, you have a slightly different version of `case_when()` than on the server. If you'd like to see Emily discover this in real-time, you can watch the walkthrough video. The below code will work on both the server and your local installation.
 
 ```{r}
 dat_scores <- dat_scores %>%
@@ -426,4 +423,4 @@ The hypothesis that the treatment would improve resilience scores was therefore 
 
 ## Finished
 
-Finally, try knitting the file to HTML and remember to  make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session on the server if applicable. 
+Finally, try knitting the file to HTML and remember to  make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit RStudio completely. 

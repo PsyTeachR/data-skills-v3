@@ -27,9 +27,7 @@ There is a walkthrough video of this chapter available via [Zoom.](https://uofgl
 
 ## Activity 1: Set-up
 
-Login to the server and then:
-
-* Open your Corsi Block project;
+* Open your Corsi Block project. If you can't remember how to open a project, refer back to section\ \@ref(sec-open-project);
 * Open the `corsi_stub2.Rmd` Markdown file that we'll use for this chapter;
 * Your environment should be clear but if there are objects in it, remove them by pressing the brush icon. 
 
@@ -341,4 +339,4 @@ ggplot(age_control, aes(x = Condition,
 
 ## Finished
 
-Finally, try knitting the file to HTML and remember to  make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session on the server. 
+Finally, try knitting the file to HTML and remember to  make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session RStudio completely. 

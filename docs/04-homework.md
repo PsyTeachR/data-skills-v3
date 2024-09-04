@@ -8,20 +8,18 @@ By the end of this chapter you should be able to:
 
 * Understand how to complete the homework files for Psych 1A
 
-In this chapter you'll find the instructions for how to complete the data skills homework. The first homework is formative which means that it does not count towards your grade, however, it's really important that you complete it so that you know what you're doing for the summative homeworks that do count towards your grade.
+In this chapter you'll find the instructions for how to complete the data skills homework. The first homework is a mark for participation so that you have a safety net to learn how to complete them before they start being markedd fully.
 
 ## New project and data files
 
 First, we need to get the project and data files set-up.
 
-* Navigate to the server and login;
-* Create a new project named `Homework 1`;
+* Open RStudio and create a new project named `Homework 1`;
 * Navigate to the Psych 1A Moodle page > Data skills > Homework 1 and download the zip folder that contains the homework files
-* Upload this zip file to your homework project
-* Delete the zip file on your computer
+* Unzip the folder and make sure that all the files are in your main Homework 1 folder. If you need a refresher on how to do this, refer back to section\ \@ref(sec-unzip).
 
 ::: {.dangerous data-latex=""}
-The number one reason that students lose marks on the data skills homeworks is submitting the wrong file to Moodle. The reason this happens tends to be because a student has multiple copies of the same file, all with the same name, except some of them are blank and some of them are complete. The best way to avoid is by having good file management. Once you have uploaded the zip file to the server, delete it from your computer because you don't need it on your computer and it can only cause you problems. 
+The number one reason that students lose marks on the data skills homeworks is submitting the wrong file to Moodle. The reason this happens tends to be because a student has multiple copies of the same file, all with the same name, except some of them are blank and some of them are complete. The best way to avoid is by having good file management. Once you have downloaded and unzipped the file, delete any copies because you don't them and they will only cause you problems. 
 :::
 
 The zip folder contains three files:
@@ -149,15 +147,7 @@ The instructions in this section might seem like overkill but the number 1 reaso
 <p class="caption">(\#fig:fig-settings)Renaming your file</p>
 </div>
 
-* If you have multiple copies of the homework file on the server or your computer for whatever reason, now is the time to go and clean them up. Delete all other copies except for your finished file that you've marked "complete". If you don't have any blank files, you can't submit a blank file!
-
-## Downloading the file to your computer
-
-In order to submit your file to Moodle, you will first need to download it to your computer. 
-
-* In the Files tab, select the checkbox next to your complete homework file, then click `More` then `Export`. It will ask you what you want to call the file, just keep the file name the same, don't make any changes. Click `Download` and depending on your settings it will ask you where you want to save it on your computer.
-* If you don't have R installed on your computer (which most of you don't), you can't open the file to check you've downloaded the right thing. This is why it's important to have good file management, nameyour files clearly, and only have one copy of the file you need. * All University computers have R installed which you could use to check your file if desired.
-* If you try and open the .Rmd on your computer and you don't have R installed, it will open it in Word or NotePad and it will look very wrong and you'll panic so don't do this. If you're on a Mac, Safari also sometimes tries to be helpful and will automatically try and open the file even if you didn't ask, so again, we'd encourage you not to use Safari.
+* If you have multiple copies of the homework file on your computer for whatever reason, now is the time to go and clean them up. Delete all other copies except for your finished file that you've marked "complete". If you don't have any blank files, you can't submit a blank file!
 
 ## Submitting to Moodle
 

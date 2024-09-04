@@ -83,14 +83,14 @@ I KNOW THIS CHAPTER ISN'T SUBTLE.
 
 ## Activity 2: New project {#sec-new-project-belong}
 
-* Log in to the to R sever and make a new project for the Belonging chapters (this week and next week):
+* Open RStudio and make a new project for the Belonging chapters (this week and next week):
 
 ## Activity 3: Data files {#sec-data-belong}
 
 Once you've done all this, it's time to download the files we need and then upload them to the server.
 
 * First, download the <a href="data/belong/belonging_data.zip" download>Belonging data zip file</a> to your computer and make sure you know which folder you saved it in.
-* Then, on the server in the Files tab (bottom right), click `Upload > Choose file` then navigate to the folder on your computer where the zip file is saved, select it, click `Open`, then `OK`.
+* Then, extract the files and copy them into the main folder of your Belonging project. If you need a refresher on how to do this, refer back to section\ \@ref(sec-unzip).
 
 The zip file contains four files:
 
@@ -601,4 +601,4 @@ It's important to note that correlation doesn't imply causation, and these are j
 
 ## Finished
 
-Finally, try knitting the file to HTML and remember to  make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session on the server. 
+Finally, try knitting the file to HTML and remember to  make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session RStudio completely. 

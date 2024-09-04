@@ -74,20 +74,20 @@ The typical score on a Corsi Block Task is usually around 5 or 6. Scores between
 
 ## Activity 2: New project
 
-* Log in to the to R sever and make a new project for the Corsi Block chapters (this week and next week):
-* Click on the "New project" button;
+* Open RStudio and make a new project for the Corsi Block chapters (this week and next week):
+* Click "File" and then "New project";
 * Then, click on the first option in the list "New Directory";
 * Then, click "New Project";
 * Then you are given the opportunity to name your project and select which folder it should be stored in. First in the "Directory name" box, type "Corsi Blocks";
-* The subdirectory should already be set to Psych 1A but if not, click browse and navigate to it then click "Choose";
+* Click browse and find your PSYCH1A and Data Skills folder and click "Open"
 * Finally, click "Create project".
 
 ## Activity 3: Data files
 
-Once you've done all this, it's time to download the files we need and then upload them to the server.
+Once you've done all this, it's time to download the files we need and then unzip them and put them in the right place.
 
 * First, download the <a href="data/corsi/corsi_data.zip" download>Corsi data zip file</a> to your computer and make sure you know which folder you saved it in.
-* Then, on the server in the Files tab (bottom right), click `Upload > Choose file` then navigate to the folder on your computer where the zip file is saved, select it, click `Open`, then `OK`.
+* Then, extract the files and copy them into the main folder of your Corsi Block project. If you need a refresher on how to do this, refer back to section\ \@ref(sec-unzip).
 
 The zip file contains four files:
 
@@ -391,7 +391,7 @@ If the descriptive statistics and the plot of the data show a  difference in Cor
 
 ## Finished
 
-Finally, try knitting the file to HTML and remember to  make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session on the server. 
+Finally, try knitting the file to HTML and remember to  make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit RStudio completely. 
 
 
 

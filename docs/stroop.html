@@ -208,9 +208,9 @@ Figure 2.1: Creating a project for the Stroop Effect
 </p>
 </div>
 </div>
-<div id="activity-2-setting-check" class="section level2" number="2.5">
+<div id="activity-3-setting-check" class="section level2" number="2.5">
 <h2>
-<span class="header-section-number">2.5</span> Activity 2: Setting check<a class="anchor" aria-label="anchor" href="#activity-2-setting-check"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.5</span> Activity 3: Setting check<a class="anchor" aria-label="anchor" href="#activity-3-setting-check"><i class="fas fa-link"></i></a>
 </h2>
 <p>Now you need to download the data files we're going to use. Before you do, we need to check some settings on your browser because the biggest issue new students face with R is not learning to code, it's knowing where your files are.</p>
 <ul>
@@ -221,18 +221,18 @@ Figure 2.1: Creating a project for the Stroop Effect
 <li>If you're on a Mac and using Safari as your browser, it has a very annoying default habit of unzipping files when you download them. It's trying to be useful but it means you don't learn about different file types and this is important. We'd strongly recommend just not using Safari at all because it seems to cause a few issues with R and using Chrome or Firefox instead but if you are particularly attached to it, <a href="https://apple.stackexchange.com/questions/961/how-to-stop-safari-from-unzipping-files-after-download">change the settings</a> to stop it unzipping files.</li>
 </ul>
 </div>
-<div id="activity-3-data-files" class="section level2" number="2.6">
+<div id="sec-unzip" class="section level2" number="2.6">
 <h2>
-<span class="header-section-number">2.6</span> Activity 3: Data files<a class="anchor" aria-label="anchor" href="#activity-3-data-files"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.6</span> Activity 4: Data files<a class="anchor" aria-label="anchor" href="#sec-unzip"><i class="fas fa-link"></i></a>
 </h2>
 <p>Once you've done all this, it's time to download the files we need and unzip them.</p>
 <ul>
 <li>First, download the <a href="data/stroop/stroop_data.zip" download>Stroop data zip file</a> to your computer and <strong>save it in your Stroop Effect project folder</strong>.</li>
 <li>In RStudio, in the Files tab, click on "stroop_data.zip". This will open up the zip folder.</li>
-<li>If you're a <a href="https://support.apple.com/en-qa/guide/mac-help/mchlp2528/mac">Mac</a> double-click on the zip folder and it will automatically unzip them into a regular folder. If you're on <a href="https://support.microsoft.com/en-gb/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5">Windows</a>, you need to click "Extract all" then ok.</li>
+<li>If you're using a <a href="https://support.apple.com/en-qa/guide/mac-help/mchlp2528/mac">Mac</a> double-click on the zip folder and it will automatically unzip them into a regular folder. If you're on <a href="https://support.microsoft.com/en-gb/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5">Windows</a>, you need to click "Extract all" then ok.</li>
 </ul>
 <p>We then need to make sure that the unzipped files are in the main project folder, not in a sub-folder. If you're comfortable with computers, move the files over and delete any other copies including the zip file with whichever method your prefer.</p>
-<p>If you're not sure how to do this, follow these instructions.There are other ways of achieving this, but this method will work for both Mac and Windows.</p>
+<p>If you're not sure how to do this, follow these instructions.There are other, potentially faster ways of achieving this, but this method will work for both Mac and Windows.</p>
 <ul>
 <li>In the RStudio Files tab, navigate back to the Stroop Effect folder.</li>
 <li>Then open the new unzipped stroop_data folder.</li>
@@ -351,30 +351,36 @@ Figure 2.2: Unzipping and moving the files
 <p>One of the great things about R, however, is that it is <strong>user extensible</strong>: anyone can create a new add-on that extends its functionality. There are currently thousands of <a href="https://psyteachr.github.io/glossary/p#package" target="_blank" class="glossary" title="A group of R functions.">packages</a> that R users have created to solve many different kinds of problems, or just simply to have fun. For example, there are packages for data visualisation, machine learning, interactive dashboards, web scraping, and playing games such as Sudoku.</p>
 <p>Add-on packages are not included with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install PokemonGo on your smartphone. The main repository where packages reside is called <a href="https://psyteachr.github.io/glossary/c#cran" target="_blank" class="glossary" title="The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.">CRAN</a>, the Comprehensive R Archive Network.</p>
 <p>There is an important distinction between <strong>installing</strong> a package and <strong>loading</strong> a package.</p>
-<div id="sec-install-package" class="section level3" number="2.7.1">
-<h3>
-<span class="header-section-number">2.7.1</span> Installing a package<a class="anchor" aria-label="anchor" href="#sec-install-package"><i class="fas fa-link"></i></a>
-</h3>
+</div>
+<div id="sec-install-package" class="section level2" number="2.8">
+<h2>
+<span class="header-section-number">2.8</span> Activity 5: Install packages<a class="anchor" aria-label="anchor" href="#sec-install-package"><i class="fas fa-link"></i></a>
+</h2>
 <p>This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store; you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not <em>loaded</em>) every time you open up R.</p>
 <p>For Level 1, the main package you need to use is named the"tidyverse" and it has functions to deal with data wrangling, summaries, and visualisation.</p>
 <p>To install the <code>tidyverse</code>:</p>
 <ul>
 <li>In the Files pane in the bottom right, click "Packages", then click "Install".</li>
 <li>In the "Packages" box type "tidyverse". It provide auto-complete suggestions to save you time. Click on "tidyverse" and then click install.</li>
-<li>It will start installing the package and produce a lot of text that might look like an error but isn't. If you get a message that says something like <code>package ‘tidyverse’ successfully unpacked and MD5 sums checked</code>, the installation was successful. If you get an error and the package wasn't installed, check the troubleshooting section of <span class="citation">(<a href="#ref-sec-package-install-troubleshooting"><strong>sec-package-install-troubleshooting?</strong></a>)</span> or come to office hours or a GTA session.</li>
+<li>It will start installing the package and produce a lot of text that might look like an error but isn't. If you get a message that says something like <code>package ‘tidyverse’ successfully unpacked and MD5 sums checked</code>, the installation was successful. If you get an error and the package wasn't installed, come to office hours or a GTA session.</li>
 </ul>
-<p>Now do the same but install a package named "cowsay".</p>
+<p>Now do the same but install the package "cowsay" and then <code>rmarkdown</code>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-install"></span>
+<img src="images/stroop/install.gif" alt="Installing packages" width="100%"><p class="caption">
+Figure 2.3: Installing packages
+</p>
 </div>
-<div id="loading-a-package" class="section level3" number="2.7.2">
+<div id="loading-a-package" class="section level3" number="2.8.1">
 <h3>
-<span class="header-section-number">2.7.2</span> Loading a package<a class="anchor" aria-label="anchor" href="#loading-a-package"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.8.1</span> Loading a package<a class="anchor" aria-label="anchor" href="#loading-a-package"><i class="fas fa-link"></i></a>
 </h3>
 <p>This is done using the <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> function. This is like <strong>launching</strong> an app on your phone: the functionality is only there when the app is launched and remains there until you close the app or restart. For example, when you run <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code> within a session, the functions in the package <code>cowsay</code> will be made available for your R session. The next time you start R, you will need to run <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code> again if you want to access that package.</p>
 </div>
 </div>
-<div id="activity-4-packages-and-function" class="section level2" number="2.8">
+<div id="activity-6-packages-and-function" class="section level2" number="2.9">
 <h2>
-<span class="header-section-number">2.8</span> Activity 4: Packages and function<a class="anchor" aria-label="anchor" href="#activity-4-packages-and-function"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.9</span> Activity 6: Packages and function<a class="anchor" aria-label="anchor" href="#activity-6-packages-and-function"><i class="fas fa-link"></i></a>
 </h2>
 <p>As an example, let's load the <code class="package">cowsay</code> package that you installed above. The <code class="package">cowsay</code> package is just for fun - it will print a message with an animal - but it's useful to show you how packages work. To load a package, you use the function <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> and include the name of the package you want to load in parentheses.</p>
 <ul>
@@ -382,17 +388,18 @@ Figure 2.2: Unzipping and moving the files
 </ul>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sckott/cowsay">cowsay</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning: package 'cowsay' was built under R version 4.3.3</code></pre>
 <p>You'll see <code><a href="https://github.com/sckott/cowsay">library(cowsay)</a></code> appear in the console. There's no warning messages or errors so it looks like it has loaded successfully.</p>
-<div id="using-a-function" class="section level3" number="2.8.1">
+<div id="using-a-function" class="section level3" number="2.9.1">
 <h3>
-<span class="header-section-number">2.8.1</span> Using a function<a class="anchor" aria-label="anchor" href="#using-a-function"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.9.1</span> Using a function<a class="anchor" aria-label="anchor" href="#using-a-function"><i class="fas fa-link"></i></a>
 </h3>
 <p>Now you can use the function <code><a href="https://rdrr.io/pkg/cowsay/man/say.html">say()</a></code>. A <a href="https://psyteachr.github.io/glossary/f#function" target="_blank" class="glossary" title="A named section of code that can be reused.">function</a> is a name that refers to code that performs some sort of action.</p>
 <ul>
 <li>In code chunk 2, write and run the below code to use the function <code><a href="https://rdrr.io/pkg/cowsay/man/say.html">say()</a></code>.</li>
 <li>If you get the error <code>could not find function</code> it means you have not loaded the package properly, try running <code><a href="https://github.com/sckott/cowsay">library(cowsay)</a></code> again and make sure everything is spelled exactly right.</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/cowsay/man/say.html">say</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ##  -------------- 
@@ -414,26 +421,26 @@ Figure 2.2: Unzipping and moving the files
 ## </code></pre>
 <p>After the function name, there is a pair of parentheses, which contain zero or more <a href="https://psyteachr.github.io/glossary/a#argument" target="_blank" class="glossary" title="A variable that provides input to a function.">arguments</a>. These are options that you can set. If you don't give it any information, it will try and use the default arguments if it has them. <code><a href="https://rdrr.io/pkg/cowsay/man/say.html">say()</a></code> has two main arguments with a <a href="https://psyteachr.github.io/glossary/d#default-value" target="_blank" class="glossary" title="A value that a function uses for an argument if it is skipped.">default value</a>: <code>what</code> the text says (default <code>Hello world</code>), and the animal the message is said <code>by</code> (default is a cat).</p>
 <p>To look up all the various options that you could use with <code><a href="https://rdrr.io/pkg/cowsay/man/say.html">say()</a></code>, run the following code in the console:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">?</span><span class="va">say</span></span></code></pre></div>
 <p>The help documentation can be a little hard to read - scrolling to the bottom and looking at the examples can help.</p>
 <ul>
 <li>In code chunk 2, add the below code to produce a different message and animal - below is an example but try your own.</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/cowsay/man/say.html">say</a></span><span class="op">(</span>what <span class="op">=</span> <span class="st">"Do or do not, there is no try"</span>,</span>
 <span>    by <span class="op">=</span> <span class="st">"yoda"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="sec-function-help" class="section level3" number="2.8.2">
+<div id="sec-function-help" class="section level3" number="2.9.2">
 <h3>
-<span class="header-section-number">2.8.2</span> Function Help<a class="anchor" aria-label="anchor" href="#sec-function-help"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.9.2</span> Function Help<a class="anchor" aria-label="anchor" href="#sec-function-help"><i class="fas fa-link"></i></a>
 </h3>
 <p>If you want more information about what a function does or how to use it, you can look at the help document. If a <a href="https://psyteachr.github.io/glossary/f#function" target="_blank" class="glossary" title="A named section of code that can be reused.">function</a> is in <a href="https://psyteachr.github.io/glossary/b#base-r" target="_blank" class="glossary" title="The set of R functions that come with a basic installation of R, before you add external packages.">base R</a> or a package you have loaded, you can type <code>?function_name</code> in the console to access the help file. At the top of the help it will give you the function and package name.</p>
 <p>If the package isn't loaded, use <code>?package_name::function_name</code>. When you aren't sure what package the function is in, use the shortcut <code>??function_name</code> which will give you a list of all possible options.</p>
 <ul>
 <li>In the <strong>console</strong>, type and run the code for the different help options below. The reason you run the help code in the console not a code chunk is that you generally don't want to save this code in your script.</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># get help with a package</span></span>
 <span><span class="op">?</span><span class="va">cowsay</span></span>
 <span></span>
@@ -458,14 +465,14 @@ Figure 2.2: Unzipping and moving the files
 </div>
 </div>
 </div>
-<div id="activity-5-loading-data" class="section level2" number="2.9">
+<div id="activity-7-loading-data" class="section level2" number="2.10">
 <h2>
-<span class="header-section-number">2.9</span> Activity 5: Loading data<a class="anchor" aria-label="anchor" href="#activity-5-loading-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.10</span> Activity 7: Loading data<a class="anchor" aria-label="anchor" href="#activity-7-loading-data"><i class="fas fa-link"></i></a>
 </h2>
 <p>OK, let's get back to looking at our data. In order to load and work with our Stroop data, we need to load another that very important package, the <code class="package">tidyverse</code>.</p>
-<div id="sec-tidyverse" class="section level3" number="2.9.1">
+<div id="sec-tidyverse" class="section level3" number="2.10.1">
 <h3>
-<span class="header-section-number">2.9.1</span> Load the Tidyverse<a class="anchor" aria-label="anchor" href="#sec-tidyverse"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.10.1</span> Load the Tidyverse<a class="anchor" aria-label="anchor" href="#sec-tidyverse"><i class="fas fa-link"></i></a>
 </h3>
 <p><code class="package">tidyverse</code> is a meta-package that loads several packages we'll be using in almost every chapter in this book:</p>
 <ul>
@@ -492,25 +499,25 @@ Figure 2.2: Unzipping and moving the files
 <ul>
 <li>In code chunk 3, write and run the code to load the <code class="package">tidyverse</code>. When you run this code, you're going to get something that at first glance might look like an error but it's not, it's just telling you which packages it has loaded.</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:img-tidyverse"></span>
 <img src="images/stroop/tidyverse.png" alt="Tidyverse message when successfully loaded" width="100%"><p class="caption">
-Figure 2.3: Tidyverse message when successfully loaded
+Figure 2.4: Tidyverse message when successfully loaded
 </p>
 </div>
 </div>
-<div id="sec-read-csv" class="section level3" number="2.9.2">
+<div id="sec-read-csv" class="section level3" number="2.10.2">
 <h3>
-<span class="header-section-number">2.9.2</span> Read in the data<a class="anchor" aria-label="anchor" href="#sec-read-csv"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.10.2</span> Read in the data<a class="anchor" aria-label="anchor" href="#sec-read-csv"><i class="fas fa-link"></i></a>
 </h3>
 <p>Now we can read in the data. To do this we will use the function <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code> that allows us to read in .csv files, which are a type of data file. There are also functions that allow you to read in .xlsx (Excel) files and other formats, however in this course we will only use .csv files.</p>
 <p>First, we will create an object called <code>dat</code> that contains the data in the <code>experiment_data.csv</code> file. Then, we will create an object called <code>ppt_info</code> that contains the data in the <code>participant_data.csv</code>.</p>
 <ul>
 <li>In code chunk 4, write and run the below code to load the data files.</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"experiment_data.csv"</span><span class="op">)</span></span>
 <span><span class="va">ppt_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"participant_data.csv"</span><span class="op">)</span></span></code></pre></div>
 <div class="info">
@@ -519,9 +526,9 @@ Figure 2.3: Tidyverse message when successfully loaded
 </div>
 </div>
 </div>
-<div id="activity-6-check-your-data" class="section level2" number="2.10">
+<div id="activity-8-check-your-data" class="section level2" number="2.11">
 <h2>
-<span class="header-section-number">2.10</span> Activity 6: Check your data<a class="anchor" aria-label="anchor" href="#activity-6-check-your-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.11</span> Activity 8: Check your data<a class="anchor" aria-label="anchor" href="#activity-8-check-your-data"><i class="fas fa-link"></i></a>
 </h2>
 <p>You should now see that the objects <code>dat</code> and <code>ppt_info</code> have appeared in the environment pane. Whenever you read data into R you should always do an initial check to see that your data looks like how you expected. There are several ways you can do this, try them all out to see how the results differ.</p>
 <ul>
@@ -533,16 +540,16 @@ Figure 2.3: Tidyverse message when successfully loaded
 <p>What is the <strong>mean</strong> age pf participants to 1 decimal place? <input class="webex-solveme nospaces" size="4" data-answer='["24.4"]'></p>
 <p>What is the <strong>mean</strong> overall reaction time to 1 decimal place? <input class="webex-solveme nospaces" size="5" data-answer='["817.7"]'></p>
 </div>
-<div id="activity-7-visualise-the-data" class="section level2" number="2.11">
+<div id="activity-9-visualise-the-data" class="section level2" number="2.12">
 <h2>
-<span class="header-section-number">2.11</span> Activity 7: Visualise the data<a class="anchor" aria-label="anchor" href="#activity-7-visualise-the-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.12</span> Activity 9: Visualise the data<a class="anchor" aria-label="anchor" href="#activity-9-visualise-the-data"><i class="fas fa-link"></i></a>
 </h2>
 <p>As you're going to learn about more over this course, data visualisation is extremely important. Visualisations can be used to give you more information about your dataset, but they can also be used to mislead.</p>
 <p>We're going to look at how to write the code to produce simple visualisations in a few weeks, for now, we want to focus on how to read and interpret different kinds of graphs. Please feel free to play around with the code and change <code>TRUE</code> to <code>FALSE</code> and adjust the values and labels and see what happens but <strong>do not worry about understanding this code for now</strong>. Just copy and paste it.</p>
 <ul>
 <li>Copy, paste and run the below code in code chunk 6 to produce a bar graph that shows the number of men, women, and non-binary participants in the dataset.</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">ppt_info</span>, <span class="co"># data we're using</span></span>
 <span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gender</span>, <span class="co"># variable we want to show as bars</span></span>
 <span>                     fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co"># make bars different colours</span></span>
@@ -554,7 +561,7 @@ Figure 2.3: Tidyverse message when successfully loaded
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:unnamed-chunk-7"></span>
 <img src="02-stroop_files/figure-html/unnamed-chunk-7-1.png" alt="Number of participants by gender" width="100%"><p class="caption">
-Figure 2.4: Number of participants by gender
+Figure 2.5: Number of participants by gender
 </p>
 </div>
 <p>Are there more men, women, or non-binary participants in the sample? <select class="webex-select"><option value="blank"></option>
@@ -564,7 +571,7 @@ Figure 2.4: Number of participants by gender
 <ul>
 <li>Copy, paste, and run the below code in code chunk 7 to create violin-boxplots of reaction times for each condition.</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># make plot</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dat</span>, <span class="co"># data we're using</span></span>
 <span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">condition</span>, <span class="co"># grouping variable (IV)</span></span>
@@ -583,7 +590,7 @@ Figure 2.4: Number of participants by gender
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:unnamed-chunk-8"></span>
 <img src="02-stroop_files/figure-html/unnamed-chunk-8-1.png" alt="Violin-boxplot of reaction times in each condition" width="100%"><p class="caption">
-Figure 2.5: Violin-boxplot of reaction times in each condition
+Figure 2.6: Violin-boxplot of reaction times in each condition
 </p>
 </div>
 <ul>
@@ -595,9 +602,9 @@ Figure 2.5: Violin-boxplot of reaction times in each condition
 <option value="">Congruent</option>
 <option value="answer">Incongruent</option></select></p>
 </div>
-<div id="finished-1" class="section level2" number="2.12">
+<div id="finished-1" class="section level2" number="2.13">
 <h2>
-<span class="header-section-number">2.12</span> Finished<a class="anchor" aria-label="anchor" href="#finished-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.13</span> Finished<a class="anchor" aria-label="anchor" href="#finished-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>Finally, try knitting the file to HTML. And that's it, well done! It's absolutely ok if you don't understand 100% of what you're doing at this point, we're going to repeat everything you've done with different datasets so you will get lots of practice and we're going to build it up very slowly. Also remember that you can attend GTA sessions and office hours for help with data skills - you don't have to have specific questions, some students just like to use the GTA sessions as the time to work through the data skills book so that if they need help, they're already there.</p>
 <p>Remember to make a note of any mistakes you made and how you fixed them, any other useful information you learned, save your Markdown, and quit R completely.</p>
@@ -816,29 +823,27 @@ $( document ).ready(function() {
 <li><a class="nav-link" href="#sec-walkthrough-stroop"><span class="header-section-number">2.2</span> Walkthrough video</a></li>
 <li><a class="nav-link" href="#activity-1-the-stroop-effect"><span class="header-section-number">2.3</span> Activity 1: The Stroop Effect</a></li>
 <li><a class="nav-link" href="#activity-2-new-project"><span class="header-section-number">2.4</span> Activity 2: New project</a></li>
-<li><a class="nav-link" href="#activity-2-setting-check"><span class="header-section-number">2.5</span> Activity 2: Setting check</a></li>
-<li><a class="nav-link" href="#activity-3-data-files"><span class="header-section-number">2.6</span> Activity 3: Data files</a></li>
+<li><a class="nav-link" href="#activity-3-setting-check"><span class="header-section-number">2.5</span> Activity 3: Setting check</a></li>
+<li><a class="nav-link" href="#sec-unzip"><span class="header-section-number">2.6</span> Activity 4: Data files</a></li>
+<li><a class="nav-link" href="#sec-packages"><span class="header-section-number">2.7</span> Packages and functions</a></li>
 <li>
-<a class="nav-link" href="#sec-packages"><span class="header-section-number">2.7</span> Packages and functions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#sec-install-package"><span class="header-section-number">2.7.1</span> Installing a package</a></li>
-<li><a class="nav-link" href="#loading-a-package"><span class="header-section-number">2.7.2</span> Loading a package</a></li>
+<a class="nav-link" href="#sec-install-package"><span class="header-section-number">2.8</span> Activity 5: Install packages</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#loading-a-package"><span class="header-section-number">2.8.1</span> Loading a package</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#activity-6-packages-and-function"><span class="header-section-number">2.9</span> Activity 6: Packages and function</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#using-a-function"><span class="header-section-number">2.9.1</span> Using a function</a></li>
+<li><a class="nav-link" href="#sec-function-help"><span class="header-section-number">2.9.2</span> Function Help</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#activity-4-packages-and-function"><span class="header-section-number">2.8</span> Activity 4: Packages and function</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#using-a-function"><span class="header-section-number">2.8.1</span> Using a function</a></li>
-<li><a class="nav-link" href="#sec-function-help"><span class="header-section-number">2.8.2</span> Function Help</a></li>
+<a class="nav-link" href="#activity-7-loading-data"><span class="header-section-number">2.10</span> Activity 7: Loading data</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#sec-tidyverse"><span class="header-section-number">2.10.1</span> Load the Tidyverse</a></li>
+<li><a class="nav-link" href="#sec-read-csv"><span class="header-section-number">2.10.2</span> Read in the data</a></li>
 </ul>
 </li>
-<li>
-<a class="nav-link" href="#activity-5-loading-data"><span class="header-section-number">2.9</span> Activity 5: Loading data</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#sec-tidyverse"><span class="header-section-number">2.9.1</span> Load the Tidyverse</a></li>
-<li><a class="nav-link" href="#sec-read-csv"><span class="header-section-number">2.9.2</span> Read in the data</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#activity-6-check-your-data"><span class="header-section-number">2.10</span> Activity 6: Check your data</a></li>
-<li><a class="nav-link" href="#activity-7-visualise-the-data"><span class="header-section-number">2.11</span> Activity 7: Visualise the data</a></li>
-<li><a class="nav-link" href="#finished-1"><span class="header-section-number">2.12</span> Finished</a></li>
+<li><a class="nav-link" href="#activity-8-check-your-data"><span class="header-section-number">2.11</span> Activity 8: Check your data</a></li>
+<li><a class="nav-link" href="#activity-9-visualise-the-data"><span class="header-section-number">2.12</span> Activity 9: Visualise the data</a></li>
+<li><a class="nav-link" href="#finished-1"><span class="header-section-number">2.13</span> Finished</a></li>
 </ul>
 
       <div class="book-extra">
@@ -856,7 +861,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-09-03.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-09-04.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

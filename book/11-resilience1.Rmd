@@ -45,18 +45,16 @@ For the next set of chapters we're going to use data from a measurement of resil
 
 ## Activity 2: New project {#sec-new-project-resil}
 
-* Log in to the to R sever and make a new project for the Resilience chapters (this week and next week).
-* If you've decided to install R on your machine, create a new project by clicking `File -> New Project`. The rest of the process is the same as on the server.
+* Open RStudio and make a new project for the Resilience chapters (this week and next week).
 * Create a new Markdown document named "Resilience 1". Delete the default text and then create a new code chunk.
 * Your environment should be clear but if there are objects in it, remove them by pressing the brush icon. 
 
 ## Activity 3: Data files {#sec-data-resil}
 
-Once you've done all this, it's time to download the files we need and then upload them to the server.
+Once you've done all this, it's time to download the files we need and then unzip them and put them in the right place.
 
 * First, download the <a href="data/resilience/resilience_data.zip" download>Resilience data zip file</a> to your computer and make sure you know which folder you saved it in.
-* Then, on the server in the Files tab (bottom right), click `Upload > Choose file` then navigate to the folder on your computer where the zip file is saved, select it, click `Open`, then `OK`.
-* If you're working on your own machine, you will need to unzip the files before you can use them. There is a short walkthrough via YouTube for how to do this on [Windows](https://www.youtube.com/watch?v=r9hpiyzOOTY) and [Mac](https://www.youtube.com/watch?v=PGp1daVIBcs). You need to unzip the files into your project folder. If you need help with this, come to office hours or a GTA session.
+* Then unzip the files and move them into the right folder.
 
 The data we're working with is simulated data for an experiment where people have completed a resilience questionnaire and also take part in a treatment condition. They either are in the control group where they are asked to do a colouring book every night, or they're in an intervention group where they're asked to complete CBT exercises every night. There are 890 participants in total.
 
@@ -305,4 +303,4 @@ theme_minimal() +
 
 ## Finished
 
-Finally, try knitting the file to HTML and remember to  make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session on the server if applicable. 
+Finally, try knitting the file to HTML and remember to  make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit RStudio completely. 

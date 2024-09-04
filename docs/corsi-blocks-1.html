@@ -203,23 +203,23 @@ Explain this answer
 <span class="header-section-number">5.4</span> Activity 2: New project<a class="anchor" aria-label="anchor" href="#activity-2-new-project-1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
-<li>Log in to the to R sever and make a new project for the Corsi Block chapters (this week and next week):</li>
-<li>Click on the "New project" button;</li>
+<li>Open RStudio and make a new project for the Corsi Block chapters (this week and next week):</li>
+<li>Click "File" and then "New project";</li>
 <li>Then, click on the first option in the list "New Directory";</li>
 <li>Then, click "New Project";</li>
 <li>Then you are given the opportunity to name your project and select which folder it should be stored in. First in the "Directory name" box, type "Corsi Blocks";</li>
-<li>The subdirectory should already be set to Psych 1A but if not, click browse and navigate to it then click "Choose";</li>
+<li>Click browse and find your PSYCH1A and Data Skills folder and click "Open"</li>
 <li>Finally, click "Create project".</li>
 </ul>
 </div>
-<div id="activity-3-data-files-1" class="section level2" number="5.5">
+<div id="activity-3-data-files" class="section level2" number="5.5">
 <h2>
-<span class="header-section-number">5.5</span> Activity 3: Data files<a class="anchor" aria-label="anchor" href="#activity-3-data-files-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.5</span> Activity 3: Data files<a class="anchor" aria-label="anchor" href="#activity-3-data-files"><i class="fas fa-link"></i></a>
 </h2>
-<p>Once you've done all this, it's time to download the files we need and then upload them to the server.</p>
+<p>Once you've done all this, it's time to download the files we need and then unzip them and put them in the right place.</p>
 <ul>
 <li>First, download the <a href="data/corsi/corsi_data.zip" download>Corsi data zip file</a> to your computer and make sure you know which folder you saved it in.</li>
-<li>Then, on the server in the Files tab (bottom right), click <code>Upload &gt; Choose file</code> then navigate to the folder on your computer where the zip file is saved, select it, click <code>Open</code>, then <code>OK</code>.</li>
+<li>Then, extract the files and copy them into the main folder of your Corsi Block project. If you need a refresher on how to do this, refer back to section <a href="stroop.html#sec-unzip">2.6</a>.</li>
 </ul>
 <p>The zip file contains four files:</p>
 <ul>
@@ -284,7 +284,7 @@ Explain this answer
 <ul>
 <li>Add the following to code chunk 1 and run the code.</li>
 </ul>
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="va">demographic_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"demographic_data.csv"</span><span class="op">)</span></span>
 <span><span class="va">score_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"score_data.csv"</span><span class="op">)</span></span></code></pre></div>
@@ -297,7 +297,7 @@ Explain this answer
 <ul>
 <li>In code chunk 2 add the below code to calculate the demographic information</li>
 </ul>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># count the total number of participants</span></span>
 <span><span class="va">total_participants</span> <span class="op">&lt;-</span> <span class="va">demographic_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -321,7 +321,7 @@ Explain this answer
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">grouping_variable</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -329,7 +329,7 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">condition_count</span> <span class="op">&lt;-</span> <span class="va">demographic_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">Condition</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -347,7 +347,7 @@ Solution
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="va">score_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>column_name1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">measure</span><span class="op">)</span>,</span>
 <span>            column_name2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">measure</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -356,7 +356,7 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">overall_score</span> <span class="op">&lt;-</span> <span class="va">score_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Corsi_Score</span><span class="op">)</span>,</span>
 <span>            sd_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Corsi_Score</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -377,7 +377,7 @@ Figure 5.1: ggplot Layers from Field et al. (2012)
 <li><p>All the layer are connected with <code>+</code> and it's important that this comes at the end of the first line and not the start of the second line or it won't work.</p></li>
 <li><p>In code chunk 5, add the below code and run it to create the histogram</p></li>
 </ul>
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">score_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Corsi_Score</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">1</span>, colour <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Corsi block score"</span>,</span>
@@ -407,7 +407,7 @@ Explain this answer
 <li>
 <code>by</code> is the name of the column the two tables have in common (i.e., the information that will be used to join them together). In this case, the column that is present in both datasets is <code>Participant</code>.</li>
 </ul>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">full_dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">demographic_data</span>,</span>
 <span>                       y <span class="op">=</span> <span class="va">score_data</span>,</span>
 <span>                       by <span class="op">=</span> <span class="st">"Participant"</span><span class="op">)</span></span></code></pre></div>
@@ -417,7 +417,7 @@ Explain this answer
 </h3>
 <p>This gives us a good opportunity to explain argument names.</p>
 <p>In the above examples, we have written out the argument names in our code (e.g., <code>x</code>, <code>y</code>, <code>by</code>), however, this is not strictly necessary. The following two lines of code would both produce the same result:</p>
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">full_dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">demographic_data</span>,</span>
 <span>                       y <span class="op">=</span> <span class="va">score_data</span>,</span>
 <span>                       by <span class="op">=</span> <span class="st">"Participant"</span><span class="op">)</span></span>
@@ -427,7 +427,7 @@ Explain this answer
 <span>                       <span class="st">"Participant"</span><span class="op">)</span></span></code></pre></div>
 <p>Importantly, if you do not write out the argument names, R will use the default order of arguments, that is for <code>inner_join</code> it will assume that the first name you enter is <code>x</code>. the second is <code>y</code> and the number is <code>by</code>.</p>
 <p>If you write out the argument names then you can write the arguments in whatever order you like:</p>
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">full_dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>by <span class="op">=</span> <span class="st">"Participant"</span>,</span>
 <span>                       y <span class="op">=</span> <span class="va">demographic_data</span>,</span>
 <span>                       x <span class="op">=</span> <span class="va">score_data</span><span class="op">)</span></span></code></pre></div>
@@ -461,7 +461,7 @@ Figure 5.2: Tab auto-complete
 <button>
 Hide
 </button>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">grouping_variable</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>column_name1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">measure</span><span class="op">)</span>,</span>
@@ -471,7 +471,7 @@ Hide
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">group_scores</span> <span class="op">&lt;-</span> <span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Condition</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Corsi_Score</span><span class="op">)</span>,</span>
@@ -489,7 +489,7 @@ Solution
 <ul>
 <li>Add this code to code chunk 8 to create a boxplot of the scores in each group.</li>
 </ul>
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">full_dat</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Condition</span>, y <span class="op">=</span> <span class="va">Corsi_Score</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Corsi block score"</span>,</span>
@@ -502,7 +502,7 @@ Solution
 <li>
 <code>nrow</code> specifies we want the faceted plots to be spread over three rows. This makes it easier to compare the distributions than if they were side-by-side (try changing this to 1 to see the difference).</li>
 </ul>
-<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">full_dat</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Corsi_Score</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Condition</span>, nrow <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
@@ -523,7 +523,7 @@ Explain this answer
 <h2>
 <span class="header-section-number">5.10</span> Finished<a class="anchor" aria-label="anchor" href="#finished-3"><i class="fas fa-link"></i></a>
 </h2>
-<p>Finally, try knitting the file to HTML and remember to make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session on the server.</p>
+<p>Finally, try knitting the file to HTML and remember to make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit RStudio completely.</p>
 
 </div>
 </div>
@@ -739,7 +739,7 @@ $( document ).ready(function() {
 <li><a class="nav-link" href="#sec-walkthrough-corsi"><span class="header-section-number">5.2</span> Walkthrough video</a></li>
 <li><a class="nav-link" href="#activity-1-the-corsi-block-task"><span class="header-section-number">5.3</span> Activity 1: The Corsi Block Task</a></li>
 <li><a class="nav-link" href="#activity-2-new-project-1"><span class="header-section-number">5.4</span> Activity 2: New project</a></li>
-<li><a class="nav-link" href="#activity-3-data-files-1"><span class="header-section-number">5.5</span> Activity 3: Data files</a></li>
+<li><a class="nav-link" href="#activity-3-data-files"><span class="header-section-number">5.5</span> Activity 3: Data files</a></li>
 <li><a class="nav-link" href="#activity-4-check-and-summarise-the-data"><span class="header-section-number">5.6</span> Activity 4: Check and summarise the data</a></li>
 <li><a class="nav-link" href="#activity-5-summarise-and-visualise-the-scores"><span class="header-section-number">5.7</span> Activity 5: Summarise and visualise the scores</a></li>
 <li>
@@ -769,7 +769,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-09-03.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-09-04.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

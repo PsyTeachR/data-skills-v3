@@ -17,12 +17,19 @@ We'll work through this chapter as a group in the lab in week 3 so feel free to 
 
 There is a walkthrough video of this chapter available via [Echo360](https://echo360.org.uk/media/2e6090b7-9e89-431f-90c3-e1517792824a/public). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
-## Activity 1: Set-up
+## Activity 1: Set-up {#sec-open-project}
 
-Login to the server and then:
+First you need to open up your Stroop Effect project. There are two ways to do this:
 
-* Open your Stroop Effect project;
-* Open the `stroop_stub2.Rmd` Markdown file that we'll use for this chapter;
+1. Navigate to the folder on your computer and open the file "Stroop Effect.Rproj"
+2. Open up RStudio and then in the drop down list at the top right hand corner, select Stroop Effect from the list of recent projects.
+
+<div class="figure" style="text-align: center">
+<img src="images/stroop/open_project.gif" alt="Opening a previously saved project" width="100%" />
+<p class="caption">(\#fig:img-tidyverse)Opening a previously saved project</p>
+</div>
+
+* Then from the Files pane, open the `stroop_stub2.Rmd` Markdown file that we'll use for this chapter;
 * Your environment should be clear but if there are objects in it, remove them by pressing the brush icon. Remember that to avoid issues, you always want to start R in a new session with a clean environment so make sure to quit at the end of each chapter and also check that you've got the settings right as described in Chapter\ \@ref(sec-rstudio-settings).
 
 Refresh your memory, thinking back to what you know about the Stroop Effect, complete the hypothesis using the word "higher" or "lower".
@@ -157,7 +164,7 @@ ppt_info %>%
 
 
 ::: {.info data-latex=""}
-If you're watching the video, you may wonder why your output is appearing in a different place to Emily's. You can choose whether the output of your code appears within your Markdown document, or in the console. If you want to change this setting go to `Tools` - `Global options` - `RMarkdown` and then uncheck the box for `Show output inline for all R Markdown documents` if you want it to appear in the console. It makes no difference to your code which one you use, it's entirely preference. 
+You can choose whether the output of your code appears within your Markdown document, or in the console. If you want to change this setting go to `Tools` - `Global options` - `RMarkdown` and then uncheck the box for `Show output inline for all R Markdown documents` if you want it to appear in the console. It makes no difference to your code which one you use, it's entirely preference. 
 :::
 
 ### Calculating summary statistics
@@ -549,4 +556,4 @@ When loading data, you need to provide the full file name, including the file ex
 
 ## Finished
 
-Remember to  make a note of any mistakes you made and how you fixed them, any other useful information you learned, save your Markdown, and quit your session on the server. 
+Remember to  make a note of any mistakes you made and how you fixed them, any other useful information you learned, save your Markdown, and quit RStudio. 

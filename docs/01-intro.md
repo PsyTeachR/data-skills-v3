@@ -47,16 +47,9 @@ As noted, you have installed two bits of software, R and RStudio. **You only eve
 
 * You may also find it useful to add a shortcut to your desktop or task bar so that it is easy to find.
 
-When you first open RStudio it will look like this:
-
-<div class="figure" style="text-align: center">
-<img src="images/intro/rstudio-icon.png" alt="Opening RStudio" width="100%" />
-<p class="caption">(\#fig:img-rstudio-open)Opening RStudio</p>
-</div>
-
 ## RStudio panes
 
-RStudio is arranged with four window <a href='https://psyteachr.github.io/glossary/p#panes' target='_blank' class='glossary' title='RStudio is arranged with four window “panes”.'>panes</a>. By default, the upper left pane is the **source pane**, where you view, write, and edit code from files and view data tables in a spreadsheet format. **When you first open a new project this pane won't display until you open a document or load in some data** -- don't worry, we'll get to that soon.
+RStudio is arranged with four window <a href='https://psyteachr.github.io/glossary/p#panes' target='_blank' class='glossary' title='RStudio is arranged with four window “panes”.'>panes</a>. By default, the upper left pane is the **source pane**, where you view, write, and edit code from files and view data tables in a spreadsheet format. **When you first open RStudio this pane won't display until you open a document or load in some data** -- don't worry, we'll get to that soon.
 
 <div class="figure" style="text-align: center">
 <img src="images/intro/rstudio.png" alt="The RStudio IDE" width="100%" />
@@ -119,7 +112,7 @@ First, if you don't have one already, make a folder on your computer named "PSYC
 * If you're unsure how to create a folder, here is [a guide for Windows and Mac](https://www.digitaltrends.com/computing/how-to-create-folder-on-desktop/).
 * You should have OneDrive installed on your computer using your University account. Create this folder in OneDrive so that it is always backed up to the cloud.
 
-Then do the following, in this order, n RStudio:
+Then do the following, in this order, in RStudio:
 
 * Click "File" then click "New project"
 * Then, click on the first option in the list "New Directory"
@@ -272,7 +265,7 @@ My name is `r name` and I am `r age` years old. It is `r birthday - today` days 
 
 As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created. 
 
-**My name is Emily and I am 39 years old. It is 311 days until my birthday.**
+**My name is Emily and I am 39 years old. It is 310 days until my birthday.**
 
 We're not going to use this function too often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers. R Markdown is an incredibly powerful and flexible format - this book was written using it! 
 

@@ -126,7 +126,7 @@
 </h2>
 <p>If you get an error message that says something like <code>namespace package 1.1.0 is already loaded, but &gt;= 2.0.1 is required</code> then it likely means that you have installed a newer version of a package on the server. As it notes in the the <a href="https://psyteachr.github.io/data-skills-v2/stroop.html#sec-install-package">original explanation of packages and functions</a>, you should not be installing anything on the server, everything you need is there and installing updated versions of packages only causes issues. We promise that we don't write these things down just for fun!</p>
 <p>If this is happening to you, run the following code in the console. This will uninstall any packages you have installed and default to the ones on the server so everything will work again:</p>
-<div class="sourceCode" id="cb232"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb233"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html">dir</a></span><span class="op">(</span><span class="st">"~/.Rp/packages"</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="va">unlink</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 
 </div>
@@ -358,7 +358,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-09-03.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-09-04.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
