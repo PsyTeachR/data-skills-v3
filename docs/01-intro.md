@@ -15,7 +15,7 @@ If you're completely new to programming, you're unlikely to understand everythin
 
 ## Walkthrough video {#sec-walkthrough-intro}
 
-There is a walkthrough video of this chapter available via [Echo360 INCOMING.]() We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+There is a walkthrough video of this chapter available via [Zoom](https://uofglasgow.zoom.us/rec/share/E51qflbRrIm1ADdWfU78cOR4wr8YyC7hHnYeIX8TzqiQ_31Hgr7D1IRB3ZMQJjty.uYONMVysezCnhRZY) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## R and RStudio {#sec-intro-r}
 
@@ -25,7 +25,7 @@ R is a programming language that you will write code in. RStudio is an Integrate
 
 ## Activity 1: Install R and RStudio
 
-Your first task is to install R and RStudio and we have prepared [a guide for how to do this](https://bartlettje.github.io/installing_R/) on Windows and Macs. Please note that you cannot install R on a Chromebook or a tablet, only a full laptop or desktop computer. If you do not have a laptop or desktop, you can use any of the [University computers](https://www.gla.ac.uk/myglasgow/it/studentclusters/) and there is also a [laptop loan scheme](https://www.gla.ac.uk/myglasgow/registry/finance/funds/laptoploan/). We also have a guide on how to use R on a university computer.
+Your first task is to install R and RStudio and we have prepared [a guide for how to do this](https://psyteachr.github.io/RSetGo/) on Windows and Macs. Please note that you cannot install R on a Chromebook or a tablet, only a full laptop or desktop computer. If you do not have a laptop or desktop, you can use any of the [University computers](https://www.gla.ac.uk/myglasgow/it/studentclusters/) and there is also a [laptop loan scheme](https://www.gla.ac.uk/myglasgow/registry/finance/funds/laptoploan/). We also have a guide on how to use R on a university computer.
 
 If you need help with the installation, or if you'd just feel more confident doing it with someone else in the room, there will be GTA support sessions in week 1 and 2 specifically to help with installation. You can also attend office hours (Emily Nordmann and Rebecca Lai in particular are happy to help with this).
 
@@ -265,7 +265,7 @@ My name is `r name` and I am `r age` years old. It is `r birthday - today` days 
 
 As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created. 
 
-**My name is Emily and I am 39 years old. It is 305 days until my birthday.**
+**My name is Emily and I am 39 years old. It is 290 days until my birthday.**
 
 We're not going to use this function too often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers. R Markdown is an incredibly powerful and flexible format - this book was written using it! 
 
@@ -295,35 +295,6 @@ The key thing we want you to take away from this chapter is that R isn't scary. 
 
 The glossary at the end of each chapter defines common jargon you might encounter while learning R. This specialised vocabulary can help you to communicate more efficiently and to search for solutions to problems. The terms below link to our [PsyTeachR glossary](https://psyteachr.github.io/glossary/), which contains further information and examples.
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> term </th>
-   <th style="text-align:left;"> definition </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:left;"> A data type representing strings of text. </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> IDE </td>
-   <td style="text-align:left;"> Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R. </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> numeric </td>
-   <td style="text-align:left;"> A data type representing a real decimal number or integer. </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> object </td>
-   <td style="text-align:left;"> A word that identifies and stores the value of some data for later use. </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> panes </td>
-   <td style="text-align:left;"> RStudio is arranged with four window "panes". </td>
-  </tr>
-</tbody>
-</table>
+|term      |definition                                                                                                                                                                 | |:---------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------| |character |A data type representing strings of text.                                                                                                                                  | |IDE       |Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R. | |numeric   |A data type representing a real decimal number or integer.                                                                                                                 | |object    |A word that identifies and stores the value of some data for later use.                                                                                                    | |panes     |RStudio is arranged with four window "panes".                                                                                                                              |
 
 

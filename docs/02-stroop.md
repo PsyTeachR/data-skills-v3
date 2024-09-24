@@ -16,7 +16,7 @@ By the end of this chapter you should be able to:
 
 ## Walkthrough video {#sec-walkthrough-stroop}
 
-There is a walkthrough video of this chapter available via [Zoom INCOMING](). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+There is a walkthrough video of this chapter available via [Zoom](https://uofglasgow.zoom.us/rec/share/vRwnO_rjeJC7ewcMA3avOuC8UhR-sra_6cGNTmZ-xz24IRpd4-LW1WF_957qPNY.e4V3Kp6TU9rODsFo). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## Activity 1: The Stroop Effect
 
@@ -204,7 +204,7 @@ library(cowsay)
 ```
 
 ```
-## Warning: package 'cowsay' was built under R version 4.3.3
+## Warning: package 'cowsay' was built under R version 4.3.1
 ```
 
 You'll see `library(cowsay)` appear in the console. There's no warning messages or errors so it looks like it has loaded successfully.
