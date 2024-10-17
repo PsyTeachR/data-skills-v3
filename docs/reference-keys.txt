@@ -271,3 +271,4 @@ glossary
 server-troubleshooting
 cant-access-server
 out-of-date-packages
+licence
