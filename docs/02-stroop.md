@@ -204,7 +204,7 @@ library(cowsay)
 ```
 
 ```
-## Warning: package 'cowsay' was built under R version 4.3.3
+## Warning: package 'cowsay' was built under R version 4.3.1
 ```
 
 You'll see `library(cowsay)` appear in the console. There's no warning messages or errors so it looks like it has loaded successfully.
