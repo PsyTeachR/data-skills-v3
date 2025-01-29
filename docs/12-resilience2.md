@@ -183,7 +183,7 @@ For example, we can create a new categorical variable that assigns participants 
 
 * You can read `~` as `then`, i.e., if age is less than or equal to 30, then write "Younger".
 * You can have as many conditions as you like, just separate them with commas.
-* `TRUE` isn't always necessary but it controls what value is entered if a value doesn't meet any of the conditions. In this case, it will return the text "Missing" for all the NA values in age.
+* `.default` isn't always necessary but it controls what value is entered if a value doesn't meet any of the conditions. In this case, it will return the text "Missing" for all the NA values in age.
 
 
 ```r
@@ -204,7 +204,7 @@ The new variable `age_category` will be created as a `character` variable but we
 dat_scores <- dat_scores %>%
   mutate(age_category = case_when(age_corrected <= 30 ~ "Younger",
                                   age_corrected > 30 ~ "Older", 
-                                  TRUE ~ "Missing"),
+                                  .default = "Missing"),
          variable_name = function_to_create_factors(variable_to_factorise))
 ```
 
@@ -219,7 +219,7 @@ dat_scores <- dat_scores %>%
 dat_scores <- dat_scores %>%
   mutate(age_category = case_when(age_corrected <= 30 ~ "Younger",
                                   age_corrected > 30 ~ "Older", 
-                                  TRUE ~ "Missing"),
+                                  .default = "Missing"),
          age_category = as.factor(age_category))
 ```
 

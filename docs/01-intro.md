@@ -265,7 +265,7 @@ My name is `r name` and I am `r age` years old. It is `r birthday - today` days 
 
 As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created. 
 
-**My name is Emily and I am 39 years old. It is 177 days until my birthday.**
+**My name is Emily and I am 39 years old. It is 163 days until my birthday.**
 
 We're not going to use this function too often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers. R Markdown is an incredibly powerful and flexible format - this book was written using it! 
 
@@ -295,6 +295,35 @@ The key thing we want you to take away from this chapter is that R isn't scary. 
 
 The glossary at the end of each chapter defines common jargon you might encounter while learning R. This specialised vocabulary can help you to communicate more efficiently and to search for solutions to problems. The terms below link to our [PsyTeachR glossary](https://psyteachr.github.io/glossary/), which contains further information and examples.
 
-|term      |definition                                                                                                                                                                 | |:---------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------| |character |A data type representing strings of text.                                                                                                                                  | |IDE       |Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R. | |numeric   |A data type representing a real decimal number or integer.                                                                                                                 | |object    |A word that identifies and stores the value of some data for later use.                                                                                                    | |panes     |RStudio is arranged with four window "panes".                                                                                                                              |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> term </th>
+   <th style="text-align:left;"> definition </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:left;"> A data type representing strings of text. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> IDE </td>
+   <td style="text-align:left;"> Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> numeric </td>
+   <td style="text-align:left;"> A data type representing a real decimal number or integer. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> object </td>
+   <td style="text-align:left;"> A word that identifies and stores the value of some data for later use. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> panes </td>
+   <td style="text-align:left;"> RStudio is arranged with four window "panes". </td>
+  </tr>
+</tbody>
+</table>
 
 
