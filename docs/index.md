@@ -2,7 +2,7 @@
 title: "Data Skills" # edit
 #subtitle: "optional" 
 author: "Emily Nordmann" # edit
-date: "2025-01-29"
+date: "2025-01-31"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs

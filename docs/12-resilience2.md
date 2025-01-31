@@ -14,7 +14,7 @@ By the end of this chapter you should be able to:
 
 ## Walkthrough video {#sec-walkthrough-resil}
 
-There is a walkthrough video of this chapter available via [Echo360](https://echo360.org.uk/media/f80d0a1a-c528-48f2-b474-724359b7b57e/public). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+There is a walkthrough video of this chapter available via [Zoom](https://uofglasgow.zoom.us/rec/play/nSxZMc9S9U4E2BZMny-gxrt081CDMPuEdDz4RLqcmVUieXH6N6cuSGzQVuMzDxVwY_anc83HiLYFVSHR.oy-f9keTZPpF5uvD?canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Fuofglasgow.zoom.us%2Frec%2Fshare%2FNg23nzltXSio_B3GPCYq_oqIZ0jecmRp6WQMfrLNQ7AUZztwJQpRwFxq1Tdq2gPK.kWIMwTEQ-t-uZv_-). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## Activity 1: Set-up {#sec-setup-resil2}
 
