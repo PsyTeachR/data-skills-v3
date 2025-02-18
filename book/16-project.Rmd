@@ -2,7 +2,7 @@
 
 We've spent the last 6 months giving you the skills you need to be able to deal with your own data. Now's the time to show us what you've learned. In this chapter we're going to describe the steps you will need to go through when analysing your data but, aside from a few lines that will help you deal with the initial questionnaire data and a couple of hints, we're not going to give you any code solutions. 
 
-For everything else, you have done it before, so use this book to help you. Remember, you don't need to write the code from memory, you just need to find the relevant examples and then copy and paste and change what needs changing to make it work for you. Additionally, data skills homework 3 is a version of this analysis, so if you can do that, you can do this, and vice versa.
+For everything else, you have done it before, so use this book to help you. Remember, you don't need to write the code from memory, you just need to find the relevant examples and then copy and paste and change what needs changing to make it work for you. Additionally, data skills homework 2 is a version of this analysis, so if you can do that, you can do this, and vice versa.
 
 We suggest that you problem-solve the code as a group, however, make sure that you all have a separate copy of the final working code. You can attend into GTA sessions in week 9 and 10 to help you as well.
 

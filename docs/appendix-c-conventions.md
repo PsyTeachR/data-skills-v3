@@ -22,7 +22,7 @@ See [webexercises](https://psyteachr.github.io/webexercises/) for more details a
 
 * Type an integer: <input class='webex-solveme nospaces regex' size='1' data-answer='["^[0-9]{1}$"]'/>
 * I am going to learn a lot: <select class='webex-select'><option value='blank'></option><option value='answer'>TRUE</option><option value='x'>FALSE</option></select>
-* What is a p-value? <div class='webex-radiogroup' id='radio_ZDOZGAJXQZ'><label><input type="radio" autocomplete="off" name="radio_ZDOZGAJXQZ" value="x"></input> <span>the probability that the null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_ZDOZGAJXQZ" value="answer"></input> <span>the probability of the observed (or more extreme) data, under the assumption that the null-hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_ZDOZGAJXQZ" value="x"></input> <span>the probability of making an error in your conclusion</span></label></div>
+* What is a p-value? <div class='webex-radiogroup' id='radio_GBFKSYOLWL'><label><input type="radio" autocomplete="off" name="radio_GBFKSYOLWL" value="x"></input> <span>the probability that the null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_GBFKSYOLWL" value="answer"></input> <span>the probability of the observed (or more extreme) data, under the assumption that the null-hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_GBFKSYOLWL" value="x"></input> <span>the probability of making an error in your conclusion</span></label></div>
 
 
 <div class='webex-solution'><button>Hidden Text</button>
@@ -94,7 +94,7 @@ library(tidyverse)
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> <a href="https://psyteachr.github.io/glossary/o#ordinal" target="_blank">ordinal</a> </td>
+   <td style="text-align:left;"> &lt;a href='https://psyteachr.github.io/glossary/o#ordinal' target='_blank'&gt;ordinal&lt;/a&gt; </td>
    <td style="text-align:left;"> Discrete variables that have an inherent order, such as level of education or dislike/like. </td>
   </tr>
 </tbody>
