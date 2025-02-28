@@ -51,11 +51,11 @@ big5 <- read_csv("big5_data.csv")
 scoring <- read_csv("scoring.csv")
 codebook <- read_csv("code_book.csv")
 ```
-` r unhide()`
+`r unhide()`
 
 ## Activity 3: Wide-form and long-form data
 
-As noted in the last chapter, our Big Five data is currently in wide-form, with one row for each particpant that contains all the data for that one person. The below table shows a preview of the first 10 columns for the first five participants.
+As noted in the last chapter, our Big Five data is currently in wide-form, with one row for each participant that contains all the data for that one person. The below table shows a preview of the first 10 columns for the first five participants.
 
 ```{r echo =FALSE}
 big5 %>%
