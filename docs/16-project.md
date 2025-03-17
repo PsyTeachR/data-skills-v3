@@ -103,7 +103,7 @@ You're now ready to analyse your data. You need the following:
 * Number of participants in your final sample, their mean age, SD, gender split, and number of missing data points.
 * The number of participants in each group. It is also useful to calculate this as a percent. We haven't shown you this explicitly but your hint is `count()` - `mutate()` - `n / sum(n)`.
 * The mean scale score and SD for each of the groups of your IV.
-* Two different visualisations. Your choice, but make them look nice and ensure all the labels are corrected and they're colour-blind friendly.
+* A visualisation of your results. Your choice, but make it look nice and ensure all the labels are corrected and they're colour-blind friendly.
 
 ## Finished
 
