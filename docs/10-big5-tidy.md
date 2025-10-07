@@ -36,7 +36,7 @@ In code chunk 1, write and run the code that:
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 library(package_name)
 object_name <- read_csv("file_name.csv")
 ```
@@ -48,7 +48,7 @@ object_name <- read_csv("file_name.csv")
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 library(tidyverse)
 big5 <- read_csv("big5_data.csv")
 scoring <- read_csv("scoring.csv")
@@ -101,7 +101,7 @@ The function we use for this is `pivot_longer()` and we briefly described it and
 
 
 
-```r
+``` r
 object_name <- data %>%
   pivot_longer(cols = first_column:last_column, 
                names_to = "column_name", 
@@ -112,7 +112,7 @@ object_name <- data %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 big5_long <- big5 %>%
   pivot_longer(cols = Q4_1:Q4_60, 
                names_to = "item", 
@@ -129,7 +129,7 @@ First, let's join the new `big5_long` with `codebook` - create a new code chunk 
 This can be read as "start with big5_long and then join it to codebook using the variable `item` to match the columns".
 
 
-```r
+``` r
 join1 <- big5_long %>%
   inner_join(codebook, 
              by = "item")
@@ -173,7 +173,7 @@ When you join the two, the new dataset will have all of the unique columns. `joi
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 join2 <- starting_data%>%
   inner_join(object_to_join, by = c("common_column1", "common_column2"))`
 ```
@@ -185,7 +185,7 @@ join2 <- starting_data%>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 join2 <- join1%>%
   inner_join(scoring, by = c("response", "direction"))
 ```
@@ -204,7 +204,7 @@ The above two joins are a really good example of where pipes come in very useful
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 object_name <- starting_data %>%
   inner_join1() %>%
   inner_join2()
@@ -217,7 +217,7 @@ object_name <- starting_data %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 full_dat <- big5_long%>%
   inner_join(codebook, by = "item") %>%
   inner_join(scoring, by = c("response", "direction"))
@@ -235,7 +235,7 @@ First, let's look at the mean scores for each trait (openness, conscientiousness
 `full_dat` contains the raw scores to each item, so a first step, we want to create a new object that calculates the mean score for each participant (`ResponseId`) for each `trait`. We can do this by using functions we have used before: `group_by()` and `summarise()`. Because we want scores by two variables (each participant and each trait), `group_by()` has two variables passed to it:
 
 
-```r
+``` r
 trait_scores <- full_dat%>%
   group_by(ResponseId, trait) %>%
   summarise(ppt_mean = mean(score),
@@ -282,7 +282,7 @@ Now, make a boxplot of the scores for each trait. See if you can do this from me
 
 
 
-```r
+``` r
 ggplot(data = trait_scores, aes(x = trait, y = ppt_mean)) +
   geom_boxplot()
 ```
@@ -300,7 +300,7 @@ ggplot(data = trait_scores, aes(x = trait, y = ppt_mean)) +
 This code introduces a lot of visual tweaks - try deleting each line of code or changing the values to figure out what each bit does.
 
 
-```r
+``` r
 ggplot(data = trait_scores, aes(x = trait, y = ppt_mean, fill = trait)) +
   geom_boxplot(alpha = .7) +
   guides(fill = "none") +
@@ -329,7 +329,7 @@ Which trait has the highest median score? <select class='webex-select'><option v
 You can also create a table of the mean scores for each trait, collapsing across participant by removing `ResponseId` from `group_by()`:
 
 
-```r
+``` r
 trait_means <- trait_scores %>%
   group_by(trait) %>%
   summarise(trait_mean = mean(ppt_mean),
@@ -361,7 +361,7 @@ Each personality trait is made up of a number of different facets. For example, 
 
 
 
-```r
+``` r
 object_name <- starting_data %>%
   filter(trait == "value")
 ```
@@ -373,7 +373,7 @@ object_name <- starting_data %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 extra_data <- full_dat %>%
   filter(trait == "extraversion")
 ```
@@ -387,7 +387,7 @@ Then create an object named `facet_scores` and calculate the mean facet scores f
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 facet_scores <- extra_data %>%
   group_by(ResponseId, facet)%>%
   summarise(ppt_mean = mean(score),
@@ -414,7 +414,7 @@ Finally, create a table that has the mean facet scores for each facet of extrave
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 facet_means <- facet_scores %>%
   group_by(facet) %>%
   summarise(facet_mean = mean(ppt_mean),
@@ -429,7 +429,7 @@ facet_means <- facet_scores %>%
 The resulting table should look like this:
 
 
-```r
+``` r
 facet_means
 ```
 

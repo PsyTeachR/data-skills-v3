@@ -14,7 +14,7 @@ If you get an error message that says something like `namespace package 1.1.0 is
 If this is happening to you, run the following code in the console. This will uninstall any packages you have installed and default to the ones on the server so everything will work again:
 
 
-```r
+``` r
 lapply(dir("~/.Rp/packages", full.names = TRUE), unlink, TRUE, TRUE)
 ```
 

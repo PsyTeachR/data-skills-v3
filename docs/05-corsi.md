@@ -114,7 +114,7 @@ Now, we need to load the tidyverse and the data files so that we can use them.
 * Add the following to code chunk 1 and run the code.
 
 
-```r
+``` r
 library(tidyverse)
 demographic_data <- read_csv("demographic_data.csv")
 score_data <- read_csv("score_data.csv")
@@ -128,7 +128,7 @@ As we did with the Stroop data, let's check the data and perform some summary st
 * In code chunk 2 add the below code to calculate the demographic information
 
 
-```r
+``` r
 # count the total number of participants
 total_participants <- demographic_data %>%
   count()
@@ -156,7 +156,7 @@ We also want to check how many participants were in each experimental condition.
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 object_name <- data %>%
   count(grouping_variable)
 ```
@@ -168,7 +168,7 @@ object_name <- data %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 condition_count <- demographic_data %>%
   count(Condition)
 ```
@@ -188,7 +188,7 @@ We're actually interested in how the scores for each sleep condition compare but
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 object_name <- score_data %>%
   summarise(column_name1 = mean(measure),
             column_name2 = sd(measure))
@@ -201,7 +201,7 @@ object_name <- score_data %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 overall_score <- score_data %>%
   summarise(mean_score = mean(Corsi_Score),
             sd_score = sd(Corsi_Score))
@@ -228,7 +228,7 @@ ggplot() builds plots by combining layers. If you're used to making plots in Exc
 * In code chunk 5, add the below code and run it to create the histogram
 
 
-```r
+``` r
 ggplot(data = score_data, aes(x = Corsi_Score)) +
   geom_histogram(binwidth = 1, colour = "black") +
   scale_x_continuous(name = "Corsi block score",
@@ -262,7 +262,7 @@ The joined dataset will have 5 columns, Participant, Gender, Age, Condition, and
 * `by` is the name of the column the two tables have in common (i.e., the information that will be used to join them together). In this case, the column that is present in both datasets is `Participant`.
 
 
-```r
+``` r
 full_dat <- inner_join(x = demographic_data,
                        y = score_data,
                        by = "Participant")
@@ -275,7 +275,7 @@ This gives us a good opportunity to explain argument names.
 In the above examples, we have written out the argument names in our code (e.g., `x`, `y`, `by`), however, this is not strictly necessary. The following two lines of code would both produce the same result:
 
 
-```r
+``` r
 full_dat <- inner_join(x = demographic_data,
                        y = score_data,
                        by = "Participant")
@@ -290,7 +290,7 @@ Importantly, if you do not write out the argument names, R will use the default 
 If you write out the argument names then you can write the arguments in whatever order you like:
 
 
-```r
+``` r
 full_dat <- inner_join(by = "Participant",
                        y = demographic_data,
                        x = score_data)
@@ -322,7 +322,7 @@ Now that we have both the condition data (`Condition`) and the participant's sco
 <div class='webex-solution'><button>Hide</button>
 
 
-```r
+``` r
 object_name <- data %>%
   group_by(grouping_variable) %>%
   summarise(column_name1 = mean(measure),
@@ -336,7 +336,7 @@ object_name <- data %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 group_scores <- full_dat %>%
   group_by(Condition) %>%
   summarise(mean_score = mean(Corsi_Score),
@@ -355,7 +355,7 @@ Finally, we can also visualise the difference in score between groups.
 * Add this code to code chunk 8 to create a boxplot of the scores in each group.
 
 
-```r
+``` r
 ggplot(full_dat, aes(x = Condition, y = Corsi_Score)) +
   geom_boxplot() +
   scale_y_continuous(name = "Corsi block score",
@@ -370,7 +370,7 @@ We can also create histograms for each condition.
 * `nrow` specifies we want the faceted plots to be spread over three rows. This makes it easier to compare the distributions than if they were side-by-side (try changing this to 1 to see the difference).
 
 
-```r
+``` r
 ggplot(full_dat, aes(x = Corsi_Score)) +
   geom_histogram(binwidth = 1) +
   facet_wrap(~Condition, nrow = 3) +

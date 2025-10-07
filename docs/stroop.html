@@ -7,7 +7,7 @@
 <title>Chapter 2 Stroop 1 | Data Skills</title>
 <meta name="author" content="Emily Nordmann">
 <meta name="description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Stroop effect is and how is it measured Load and use packages and functions in R Load data using...">
-<meta name="generator" content="bookdown 0.34 with bs4_book()">
+<meta name="generator" content="bookdown 0.44 with bs4_book()">
 <meta property="og:title" content="Chapter 2 Stroop 1 | Data Skills">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/data-skills-v3/stroop.html">
@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v3/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -387,47 +387,40 @@ Figure 2.3: Installing packages
 </ul>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sckott/cowsay">cowsay</a></span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Warning: package 'cowsay' was built under R version 4.3.1</code></pre>
 <p>You'll see <code><a href="https://github.com/sckott/cowsay">library(cowsay)</a></code> appear in the console. There's no warning messages or errors so it looks like it has loaded successfully.</p>
 <div id="using-a-function" class="section level3" number="2.9.1">
 <h3>
 <span class="header-section-number">2.9.1</span> Using a function<a class="anchor" aria-label="anchor" href="#using-a-function"><i class="fas fa-link"></i></a>
 </h3>
-<p>Now you can use the function <code><a href="https://rdrr.io/pkg/cowsay/man/say.html">say()</a></code>. A <a href="https://psyteachr.github.io/glossary/f#function" target="_blank" class="glossary" title="A named section of code that can be reused.">function</a> is a name that refers to code that performs some sort of action.</p>
+<p>Now you can use the function <code><a href="https://sckott.github.io/cowsay/reference/say.html">say()</a></code>. A <a href="https://psyteachr.github.io/glossary/f#function" target="_blank" class="glossary" title="A named section of code that can be reused.">function</a> is a name that refers to code that performs some sort of action.</p>
 <ul>
-<li>In code chunk 2, write and run the below code to use the function <code><a href="https://rdrr.io/pkg/cowsay/man/say.html">say()</a></code>.</li>
+<li>In code chunk 2, write and run the below code to use the function <code><a href="https://sckott.github.io/cowsay/reference/say.html">say()</a></code>.</li>
 <li>If you get the error <code>could not find function</code> it means you have not loaded the package properly, try running <code><a href="https://github.com/sckott/cowsay">library(cowsay)</a></code> again and make sure everything is spelled exactly right.</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/cowsay/man/say.html">say</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://sckott.github.io/cowsay/reference/say.html">say</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
+##  ______________ 
+## &lt; Hello world! &gt;
 ##  -------------- 
-## Hello world! 
-##  --------------
-##     \
 ##       \
-##         \
-##             |\___/|
-##           ==) ^Y^ (==
-##             \  ^  /
-##              )=*=(
-##             /     \
-##             |     |
-##            /| | | |\
-##            \| | |_|/\
-##       jgs  //_// ___/
-##                \_)
-## </code></pre>
-<p>After the function name, there is a pair of parentheses, which contain zero or more <a href="https://psyteachr.github.io/glossary/a#argument" target="_blank" class="glossary" title="A variable that provides input to a function.">arguments</a>. These are options that you can set. If you don't give it any information, it will try and use the default arguments if it has them. <code><a href="https://rdrr.io/pkg/cowsay/man/say.html">say()</a></code> has two main arguments with a <a href="https://psyteachr.github.io/glossary/d#default-value" target="_blank" class="glossary" title="A value that a function uses for an argument if it is skipped.">default value</a>: <code>what</code> the text says (default <code>Hello world</code>), and the animal the message is said <code>by</code> (default is a cat).</p>
-<p>To look up all the various options that you could use with <code><a href="https://rdrr.io/pkg/cowsay/man/say.html">say()</a></code>, run the following code in the console:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+##        \
+## 
+##         ^__^ 
+##         (oo)\ ________ 
+##         (__)\         )\ /\ 
+##              ||------w|
+##              ||      ||</code></pre>
+<p>After the function name, there is a pair of parentheses, which contain zero or more <a href="https://psyteachr.github.io/glossary/a#argument" target="_blank" class="glossary" title="A variable that provides input to a function.">arguments</a>. These are options that you can set. If you don't give it any information, it will try and use the default arguments if it has them. <code><a href="https://sckott.github.io/cowsay/reference/say.html">say()</a></code> has two main arguments with a <a href="https://psyteachr.github.io/glossary/d#default-value" target="_blank" class="glossary" title="A value that a function uses for an argument if it is skipped.">default value</a>: <code>what</code> the text says (default <code>Hello world</code>), and the animal the message is said <code>by</code> (default is a cat).</p>
+<p>To look up all the various options that you could use with <code><a href="https://sckott.github.io/cowsay/reference/say.html">say()</a></code>, run the following code in the console:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">?</span><span class="va">say</span></span></code></pre></div>
 <p>The help documentation can be a little hard to read - scrolling to the bottom and looking at the examples can help.</p>
 <ul>
 <li>In code chunk 2, add the below code to produce a different message and animal - below is an example but try your own.</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/cowsay/man/say.html">say</a></span><span class="op">(</span>what <span class="op">=</span> <span class="st">"Do or do not, there is no try"</span>,</span>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://sckott.github.io/cowsay/reference/say.html">say</a></span><span class="op">(</span>what <span class="op">=</span> <span class="st">"Do or do not, there is no try"</span>,</span>
 <span>    by <span class="op">=</span> <span class="st">"yoda"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="sec-function-help" class="section level3" number="2.9.2">
@@ -439,7 +432,7 @@ Figure 2.3: Installing packages
 <ul>
 <li>In the <strong>console</strong>, type and run the code for the different help options below. The reason you run the help code in the console not a code chunk is that you generally don't want to save this code in your script.</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># get help with a package</span></span>
 <span><span class="op">?</span><span class="va">cowsay</span></span>
 <span></span>
@@ -447,11 +440,11 @@ Figure 2.3: Installing packages
 <span><span class="op">?</span><span class="va">say</span></span>
 <span></span>
 <span><span class="co"># get help with a function whether or not the package is loaded</span></span>
-<span><span class="op">?</span><span class="fu">cowsay</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/cowsay/man/say.html">say</a></span></span>
+<span><span class="op">?</span><span class="fu">cowsay</span><span class="fu">::</span><span class="va"><a href="https://sckott.github.io/cowsay/reference/say.html">say</a></span></span>
 <span></span>
 <span><span class="co"># shows a list of potentially matching functions</span></span>
 <span><span class="op">?</span><span class="op">?</span><span class="va">say</span></span></code></pre></div>
-<p>Function help is always organised in the same way. For example, look at the help for <code><a href="https://rdrr.io/pkg/cowsay/man/say.html">?cowsay::say</a></code>. At the top, it tells you the name of the function and its package in curly brackets, then a short description of the function, followed by a longer description. The <strong>Usage</strong> section shows the function with all of its <a href="https://psyteachr.github.io/glossary/a#argument" target="_blank" class="glossary" title="A variable that provides input to a function.">arguments</a>. If any of those arguments have default values, they will be shown like <code>function(arg = default)</code>. The <strong>Arguments</strong> section lists each argument with an explanation. There may be a <strong>Details</strong> section after this with even more detail about the functions. The <strong>Examples</strong> section is last, and shows examples that you can run in your console window to see how the function works.</p>
+<p>Function help is always organised in the same way. For example, look at the help for <code><a href="https://sckott.github.io/cowsay/reference/say.html">?cowsay::say</a></code>. At the top, it tells you the name of the function and its package in curly brackets, then a short description of the function, followed by a longer description. The <strong>Usage</strong> section shows the function with all of its <a href="https://psyteachr.github.io/glossary/a#argument" target="_blank" class="glossary" title="A variable that provides input to a function.">arguments</a>. If any of those arguments have default values, they will be shown like <code>function(arg = default)</code>. The <strong>Arguments</strong> section lists each argument with an explanation. There may be a <strong>Details</strong> section after this with even more detail about the functions. The <strong>Examples</strong> section is last, and shows examples that you can run in your console window to see how the function works.</p>
 <div class="callout-note try" style="clear: both;">
 <p>Use the help documentation to find the answers to this question:</p>
 <ul>
@@ -498,7 +491,7 @@ Figure 2.3: Installing packages
 <ul>
 <li>In code chunk 3, write and run the code to load the <code class="package">tidyverse</code>. When you run this code, you're going to get something that at first glance might look like an error but it's not, it's just telling you which packages it has loaded.</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:img-tidyverse"></span>
@@ -516,7 +509,7 @@ Figure 2.4: Tidyverse message when successfully loaded
 <ul>
 <li>In code chunk 4, write and run the below code to load the data files.</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"experiment_data.csv"</span><span class="op">)</span></span>
 <span><span class="va">ppt_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"participant_data.csv"</span><span class="op">)</span></span></code></pre></div>
 <div class="info">
@@ -548,7 +541,7 @@ Figure 2.4: Tidyverse message when successfully loaded
 <ul>
 <li>Copy, paste and run the below code in code chunk 6 to produce a bar graph that shows the number of men, women, and non-binary participants in the dataset.</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">ppt_info</span>, <span class="co"># data we're using</span></span>
 <span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gender</span>, <span class="co"># variable we want to show as bars</span></span>
 <span>                     fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co"># make bars different colours</span></span>
@@ -570,7 +563,7 @@ Figure 2.5: Number of participants by gender
 <ul>
 <li>Copy, paste, and run the below code in code chunk 7 to create violin-boxplots of reaction times for each condition.</li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># make plot</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dat</span>, <span class="co"># data we're using</span></span>
 <span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">condition</span>, <span class="co"># grouping variable (IV)</span></span>
@@ -860,7 +853,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2025-03-17.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2025-10-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

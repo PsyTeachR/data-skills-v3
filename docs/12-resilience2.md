@@ -24,7 +24,7 @@ There is a walkthrough video of this chapter available via [Zoom](https://uofgla
 * Create a new code chunk and then copy, paste, and run the below code. You don't need to edit anything, this will get you to the point you were at in Activity 7 in Resilience 1. Once you've run the code, click on `dat_wide` to view it and take a minute to familiarise yourself with the variables and structure of the dataset.
 
 
-```r
+``` r
 library(tidyverse)
 demo_data <- read_csv("demographic_data.csv")
 q_data <- read_csv("questionnaire_data.csv")
@@ -52,7 +52,7 @@ dat_wide <- inner_join(x = demo_cleaned, y = q_cleaned, by = "participant_ID")
 As noted in Resilience 1, there is a little bit of missing data in this dataset. There's a few ways to identify missing data. The first method you have already encountered, you can run `summary()` on the object and any variables with missing data will have a count of `NA's`.
 
 
-```r
+``` r
 summary(dat_wide)
 ```
 
@@ -63,7 +63,7 @@ But you can also do this using `tidyverse` functions. The reason this is potenti
 * The . in `is.na()` acts as a placeholder for each column in turn. 
 
 
-```r
+``` r
 missing_data <- dat_wide %>%
   summarise_all(~sum(is.na(.)))
 ```
@@ -77,7 +77,7 @@ Now we've identified which columns have missing values, we can deal with it usin
 The first option is to do the nuclear version and drop any line of data if there is a single missing data point so that we only have complete cases. Because our data is in wide-form, this would mean that we drop all the data from an entire participant if they are missing data in any of the variables. 
 
 
-```r
+``` r
 dat_complete <- dat_wide %>%
   drop_na()
 ```
@@ -91,7 +91,7 @@ dat_complete <- dat_wide %>%
 You can figure this out by looking in the environment pane and seeing how many observations `dat_complete` has. You could also do it with code:
 
 
-```r
+``` r
 dat_complete %>%
   count()
 ```
@@ -133,7 +133,7 @@ Our study is going to look at whether resilience scores change depending on the 
 Instead of running `drop_na()` on the entire dataset, we can specify which columns to include or ignore. This code works the same way as `select()` in that you can either say which columns you want it to run the code on, or you say which columns to ignore. In this case, it's easier to say which ones to ignore.
 
 
-```r
+``` r
 dat_final <- dat_wide %>%
   drop_na(-participant_ID, -gender, -age)
 ```
@@ -145,7 +145,7 @@ This then means only the resilience and treatment columns are included in the ca
 Now we've got rid of the missing data, we can transform the object to long-form and score it. Copy and paste the below code (this was explained in the last chapter, we've provided it for you so we can jump ahead to more interesting things).
 
 
-```r
+``` r
 dat_long <- dat_final %>%
   pivot_longer(cols = bounce_back_quickly:long_time_over_setbacks, 
                names_to = "item", 
@@ -172,7 +172,7 @@ We can create a new column using `mutate()`.
 * We just want to add columns to the existing object which is why we are still using `dat_scores` rather than creating a new object.
 
 
-```r
+``` r
 dat_scores <- dat_scores %>%
   mutate(age_corrected = age + 1)
 ```
@@ -186,7 +186,7 @@ For example, we can create a new categorical variable that assigns participants 
 * `.default` isn't always necessary but it controls what value is entered if a value doesn't meet any of the conditions. In this case, it will return the text "Missing" for all the NA values in age.
 
 
-```r
+``` r
 dat_scores <- dat_scores %>%
   mutate(age_category = case_when(age_corrected <= 30 ~ "Younger",
                                   age_corrected > 30 ~ "Older"))
@@ -200,7 +200,7 @@ The new variable `age_category` will be created as a `character` variable but we
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 dat_scores <- dat_scores %>%
   mutate(age_category = case_when(age_corrected <= 30 ~ "Younger",
                                   age_corrected > 30 ~ "Older", 
@@ -215,7 +215,7 @@ dat_scores <- dat_scores %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 dat_scores <- dat_scores %>%
   mutate(age_category = case_when(age_corrected <= 30 ~ "Younger",
                                   age_corrected > 30 ~ "Older", 
@@ -238,7 +238,7 @@ Now it's a factor, using your method of choice, count how many participants are 
 
 
 
-```r
+``` r
 summary() 
 
 # or
@@ -255,7 +255,7 @@ count()
 
 
 
-```r
+``` r
 summary(dat_scores)
 
 dat_scores %>%
@@ -312,7 +312,7 @@ The software we used to store the data really has gone wrong and we've also disc
 
 
 
-```r
+``` r
 dat_scores <- dat_scores %>%
   mutate(new_variable = case_when(old_variable == "old_value" ~ "new_value",
                                   old_variable == "old_value" ~ "new_value",
@@ -328,7 +328,7 @@ dat_scores <- dat_scores %>%
 
 
 
-```r
+``` r
 dat_scores <- dat_scores %>%
   mutate(gender_corrected = case_when(gender == "man" ~ "woman",
                                       gender == "woman" ~ "man",
@@ -364,7 +364,7 @@ Write code to calculate the following (remember to use the corrected variables):
 These are all the functions you need to achieve the above
 
 
-```r
+``` r
 count()
 summarise()
 mean
@@ -385,7 +385,7 @@ is.na()
 If you have looked at the solutions without trying it for yourself, just remember that it's your own learning that will suffer and Level 2 is going to be an unpleasant shock to the system if you've been taking shortcuts throughout Level 1....
 
 
-```r
+``` r
 # total ppts
 dat_scores %>%
   count()
@@ -422,7 +422,7 @@ dat_scores %>%
 These are all the functions you need to achieve the above
 
 
-```r
+``` r
 summarise()
 group_by()
 mean
@@ -449,7 +449,7 @@ facet_wrap()
 If you have looked at the solutions without trying it for yourself, just remember that it's your own learning that will suffer and Level 2 is going to be an unpleasant shock to the system if you've been taking shortcuts throughout Level 1....
 
 
-```r
+``` r
 # overall resilience score
 dat_scores %>%
   summarise(mean_score = mean(resilience_score),

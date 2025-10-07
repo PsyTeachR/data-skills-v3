@@ -40,7 +40,7 @@ The `dbinom()` (density) function has three arguments:
 Copy, paste and run the below code in a new code chunk:
 
 
-```r
+``` r
 dbinom(x = 5, size = 10, prob = 0.5)
 ```
 
@@ -58,7 +58,7 @@ This time we use `pbinom()` as we want to know the **cumulative probability** of
 Copy, paste and run the below code in a new code chunk:
 
 
-```r
+``` r
 pbinom(q = 2, size = 10, prob = 0.5)
 ```
 
@@ -72,7 +72,7 @@ Let's try one more scenario with a cut-off point to make sure you have understoo
 We can use the same function as in the previous example, however, there's an extra argument if we want to get the correct answer. Let's try running the code we used above but change `q = 2` to `q = 7`.
 
 
-```r
+``` r
 pbinom(q = 7, size = 10, prob = .5) 
 ```
 
@@ -92,7 +92,7 @@ To get the right answer, we have to add `lower.tail = FALSE` as we are intereste
 Copy, paste and run the below code in a new code chunk:
 
 
-```r
+``` r
 pbinom(q = 6, size = 10, prob = .5, lower.tail = FALSE) 
 ```
 
@@ -110,7 +110,7 @@ We know from looking at the binomial distribution above that sometimes even when
 In other words, you ask it for the minimum number of successes (e.g. heads) to maintain an overall probability of .05, in 10 flips, when the probability of a success on any one flip is .5.
 
 
-```r
+``` r
 qbinom(p = .05, size = 10, prob = .5)
 ```
 
@@ -129,7 +129,7 @@ However, ten trials is probably far too few if you want to accuse the magician o
 * What would your cut-off be if you ran 10,000 trials? <input class='webex-solveme nospaces' size='4' data-answer='["4918"]'/>
 
 
-```r
+``` r
 qbinom(p = .05, size = c(100, 1000, 10000), prob = .5)
 ```
 
@@ -174,7 +174,7 @@ The below figure is a simulation of this data - you can see the code used to run
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 men <- rnorm(n = 100000, mean = 176.2, sd = 6.748)
 women <- rnorm(n = 100000, mean = 163.8, sd = 6.931)
 
@@ -207,7 +207,7 @@ In this chapter we will use this information to calculate the probability of obs
 * `lower.tail` works as above and depends on whether you are interested in the upper or lower tail
 
 
-```r
+``` r
 pnorm(q = NULL, mean = NULL, sd = NULL, lower.tail = NULL)
 ```
 
@@ -237,7 +237,7 @@ In the previous examples we calculated the probability of a particular outcome. 
 `qnorm()` is very similar to `pnorm()` with one exception, rather than specifying `q` our known observation or quantile, instead we have to specify `p`, our known probability.
 
 
-```r
+``` r
 qnorm(p = NULL, mean = NULL, sd = NULL, lower.tail = NULL)
 ```
 
@@ -259,7 +259,7 @@ And that's it! The key concepts to take away from this chapter are that differen
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 .25
 ```
 
@@ -272,7 +272,7 @@ And that's it! The key concepts to take away from this chapter are that differen
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 .06
 ```
 
@@ -285,7 +285,7 @@ And that's it! The key concepts to take away from this chapter are that differen
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 .17
 ```
 
@@ -299,7 +299,7 @@ And that's it! The key concepts to take away from this chapter are that differen
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 42
 474
 4918
@@ -314,7 +314,7 @@ And that's it! The key concepts to take away from this chapter are that differen
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 pnorm(q = 176.2, mean = 163.8, sd = 6.931, lower.tail = FALSE)
 ```
 
@@ -327,7 +327,7 @@ pnorm(q = 176.2, mean = 163.8, sd = 6.931, lower.tail = FALSE)
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 pnorm(q = 181.12, mean = 176.2, sd = 6.748, lower.tail = FALSE)
 ```
 
@@ -340,7 +340,7 @@ pnorm(q = 181.12, mean = 176.2, sd = 6.748, lower.tail = FALSE)
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 pnorm(q = 181.12, mean = 163.8, sd = 6.931, lower.tail = TRUE)
 ```
 
@@ -353,7 +353,7 @@ pnorm(q = 181.12, mean = 163.8, sd = 6.931, lower.tail = TRUE)
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 qnorm(p = .05, mean = 176.2, sd = 6.748, lower.tail = FALSE)
 ```
 

@@ -199,12 +199,8 @@ As an example, let's load the <code class='package'>cowsay</code> package that y
 * In code chunk 1, type and run the below code to load the `cowsay` package. If you can't remember how to run code, take a look back at Chapter\ \@ref(sec-run-code).
 
 
-```r
+``` r
 library(cowsay)
-```
-
-```
-## Warning: package 'cowsay' was built under R version 4.3.1
 ```
 
 You'll see `library(cowsay)` appear in the console. There's no warning messages or errors so it looks like it has loaded successfully.
@@ -217,29 +213,23 @@ Now you can use the function `say()`. A <a href='https://psyteachr.github.io/glo
 * If you get the error `could not find function` it means you have not loaded the package properly, try running `library(cowsay)` again and make sure everything is spelled exactly right.
 
 
-```r
+``` r
 say()
 ```
 
 ```
 ## 
+##  ______________ 
+## < Hello world! >
 ##  -------------- 
-## Hello world! 
-##  --------------
-##     \
 ##       \
-##         \
-##             |\___/|
-##           ==) ^Y^ (==
-##             \  ^  /
-##              )=*=(
-##             /     \
-##             |     |
-##            /| | | |\
-##            \| | |_|/\
-##       jgs  //_// ___/
-##                \_)
+##        \
 ## 
+##         ^__^ 
+##         (oo)\ ________ 
+##         (__)\         )\ /\ 
+##              ||------w|
+##              ||      ||
 ```
 
 After the function name, there is a pair of parentheses, which contain zero or more <a href='https://psyteachr.github.io/glossary/a#argument' target='_blank' class='glossary' title='A variable that provides input to a function.'>arguments</a>. These are options that you can set. If you don't give it any information, it will try and use the default arguments if it has them. `say()` has two main arguments with a <a href='https://psyteachr.github.io/glossary/d#default-value' target='_blank' class='glossary' title='A value that a function uses for an argument if it is skipped.'>default value</a>: `what` the text says (default `Hello world`), and the animal the message is said `by` (default is a cat).
@@ -247,7 +237,7 @@ After the function name, there is a pair of parentheses, which contain zero or m
 To look up all the various options that you could use with `say()`, run the following code in the console:
 
 
-```r
+``` r
 ?say
 ```
 
@@ -256,7 +246,7 @@ The help documentation can be a little hard to read - scrolling to the bottom an
 * In code chunk 2, add the below code to produce a different message and animal - below is an example but try your own.
 
 
-```r
+``` r
 say(what = "Do or do not, there is no try",
     by = "yoda")
 ```
@@ -270,7 +260,7 @@ If the package isn't loaded, use `?package_name::function_name`. When you aren't
 * In the **console**, type and run the code for the different help options below. The reason you run the help code in the console not a code chunk is that you generally don't want to save this code in your script.
 
 
-```r
+``` r
 # get help with a package
 ?cowsay
 
@@ -315,7 +305,7 @@ To use <code class='package'>readr</code> to import the data, we need to load th
 * In code chunk 3, write and run the code to load the <code class='package'>tidyverse</code>. When you run this code, you're going to get something that at first glance might look like an error but it's not, it's just telling you which packages it has loaded.
 
 
-```r
+``` r
 library(tidyverse)
 ```
 
@@ -333,7 +323,7 @@ First, we will create an object called `dat` that contains the data in the `expe
 * In code chunk 4, write and run the below code to load the data files.
 
 
-```r
+``` r
 dat <- read_csv(file = "experiment_data.csv")
 ppt_info <- read_csv(file = "participant_data.csv")
 ```
@@ -366,7 +356,7 @@ We're going to look at how to write the code to produce simple visualisations in
 * Copy, paste and run the below code in code chunk 6 to produce a bar graph that shows the number of men, women, and non-binary participants in the dataset. 
 
 
-```r
+``` r
 ggplot(ppt_info, # data we're using
        aes(x = gender, # variable we want to show as bars
                      fill = gender)) + # make bars different colours
@@ -387,7 +377,7 @@ Are there more men, women, or non-binary participants in the sample? <select cla
 * Copy, paste, and run the below code  in code chunk 7 to create violin-boxplots of reaction times for each condition.
 
 
-```r
+``` r
 # make plot
 ggplot(dat, # data we're using
        aes(x = condition, # grouping variable (IV)

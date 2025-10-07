@@ -96,7 +96,7 @@ Which function do you use to load in a .csv dataset? <select class='webex-select
 
 
 
-```r
+``` r
 library(package_name)
 object_name <- read_csv(file = "file_name.csv")
 ```
@@ -110,7 +110,7 @@ object_name <- read_csv(file = "file_name.csv")
 
 
 
-```r
+``` r
 library(tidyverse)
 dat <- read_csv(file = "experiment_data.csv")
 ppt_info <- read_csv(file = "participant_data.csv")
@@ -131,7 +131,7 @@ Let's start doing some simple analysis on our dataset and as a first step, we'll
 * The weird `%>%` symbol is known as the *pipe* and it's loaded in as part of the <code class='package'>tidyverse</code>. The formal definition is that the pipe takes an object and sends it to the next function but it's maybe easier to read it as **and then**. So the below code reads "Take the object `ppt_infO` **and then** count it.
 
 
-```r
+``` r
 ppt_info %>%
   count()
 ```
@@ -147,7 +147,7 @@ ppt_info %>%
 But we can also use `count()` to count the number of observations in each group. When writing up psychological research, it's common to report the gender split of your sample. To do this, we add `gender` to our `count()` function which will count the number of observations separately for each group in the variable `gender`:
 
 
-```r
+``` r
 ppt_info %>%
   count(gender)
 ```
@@ -176,7 +176,7 @@ It's also common to report the mean and standard deviation of the age of your sa
 * The bit to the right of the `=` sign is the calculation R will perform. In this case, we'll use the function `mean()` on the variable `age`.
 
 
-```r
+``` r
 ppt_info %>%
   summarise(mean_age = mean(age))
 ```
@@ -192,7 +192,7 @@ ppt_info %>%
 You can add multiple operations to a single call to `summarise()`, for example, we can add on the calculation of standard deviation:
 
 
-```r
+``` r
 ppt_info %>%
   summarise(mean_age = mean(age),
             sd_age = sd(age))
@@ -227,7 +227,7 @@ In R, there are many functions to calculate summary statistics. Here is a list o
 
 
 
-```r
+``` r
 ppt_info %>%
   summarise(mean_age = mean(age),
             sd_age = sd(age),
@@ -247,7 +247,7 @@ A useful addition when you are calculating summary statistics by groups is to ad
 * In code chunk 2, add the below code to calculate summary stats for age by group.
 
 
-```r
+``` r
 ppt_info %>%
   group_by(gender) %>%
   summarise(mean_age = mean(age),
@@ -281,7 +281,7 @@ Before we move on, one last thing. So far the code you have written produces the
 
 
 
-```r
+``` r
 object_name <- code_to_save_to_object
 ```
 
@@ -294,7 +294,7 @@ object_name <- code_to_save_to_object
 
 
 
-```r
+``` r
 age_stats <- ppt_info %>%
   group_by(gender) %>%
   summarise(mean_age = mean(age),
@@ -321,7 +321,7 @@ In the long-form data set, we should have two rows for each participant, one for
 
 
 
-```r
+``` r
 new_data %>%
   count(variable_to_count)
 ```
@@ -335,7 +335,7 @@ new_data %>%
 
 
 
-```r
+``` r
 dat %>%
   count(condition)
 ```
@@ -356,7 +356,7 @@ Next, we need to calculate the mean reaction times in each condition so that we 
 
 
 
-```r
+``` r
 object_name <- data_set %>%
   group_by(grouping_variable) %>%
   summarise(column_name = statistic(measurement),
@@ -372,7 +372,7 @@ object_name <- data_set %>%
 
 
 
-```r
+``` r
 condition_stats <- dat %>%
   group_by(condition) %>%
   summarise(mean_rt = mean(reaction_time),
@@ -402,7 +402,7 @@ To finish up, let's make a few plots to visualise the data. Again, don't worry t
 * In code chunk 4, add the below code to create a boxplot of the reaction times in each condition.
 
 
-```r
+``` r
 ggplot(dat, aes(x = condition, y = reaction_time)) +
   geom_boxplot(width = .4)
 ```
@@ -433,7 +433,7 @@ So, in a boxplot, the "box" represents the IQR and the line inside the box is th
 
 
 
-```r
+``` r
 ggplot(dat, aes(x = reaction_time, fill = condition)) +
   geom_histogram(colour = "black") +
   scale_fill_manual(values = c("deepskyblue", "gold"))
@@ -460,7 +460,7 @@ A histogram shows the distribution of responses. The x-axis is the value of the 
 * In code chunk 6, add the below code to create a grouped density plot which is another way of visualising the distribution of a variable?
 
 
-```r
+``` r
 ggplot(dat, aes(x = reaction_time, fill = condition)) +
   geom_density(alpha = .4) +
   scale_fill_manual(values = c("deepskyblue", "gold"))
@@ -510,7 +510,7 @@ These exercises will produce errors. Try to solve the errors yourself, and then 
 2. Then run the following code which will clear all objects you have created:
 
 
-```r
+``` r
 rm(list = ls())
 ```
 
@@ -518,7 +518,7 @@ rm(list = ls())
 3. Then run the below code:
 
 
-```r
+``` r
 dat_exercise <- read_csv("participant_data.csv")
 ```
 
@@ -537,7 +537,7 @@ When you restarted the session, you unloaded all the packages you previously had
 2. Next run the following code:
 
 
-```r
+``` r
 library(tidyverse)
 dat_exercise <- read_csv("participant_data")
 ```

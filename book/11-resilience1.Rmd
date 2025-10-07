@@ -282,7 +282,7 @@ ggplot(dat_scores, aes(x = resilience_score, fill = treatment)) +
 
 A boxplot with raw data points, and the mean with error bars representing standard error.
 
-I haven't come close to teaching you how to make this one but if you want to stretch yourself, see if you can figure it out and send me (Emily) a DM with your code. I would start with the boxplot, then try and flip it, then add in the data raw data points and the axis labels. The colours and the mean + SE will cause you the most trouble. Happy Googling :)
+I haven't come close to teaching you how to make this one but if you want to stretch yourself, see if you can figure it out and send me (Matt) a DM with your code. I would start with the boxplot, then try and flip it, then add in the data raw data points and the axis labels. The colours and the mean + SE will cause you the most trouble. Happy Googling :)
 
 ```{r echo = FALSE}
 ggplot(dat_scores, aes(x = treatment, y = resilience_score)) +

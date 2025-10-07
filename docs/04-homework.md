@@ -32,7 +32,7 @@ The zip folder contains three files:
 
 In order to get the marks **you must complete the homework using the .Rmd file we have provided**. Do not make your own. Use `ds1_GUID_blank.Rmd`. To understand why this is so important, let's explain how the homework will be marked.
 
-The data skills homework is marked using **computer-assisted marking**. There is a code script that compares your answers to the solutions. If you provide the correct answer, you will get the marks for the question, if you don't provide an answer that matches, the code will initially award a mark of zero. A human (Emily), then manually reviews all the incorrect answers to ensure they are actually incorrect, which is why we call it computer-assisted rather than computer-automated.
+The data skills homework is marked using **computer-assisted marking**. There is a code script that compares your answers to the solutions. If you provide the correct answer, you will get the marks for the question, if you don't provide an answer that matches, the code will initially award a mark of zero. A human (Matt and Emily), then manually reviews all the incorrect answers to ensure they are actually incorrect, which is why we call it computer-assisted rather than computer-automated.
 
 The script uses two pieces of information to check whether your answers are correct.
 
@@ -58,14 +58,14 @@ Replace the NULL with code that calculates mean age and standard deviation for e
 You will be given a code chunk that looks like this:
 
 
-```r
+``` r
 age_stats <- NULL
 ```
 
 You should replace the NULL with the code that completes the task, for example:
 
 
-```r
+``` r
 age_stats <- dat %>%
   group_by(income) %>%
   summarise(mean_age = mean(age),
@@ -82,14 +82,14 @@ Sometimes we will ask you to look at the output you have created and provide a s
 Look at `age_stats`. How many participants are in the largest income group? Replace the NULL with a single whole number. This number should not be in quotation marks.
 
 
-```r
+``` r
 largest_group <- NULL
 ```
 
 To answer this you would look at `age_stats` and see that the largest income group is Average with 136 participants so you would replace the NULL with 136 It's important that you don't put the number in quotation marks otherwise R will treat your answer as a character variable rather than a number and it won't match the solution.
 
 
-```r
+``` r
 largest_group <- 136
 ```
 
@@ -100,7 +100,7 @@ Finally, we will sometimes ask you a multiple choice question, usually based on 
 First, run the below code to create a boxplot of happiness scores for each condition.
 
 
-```r
+``` r
 library(tidyverse)
 read_csv("ahi-cesd2023.csv") %>%
   ggplot(aes(x = income, y = ahiTotal)) +
@@ -116,14 +116,14 @@ Based on this plot, which group has the lowest happiness scores?
 Replace the NULL with your answer. Please just provide a single whole number and do not put this number in quotation marks.
 
 
-```r
+``` r
 lowest_hap <- NULL
 ```
 
 You would then replace look at the plot and replace the NULL with your answer, for example:
 
 
-```r
+``` r
 lowest_hap <- 1
 ```
 

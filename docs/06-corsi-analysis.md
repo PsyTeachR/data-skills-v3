@@ -38,7 +38,7 @@ The final step might be a bit tricky to do from memory as you've only done it on
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 library(package_name)
 object_name1 <- read_csv("file_name1.csv")
 object_name2 <- read_csv("file_name1.csv")
@@ -53,7 +53,7 @@ object_name3 <- inner_join(x = table1, y = table2, by = "common_columns")
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 library(tidyverse)
 demographic_data <- read_csv("demographic_data.csv")
 score_data <- read_csv("score_data.csv")
@@ -73,7 +73,7 @@ Often you will have more variables (columns) than you need. For the analysis we'
 You can create a new dataset with just the columns you want using the `select()` function. You can either specify the columns you want to keep:
 
 
-```r
+``` r
 full_dat %>%
   select(Participant, Condition, Corsi_Score)
 ```
@@ -81,7 +81,7 @@ full_dat %>%
 Or you could specify which columns you want to drop using `-variable`:
 
 
-```r
+``` r
 full_dat %>%
   select(-Gender, -Age)
 ```
@@ -94,7 +94,7 @@ Which method you use will depend on how many variables you have, sometimes it's 
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 object_name <- dataset %>%
   select(column1, column2, column3)
 ```
@@ -106,7 +106,7 @@ object_name <- dataset %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 analysis_data <- full_dat %>%
   select(Participant, Condition, Age, Corsi_Score)
 ```
@@ -121,7 +121,7 @@ Whilst `select()` is used to pick and choose columns, `filter()` is used to pick
 `filter()` is very powerful and can be used in a number of ways. For example, you can use it to select rows where one of the variables equals an exact value. If this value is text, it should be in quotation marks (e.g., `"man"`) but if it's a number it doesn't need to be. You do have to use the double equal sign in both though:
 
 
-```r
+``` r
 # only keep data from men
 full_dat %>%
   filter(Gender == "Man")
@@ -134,7 +134,7 @@ full_dat %>%
 You can also use it to keep a range of values. For numerical values, you can do this by specifying criteria like more than or less than. 
 
 
-```r
+``` r
 # only keep data from ppts whose Age is more than 18
 full_dat %>%
   filter(Age > 18)
@@ -147,7 +147,7 @@ full_dat %>%
 You can also specify a range of values using some slightly weird notation `%in%` which will keep any row where the value equals one of the ones you specify. Whenever you have to enter multiple values to a single argument, you need to wrap them in `c()` which stands for **combine**. A common error is to forget to use `c()` when you've got multiple values - make a note of this!
 
 
-```r
+``` r
 # keep ppts whose Age equals 18, 25, or 30
 full_dat %>%
   filter(Age %in% c(18,25,30))
@@ -160,7 +160,7 @@ full_dat %>%
 Finally, you can also combine multiple criteria using `&` (AND) or `|` (OR):
 
 
-```r
+``` r
 # keep data from men over 30
 full_dat %>%
   filter(Age > 30 & Gender == "Man")
@@ -183,7 +183,7 @@ Previous research (e.g., [Hester at el., 2004](https://www.hesterlab.org/wp-cont
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 object_name <- dataset %>%
   filter(variable >= 20 & variable <= 30)
 ```
@@ -195,7 +195,7 @@ object_name <- dataset %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 age_control <- analysis_data %>%
   filter(Age >= 20 & Age <= 30)
 ```
@@ -217,7 +217,7 @@ Now we have reduced the dataset down to just the variables and observations we'r
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 object_name <- dataset %>%
   group_by(grouping_variable) %>%
   summarise(column_name = mean(measurement),
@@ -232,7 +232,7 @@ object_name <- dataset %>%
 
 
 
-```r
+``` r
 group_stats <- age_control %>%
   group_by(Condition) %>%
   summarise(mean_score = mean(Corsi_Score),
@@ -255,7 +255,7 @@ We also want to create a boxplot of the scores in each group.
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 ggplot(data, aes(x = grouping_variable, y = measurement)) +
   geom_boxplot()
 ```
@@ -267,7 +267,7 @@ ggplot(data, aes(x = grouping_variable, y = measurement)) +
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 ggplot(age_control, aes(x = Condition, y = Corsi_Score)) +
   geom_boxplot()
 ```
@@ -286,7 +286,7 @@ Is the hypothesis that sleep deprivation will negatively affect spatial working 
 `ggplot()` gives you a huge amount of control over how your plots look. First, we can add colour by adding `fill` to the mapping. `fill` also takes the value `Condition` because we want a different colour for each level of condition.
 
 
-```r
+``` r
 ggplot(age_control, aes(x = Condition, 
                         y = Corsi_Score, 
                         fill = Condition)) +
@@ -298,7 +298,7 @@ ggplot(age_control, aes(x = Condition,
 By default, any time you add in colour as a variable, `ggplot()` will produce a legend guide to tell you what the colours means. Sometimes this is necessary because you can't read the plot without knowing what the colours mean, but in this case, we already know what the colours mean because it's on the x-axis so all this legend is doing is taking up space. We can remove it by adding a layer and a call to `guides()`.
 
 
-```r
+``` r
 ggplot(age_control, aes(x = Condition, 
                         y = Corsi_Score, 
                         fill = Condition)) +
@@ -314,7 +314,7 @@ For reasons that are unclear, the default colours in `ggplot()` are extremely un
 * Sometimes when you add in colour, it can make the black lines harder to read. One approach to this problem is to reduce the transparency of the colour fill by using the argument `alpha` which will take a value of 0 (completely transparent) to 1 (fully opaque). Try changing this value to see which value works best (sometimes it is trial-and-error):
 
 
-```r
+``` r
 ggplot(age_control, aes(x = Condition, 
                         y = Corsi_Score, 
                         fill = Condition)) +
@@ -347,7 +347,7 @@ A lot of the time, whether a variable is discrete or continuous is easy enough t
 In R, **factors** are a type of variable that represents categorical data with distinct levels or categories. It is similar to a discrete variable because both involve distinct values or categories. By default, R will order any factors alpha-numerically. Sometimes this is what you want but sometimes you'd prefer a different order, for example if we make a bar chart of the counts of how many participants of each gender there are it will look like this:
 
 
-```r
+``` r
 ggplot(demographic_data, aes(x = Gender)) +
   geom_bar() 
 ```
@@ -359,7 +359,7 @@ But you may prefer to reorder the factor levels using `mutate()` and `factor()`.
 Because we're overwriting the variables in an existing object rather than creating new ones, this code can seem a bit confusing but you can read it as "start with the dataset demographic data and then, overwrite the column Gender with Gender as a reordered factor and arrange the levels in the order woman, man, non-binary and save it all in the original object". Because we're passing multiple values to `levels` we to use `c()` to combine them all.
 
 
-```r
+``` r
 demographic_data <- demographic_data %>%
   mutate(Gender = factor(Gender, 
                          levels = c("Woman", "Man", "Non-Binary")))
@@ -368,7 +368,7 @@ demographic_data <- demographic_data %>%
 If you run the plot code again, you'll see it has updated the order:
 
 
-```r
+``` r
 ggplot(demographic_data, aes(x = Gender)) +
   geom_bar() 
 ```
@@ -381,7 +381,7 @@ ggplot(demographic_data, aes(x = Gender)) +
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 dataset <- dataset %>%
   mutate(variable_to_reorder = factor(variable_to_reorder, 
                                       levels = c("condition1",  "condition2", "condition3")))
@@ -395,7 +395,7 @@ dataset <- dataset %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 # relevel the factor
 age_control <- age_control %>%
   mutate(Condition = factor(Condition, 

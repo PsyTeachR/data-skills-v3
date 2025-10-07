@@ -27,7 +27,7 @@ R is a programming language that you will write code in. RStudio is an Integrate
 
 Your first task is to install R and RStudio and we have prepared [a guide for how to do this](https://psyteachr.github.io/RSetGo/) on Windows and Macs. Please note that you cannot install R on a Chromebook or a tablet, only a full laptop or desktop computer. If you do not have a laptop or desktop, you can use any of the [University computers](https://www.gla.ac.uk/myglasgow/it/studentclusters/) and there is also a [laptop loan scheme](https://www.gla.ac.uk/myglasgow/registry/finance/funds/laptoploan/). We also have a guide on how to use R on a university computer.
 
-If you need help with the installation, or if you'd just feel more confident doing it with someone else in the room, there will be GTA support sessions in week 1 and 2 specifically to help with installation. You can also attend office hours (Emily Nordmann and Rebecca Lai in particular are happy to help with this).
+If you need help with the installation, or if you'd just feel more confident doing it with someone else in the room, there will be GTA support sessions in week 1 and 2 specifically to help with installation. You can also attend office hours with any member of the Level 1 team.
 
 
 ::: {.warning data-latex=""}
@@ -138,7 +138,7 @@ A large part of your coding will involve creating and manipulating objects. Obje
 Run the following code in the console, but change the values of `name`, `age` and `birthday` to your own details (`birthday` should be the date of your next birthday, year-month-day). Press enter after you type each line.
 
 ```{r objects, filename = "Run in the console"}
-name <- "Emily"
+name <- "Patsy"
 age <- 39
 today <- Sys.Date()
 birthday <- as.Date("2025-07-11")
@@ -224,10 +224,10 @@ Now we're going to add in the code we used earlier to our R Markdown document so
 * Remember that text values and dates need to be contained in quotation marks but numerical values do not. Missing and/or unnecessary quotation marks are a common cause of code not working - remember this!
 
 ```{r}
-name <- "Emily" 
+name <- "Patsy" 
 age <- 39
 today <- Sys.Date()
-birthday <- as.Date("2025-07-11")
+birthday <- as.Date("2026-07-11")
 ```
 
 ### Running code {#sec-run-code}

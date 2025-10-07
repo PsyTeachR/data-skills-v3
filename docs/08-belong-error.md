@@ -41,7 +41,7 @@ Don't use ChatGPT or other AI tools for this chapter because you won't learn any
 2. Then run the following code which will clear all objects you have created:
 
 
-```r
+``` r
 rm(list = ls())
 ```
 
@@ -52,7 +52,7 @@ Then, read this article on the [Top 10 Errors in R and How to Fix Them](https://
 With this code, we want to use the function `read_csv()` from the `tidyverse` package to load the data into two objects `demographic_data` and `questionnaire_data`. This code will produce an error and won't run.
 
 
-```r
+``` r
 demographic_data <- read_csv("demographic_data.csv")
 questionnaire_data <- read_csv("questionnaire_data.csv")
 ```
@@ -73,7 +73,7 @@ In order to use a function, you must load the package it is in first
 With this code, we want to join the two objects `demographic_data` and `questionnaire_data` together and save them in an object named `full_dat`. `full_dat` should have 1000 rows and 7 variables. This code will run, but it won't produce what you want. 
 
 
-```r
+``` r
 full_dat <- inner_join(x = demographic_data,
                        y = questionnaire_data, 
                        by = "participant", "level")
@@ -94,7 +94,7 @@ If you want to pass multiple values to an argument, you need to `c`ombine them o
 Next, we want to filter the questionnaire data to only include first-year students:
 
 
-```r
+``` r
 first_year <- full_dat %>%
   filter(level = "First year")
 ```
@@ -114,7 +114,7 @@ This is one of those rare times when reading the error message will give you a c
 Then, we want to recode gender as a factor and count the number of participants in each gender group. This code will run, but it will introduce an error into your data.
 
 
-```r
+``` r
 first_year <- first_year %>%
   mutate(gender_coded = factor(gender, levels = c(1,2,3),
                          labels = c("Man", "Woman", "Non-binary")))
@@ -139,7 +139,7 @@ Look at the order of the levels and labels and think about what 1, 2, and 3 are 
 This code should use the function `select()` to select the columns `participant`, `gender_coded`, `age`, the three questionnaire score columns, and also rename `gender_coded` as `gender`. 
 
 
-```r
+``` r
 first_year <- first_year %>%
   selct(Participant, 
          "gender" = gender_coded,
@@ -165,7 +165,7 @@ Typos (either mispelled word or incorrect use of capital letters) are the most c
 This code should use `group_by()` and `summarise()` to calculate the mean scores on each belonging sub-scale by gender and save it in an object named `scores_gender`. The final table should have 4 columns (gender, belong, engagement, and confidence) and three rows (one for each gender). This code will run, but it won't produce what it is supposed to.
 
 
-```r
+``` r
 scores_gender <- first_year %>%
   group_by(participant, gender) %>%
   summarise(belong = mean(belongingness),
@@ -188,7 +188,7 @@ If you're trying to calculate summary statistics by group, you only need to add 
 Now we want to make a boxplot that shows belonging scores by gender using `ggplot()`. This code will either give you an error of `incomplete expression` or it may not throw an error, but it also won't fully run and you'll need to put your cursor in the console and press escape to get out of it. 
 
 
-```r
+``` r
 ggplot(first_year, aes(x = gender, y = belongingness) +
   geom_violin() +
   geom_boxplot(width = .2) 
@@ -211,7 +211,7 @@ Finally, we want to make a grouped scatterplot that shows the relationship betwe
 This code will run and produce a scatterplot, but it isn't what we want. 
 
 
-```r
+``` r
 ggplot(first_year, aes(x = belongingness, y = engagement, fill = gender)) +
   geom_point() +
   geom_smooth(method = "lm") +

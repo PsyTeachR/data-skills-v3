@@ -107,7 +107,7 @@ Now, we need to load the tidyverse and the data files so that we can use them.
 
 
 
-```r
+``` r
 library(tidyverse)
 demographic_data <- read_csv("demographic_data.csv")
 questionnaire_data <- read_csv("questionnaire_data.csv")
@@ -138,7 +138,7 @@ We need to list both `participant` and `level` in the `by` argument so that R kn
 * In code chunk 2, add and run the below code to join the datasets.Try removing the `c()` to see what happens to the table.
 
 
-```r
+``` r
 full_data <- inner_join(x = demographic_data, # table 1
                         y = questionnaire_data, # table 2
                         by = c("participant", "level")) # all common columns
@@ -181,7 +181,7 @@ Integers and doubles are both numeric.
 If you try and use the data that's in `gender` as it is, it can cause some problems. For example, if you tried to plot a boxplot of the scores by gender, you'd get this mess because as far as R is concerned, you haven't given it a grouping variable, you've given it two continuous variables
 
 
-```r
+``` r
 ggplot(full_data, aes(x = gender, y = belongingness)) +
   geom_boxplot()
 ```
@@ -200,7 +200,7 @@ Instead, we need to convert that data to a factor, using the `mutate()` and `fac
 * Add and run the below code to code chunk 3. 
 
 
-```r
+``` r
 full_data <- full_data %>%
   mutate(gender_coded = factor(gender, 
                         levels = c(2,1, 3),
@@ -213,7 +213,7 @@ full_data <- full_data %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 ggplot(full_data, aes(x = gender_coded, y = belongingness)) +
   geom_boxplot()
 ```
@@ -236,7 +236,7 @@ As usual, let's get some demographic info about our participants. In code chunk 
 
 
 
-```r
+``` r
 data %>%
   count(group)
 ```
@@ -250,7 +250,7 @@ data %>%
 
 
 
-```r
+``` r
 full_data %>%
   count(gender_coded)
 
@@ -304,7 +304,7 @@ Our analysis will focus on gender differences in belonging for first year studen
 
 
 
-```r
+``` r
 object_name <- dataset %>%
   filter(variable = "value")
 ```
@@ -319,7 +319,7 @@ object_name <- dataset %>%
 
 
 
-```r
+``` r
 first_year_data <- full_data %>%
   filter(level == "First year")
 ```
@@ -334,7 +334,7 @@ We can also drop the numeric gender column and level as we don't need them anymo
 * The `:` notation means that it will select all columns from `belonginess` to `self-confidence` so we don't have to type them all out.
 
 
-```r
+``` r
 first_year_data <- first_year_data %>%
   select(participant, 
          "gender" = gender_coded,
@@ -349,7 +349,7 @@ Finally, see if you can string both the `filter()` and `select()` code together 
 
 
 
-```r
+``` r
 first_year_data <- starting_dataset %>%
   first_function %>%
   second_function
@@ -364,7 +364,7 @@ first_year_data <- starting_dataset %>%
 
 
 
-```r
+``` r
 first_year_data <- full_data %>%
   filter(level == "First year")%>%
   select(participant, 
@@ -386,7 +386,7 @@ For the final activity, let's make some plots and show you some additional optio
 To visualise two continuous variables we can use a scatterplot by calling `geom_point()`. To use `geom_point()` you need to specify an `x` and a `y` variable.
 
 
-```r
+``` r
 ggplot(first_year_data, aes(x = belongingness, y = engagement)) +
   geom_point()
 ```
@@ -396,7 +396,7 @@ ggplot(first_year_data, aes(x = belongingness, y = engagement)) +
 To add a line of best fit, add a layer that calls `geom_smooth()` (instinctively you might expect to need `geom_line()`, this does something very different and will make your plot look mad, try it). You can specify different methods of drawing the line, for now, we'll choose `method = "lm"` which stands for "linear model" which basically means draw a straight line.
 
 
-```r
+``` r
 ggplot(first_year_data, aes(x = belongingness, y = engagement)) +
   geom_point() +
   geom_smooth(method = "lm")
@@ -429,7 +429,7 @@ We can also add in a grouping variable to our scatterplot code which will draw d
 * To use colour-blind friendly colours, you add on `scale_colour_viridis_d()` - `colour` because it's mapped to `colour` and `d` because it's a discrete variable (gender is categorical).
 
 
-```r
+``` r
 ggplot(first_year_data, aes(x = belongingness, 
                             y = engagement,
                             colour = gender)) +
@@ -451,7 +451,7 @@ In addition to adding colour, you can also apply a theme to the entire plot whic
 * The below code adds on `theme_minimal()` but try removing this line and then typing `theme_` to see all the options that are available with the auto-complete. Try a few and see which one your favourite is.
 
 
-```r
+``` r
 ggplot(first_year_data, aes(x = belongingness, 
                             y = engagement,
                             colour = gender)) +
@@ -466,7 +466,7 @@ ggplot(first_year_data, aes(x = belongingness,
 There's a couple of ways that you can edit axis labels and breaks. If you just want to edit the overall axis labels, the easiest way is to use the `labs()` function:
 
 
-```r
+``` r
 ggplot(first_year_data, aes(x = belongingness, 
                             y = engagement,
                             colour = gender)) +
@@ -493,7 +493,7 @@ However, if you want to make more fine-grained changes you may need to use the `
 * `breaks` changes the breaks of the axis, i.e., the numbers that are presented. We ask it for a sequence (`seq`) of all the numbers from ` to 7.
 
 
-```r
+``` r
 ggplot(first_year_data, aes(x = belongingness, 
                             y = engagement,
                             colour = gender)) +
@@ -528,7 +528,7 @@ In the above example we made a scatterplot to visualise the relationship between
 
 
 
-```r
+``` r
 # belonging and self-confidence
 ggplot(first_year_data, aes(x = belongingness, 
                             y = self_confidence,
@@ -553,7 +553,7 @@ ggplot(first_year_data, aes(x = belongingness,
 
 <img src="07-belong_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;" />
 
-```r
+``` r
 # engagement and self-confidence
 ggplot(first_year_data, aes(x = engagement, 
                             y = self_confidence,

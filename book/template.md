@@ -2,7 +2,7 @@
 title: "Data Skills" # edit
 #subtitle: "optional" 
 author: "Emily Nordmann" # edit
-date: "2025-03-17"
+date: "2025-10-07"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
@@ -94,7 +94,7 @@ R is a programming language that you will write code in. RStudio is an Integrate
 
 Your first task is to install R and RStudio and we have prepared [a guide for how to do this](https://psyteachr.github.io/RSetGo/) on Windows and Macs. Please note that you cannot install R on a Chromebook or a tablet, only a full laptop or desktop computer. If you do not have a laptop or desktop, you can use any of the [University computers](https://www.gla.ac.uk/myglasgow/it/studentclusters/) and there is also a [laptop loan scheme](https://www.gla.ac.uk/myglasgow/registry/finance/funds/laptoploan/). We also have a guide on how to use R on a university computer.
 
-If you need help with the installation, or if you'd just feel more confident doing it with someone else in the room, there will be GTA support sessions in week 1 and 2 specifically to help with installation. You can also attend office hours (Emily Nordmann and Rebecca Lai in particular are happy to help with this).
+If you need help with the installation, or if you'd just feel more confident doing it with someone else in the room, there will be GTA support sessions in week 1 and 2 specifically to help with installation. You can also attend office hours with any member of the Level 1 team.
 
 
 ::: {.warning data-latex=""}
@@ -205,8 +205,8 @@ A large part of your coding will involve creating and manipulating objects. Obje
 Run the following code in the console, but change the values of `name`, `age` and `birthday` to your own details (`birthday` should be the date of your next birthday, year-month-day). Press enter after you type each line.
 
 
-```r
-name <- "Emily"
+``` r
+name <- "Patsy"
 age <- 39
 today <- Sys.Date()
 birthday <- as.Date("2025-07-11")
@@ -228,7 +228,7 @@ To print the contents of an object, type the object's name in the console and pr
 To clear objects from the environment you can remove them individually:
 
 
-```r
+``` r
 rm(name)
 ```
 
@@ -292,11 +292,11 @@ Now we're going to add in the code we used earlier to our R Markdown document so
 * Remember that text values and dates need to be contained in quotation marks but numerical values do not. Missing and/or unnecessary quotation marks are a common cause of code not working - remember this!
 
 
-```r
-name <- "Emily" 
+``` r
+name <- "Patsy" 
 age <- 39
 today <- Sys.Date()
-birthday <- as.Date("2025-07-11")
+birthday <- as.Date("2026-07-11")
 ```
 
 ### Running code {#sec-run-code}
@@ -324,7 +324,7 @@ An incredibly useful feature of R Markdown is that R can insert values into your
 * First, copy and paste this text exactly (do not change anything) to the **white space** underneath your code chunk.
 
 
-```r
+``` r
 My name is `r name` and I am `r age` years old. It is `r birthday - today` days until my birthday.
 ```
 
@@ -332,7 +332,7 @@ My name is `r name` and I am `r age` years old. It is `r birthday - today` days 
 
 As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created. 
 
-**My name is Emily and I am 39 years old. It is 116 days until my birthday.**
+**My name is Patsy and I am 39 years old. It is 277 days until my birthday.**
 
 We're not going to use this function too often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers. R Markdown is an incredibly powerful and flexible format - this book was written using it! 
 
@@ -569,12 +569,8 @@ As an example, let's load the <code class='package'>cowsay</code> package that y
 * In code chunk 1, type and run the below code to load the `cowsay` package. If you can't remember how to run code, take a look back at Chapter\ \@ref(sec-run-code).
 
 
-```r
+``` r
 library(cowsay)
-```
-
-```
-## Warning: package 'cowsay' was built under R version 4.3.1
 ```
 
 You'll see `library(cowsay)` appear in the console. There's no warning messages or errors so it looks like it has loaded successfully.
@@ -587,29 +583,23 @@ Now you can use the function `say()`. A <a href='https://psyteachr.github.io/glo
 * If you get the error `could not find function` it means you have not loaded the package properly, try running `library(cowsay)` again and make sure everything is spelled exactly right.
 
 
-```r
+``` r
 say()
 ```
 
 ```
 ## 
+##  ______________ 
+## < Hello world! >
 ##  -------------- 
-## Hello world! 
-##  --------------
-##     \
 ##       \
-##         \
-##             |\___/|
-##           ==) ^Y^ (==
-##             \  ^  /
-##              )=*=(
-##             /     \
-##             |     |
-##            /| | | |\
-##            \| | |_|/\
-##       jgs  //_// ___/
-##                \_)
+##        \
 ## 
+##         ^__^ 
+##         (oo)\ ________ 
+##         (__)\         )\ /\ 
+##              ||------w|
+##              ||      ||
 ```
 
 After the function name, there is a pair of parentheses, which contain zero or more <a href='https://psyteachr.github.io/glossary/a#argument' target='_blank' class='glossary' title='A variable that provides input to a function.'>arguments</a>. These are options that you can set. If you don't give it any information, it will try and use the default arguments if it has them. `say()` has two main arguments with a <a href='https://psyteachr.github.io/glossary/d#default-value' target='_blank' class='glossary' title='A value that a function uses for an argument if it is skipped.'>default value</a>: `what` the text says (default `Hello world`), and the animal the message is said `by` (default is a cat).
@@ -617,7 +607,7 @@ After the function name, there is a pair of parentheses, which contain zero or m
 To look up all the various options that you could use with `say()`, run the following code in the console:
 
 
-```r
+``` r
 ?say
 ```
 
@@ -626,7 +616,7 @@ The help documentation can be a little hard to read - scrolling to the bottom an
 * In code chunk 2, add the below code to produce a different message and animal - below is an example but try your own.
 
 
-```r
+``` r
 say(what = "Do or do not, there is no try",
     by = "yoda")
 ```
@@ -640,7 +630,7 @@ If the package isn't loaded, use `?package_name::function_name`. When you aren't
 * In the **console**, type and run the code for the different help options below. The reason you run the help code in the console not a code chunk is that you generally don't want to save this code in your script.
 
 
-```r
+``` r
 # get help with a package
 ?cowsay
 
@@ -685,7 +675,7 @@ To use <code class='package'>readr</code> to import the data, we need to load th
 * In code chunk 3, write and run the code to load the <code class='package'>tidyverse</code>. When you run this code, you're going to get something that at first glance might look like an error but it's not, it's just telling you which packages it has loaded.
 
 
-```r
+``` r
 library(tidyverse)
 ```
 
@@ -703,7 +693,7 @@ First, we will create an object called `dat` that contains the data in the `expe
 * In code chunk 4, write and run the below code to load the data files.
 
 
-```r
+``` r
 dat <- read_csv(file = "experiment_data.csv")
 ppt_info <- read_csv(file = "participant_data.csv")
 ```
@@ -736,7 +726,7 @@ We're going to look at how to write the code to produce simple visualisations in
 * Copy, paste and run the below code in code chunk 6 to produce a bar graph that shows the number of men, women, and non-binary participants in the dataset. 
 
 
-```r
+``` r
 ggplot(ppt_info, # data we're using
        aes(x = gender, # variable we want to show as bars
                      fill = gender)) + # make bars different colours
@@ -757,7 +747,7 @@ Are there more men, women, or non-binary participants in the sample? <select cla
 * Copy, paste, and run the below code  in code chunk 7 to create violin-boxplots of reaction times for each condition.
 
 
-```r
+``` r
 # make plot
 ggplot(dat, # data we're using
        aes(x = condition, # grouping variable (IV)
@@ -892,7 +882,7 @@ Which function do you use to load in a .csv dataset? <select class='webex-select
 
 
 
-```r
+``` r
 library(package_name)
 object_name <- read_csv(file = "file_name.csv")
 ```
@@ -906,7 +896,7 @@ object_name <- read_csv(file = "file_name.csv")
 
 
 
-```r
+``` r
 library(tidyverse)
 dat <- read_csv(file = "experiment_data.csv")
 ppt_info <- read_csv(file = "participant_data.csv")
@@ -927,7 +917,7 @@ Let's start doing some simple analysis on our dataset and as a first step, we'll
 * The weird `%>%` symbol is known as the *pipe* and it's loaded in as part of the <code class='package'>tidyverse</code>. The formal definition is that the pipe takes an object and sends it to the next function but it's maybe easier to read it as **and then**. So the below code reads "Take the object `ppt_infO` **and then** count it.
 
 
-```r
+``` r
 ppt_info %>%
   count()
 ```
@@ -943,7 +933,7 @@ ppt_info %>%
 But we can also use `count()` to count the number of observations in each group. When writing up psychological research, it's common to report the gender split of your sample. To do this, we add `gender` to our `count()` function which will count the number of observations separately for each group in the variable `gender`:
 
 
-```r
+``` r
 ppt_info %>%
   count(gender)
 ```
@@ -972,7 +962,7 @@ It's also common to report the mean and standard deviation of the age of your sa
 * The bit to the right of the `=` sign is the calculation R will perform. In this case, we'll use the function `mean()` on the variable `age`.
 
 
-```r
+``` r
 ppt_info %>%
   summarise(mean_age = mean(age))
 ```
@@ -988,7 +978,7 @@ ppt_info %>%
 You can add multiple operations to a single call to `summarise()`, for example, we can add on the calculation of standard deviation:
 
 
-```r
+``` r
 ppt_info %>%
   summarise(mean_age = mean(age),
             sd_age = sd(age))
@@ -1023,7 +1013,7 @@ In R, there are many functions to calculate summary statistics. Here is a list o
 
 
 
-```r
+``` r
 ppt_info %>%
   summarise(mean_age = mean(age),
             sd_age = sd(age),
@@ -1043,7 +1033,7 @@ A useful addition when you are calculating summary statistics by groups is to ad
 * In code chunk 2, add the below code to calculate summary stats for age by group.
 
 
-```r
+``` r
 ppt_info %>%
   group_by(gender) %>%
   summarise(mean_age = mean(age),
@@ -1077,7 +1067,7 @@ Before we move on, one last thing. So far the code you have written produces the
 
 
 
-```r
+``` r
 object_name <- code_to_save_to_object
 ```
 
@@ -1090,7 +1080,7 @@ object_name <- code_to_save_to_object
 
 
 
-```r
+``` r
 age_stats <- ppt_info %>%
   group_by(gender) %>%
   summarise(mean_age = mean(age),
@@ -1117,7 +1107,7 @@ In the long-form data set, we should have two rows for each participant, one for
 
 
 
-```r
+``` r
 new_data %>%
   count(variable_to_count)
 ```
@@ -1131,7 +1121,7 @@ new_data %>%
 
 
 
-```r
+``` r
 dat %>%
   count(condition)
 ```
@@ -1152,7 +1142,7 @@ Next, we need to calculate the mean reaction times in each condition so that we 
 
 
 
-```r
+``` r
 object_name <- data_set %>%
   group_by(grouping_variable) %>%
   summarise(column_name = statistic(measurement),
@@ -1168,7 +1158,7 @@ object_name <- data_set %>%
 
 
 
-```r
+``` r
 condition_stats <- dat %>%
   group_by(condition) %>%
   summarise(mean_rt = mean(reaction_time),
@@ -1198,7 +1188,7 @@ To finish up, let's make a few plots to visualise the data. Again, don't worry t
 * In code chunk 4, add the below code to create a boxplot of the reaction times in each condition.
 
 
-```r
+``` r
 ggplot(dat, aes(x = condition, y = reaction_time)) +
   geom_boxplot(width = .4)
 ```
@@ -1229,7 +1219,7 @@ So, in a boxplot, the "box" represents the IQR and the line inside the box is th
 
 
 
-```r
+``` r
 ggplot(dat, aes(x = reaction_time, fill = condition)) +
   geom_histogram(colour = "black") +
   scale_fill_manual(values = c("deepskyblue", "gold"))
@@ -1256,7 +1246,7 @@ A histogram shows the distribution of responses. The x-axis is the value of the 
 * In code chunk 6, add the below code to create a grouped density plot which is another way of visualising the distribution of a variable?
 
 
-```r
+``` r
 ggplot(dat, aes(x = reaction_time, fill = condition)) +
   geom_density(alpha = .4) +
   scale_fill_manual(values = c("deepskyblue", "gold"))
@@ -1306,7 +1296,7 @@ These exercises will produce errors. Try to solve the errors yourself, and then 
 2. Then run the following code which will clear all objects you have created:
 
 
-```r
+``` r
 rm(list = ls())
 ```
 
@@ -1314,7 +1304,7 @@ rm(list = ls())
 3. Then run the below code:
 
 
-```r
+``` r
 dat_exercise <- read_csv("participant_data.csv")
 ```
 
@@ -1333,7 +1323,7 @@ When you restarted the session, you unloaded all the packages you previously had
 2. Next run the following code:
 
 
-```r
+``` r
 library(tidyverse)
 dat_exercise <- read_csv("participant_data")
 ```
@@ -1390,7 +1380,7 @@ The zip folder contains three files:
 
 In order to get the marks **you must complete the homework using the .Rmd file we have provided**. Do not make your own. Use `ds1_GUID_blank.Rmd`. To understand why this is so important, let's explain how the homework will be marked.
 
-The data skills homework is marked using **computer-assisted marking**. There is a code script that compares your answers to the solutions. If you provide the correct answer, you will get the marks for the question, if you don't provide an answer that matches, the code will initially award a mark of zero. A human (Emily), then manually reviews all the incorrect answers to ensure they are actually incorrect, which is why we call it computer-assisted rather than computer-automated.
+The data skills homework is marked using **computer-assisted marking**. There is a code script that compares your answers to the solutions. If you provide the correct answer, you will get the marks for the question, if you don't provide an answer that matches, the code will initially award a mark of zero. A human (Matt and Emily), then manually reviews all the incorrect answers to ensure they are actually incorrect, which is why we call it computer-assisted rather than computer-automated.
 
 The script uses two pieces of information to check whether your answers are correct.
 
@@ -1416,14 +1406,14 @@ Replace the NULL with code that calculates mean age and standard deviation for e
 You will be given a code chunk that looks like this:
 
 
-```r
+``` r
 age_stats <- NULL
 ```
 
 You should replace the NULL with the code that completes the task, for example:
 
 
-```r
+``` r
 age_stats <- dat %>%
   group_by(income) %>%
   summarise(mean_age = mean(age),
@@ -1440,14 +1430,14 @@ Sometimes we will ask you to look at the output you have created and provide a s
 Look at `age_stats`. How many participants are in the largest income group? Replace the NULL with a single whole number. This number should not be in quotation marks.
 
 
-```r
+``` r
 largest_group <- NULL
 ```
 
 To answer this you would look at `age_stats` and see that the largest income group is Average with 136 participants so you would replace the NULL with 136 It's important that you don't put the number in quotation marks otherwise R will treat your answer as a character variable rather than a number and it won't match the solution.
 
 
-```r
+``` r
 largest_group <- 136
 ```
 
@@ -1458,7 +1448,7 @@ Finally, we will sometimes ask you a multiple choice question, usually based on 
 First, run the below code to create a boxplot of happiness scores for each condition.
 
 
-```r
+``` r
 library(tidyverse)
 read_csv("ahi-cesd2023.csv") %>%
   ggplot(aes(x = income, y = ahiTotal)) +
@@ -1474,14 +1464,14 @@ Based on this plot, which group has the lowest happiness scores?
 Replace the NULL with your answer. Please just provide a single whole number and do not put this number in quotation marks.
 
 
-```r
+``` r
 lowest_hap <- NULL
 ```
 
 You would then replace look at the plot and replace the NULL with your answer, for example:
 
 
-```r
+``` r
 lowest_hap <- 1
 ```
 
@@ -1633,7 +1623,7 @@ Now, we need to load the tidyverse and the data files so that we can use them.
 * Add the following to code chunk 1 and run the code.
 
 
-```r
+``` r
 library(tidyverse)
 demographic_data <- read_csv("demographic_data.csv")
 score_data <- read_csv("score_data.csv")
@@ -1647,7 +1637,7 @@ As we did with the Stroop data, let's check the data and perform some summary st
 * In code chunk 2 add the below code to calculate the demographic information
 
 
-```r
+``` r
 # count the total number of participants
 total_participants <- demographic_data %>%
   count()
@@ -1675,7 +1665,7 @@ We also want to check how many participants were in each experimental condition.
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 object_name <- data %>%
   count(grouping_variable)
 ```
@@ -1687,7 +1677,7 @@ object_name <- data %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 condition_count <- demographic_data %>%
   count(Condition)
 ```
@@ -1707,7 +1697,7 @@ We're actually interested in how the scores for each sleep condition compare but
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 object_name <- score_data %>%
   summarise(column_name1 = mean(measure),
             column_name2 = sd(measure))
@@ -1720,7 +1710,7 @@ object_name <- score_data %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 overall_score <- score_data %>%
   summarise(mean_score = mean(Corsi_Score),
             sd_score = sd(Corsi_Score))
@@ -1747,7 +1737,7 @@ ggplot() builds plots by combining layers. If you're used to making plots in Exc
 * In code chunk 5, add the below code and run it to create the histogram
 
 
-```r
+``` r
 ggplot(data = score_data, aes(x = Corsi_Score)) +
   geom_histogram(binwidth = 1, colour = "black") +
   scale_x_continuous(name = "Corsi block score",
@@ -1781,7 +1771,7 @@ The joined dataset will have 5 columns, Participant, Gender, Age, Condition, and
 * `by` is the name of the column the two tables have in common (i.e., the information that will be used to join them together). In this case, the column that is present in both datasets is `Participant`.
 
 
-```r
+``` r
 full_dat <- inner_join(x = demographic_data,
                        y = score_data,
                        by = "Participant")
@@ -1794,7 +1784,7 @@ This gives us a good opportunity to explain argument names.
 In the above examples, we have written out the argument names in our code (e.g., `x`, `y`, `by`), however, this is not strictly necessary. The following two lines of code would both produce the same result:
 
 
-```r
+``` r
 full_dat <- inner_join(x = demographic_data,
                        y = score_data,
                        by = "Participant")
@@ -1809,7 +1799,7 @@ Importantly, if you do not write out the argument names, R will use the default 
 If you write out the argument names then you can write the arguments in whatever order you like:
 
 
-```r
+``` r
 full_dat <- inner_join(by = "Participant",
                        y = demographic_data,
                        x = score_data)
@@ -1841,7 +1831,7 @@ Now that we have both the condition data (`Condition`) and the participant's sco
 <div class='webex-solution'><button>Hide</button>
 
 
-```r
+``` r
 object_name <- data %>%
   group_by(grouping_variable) %>%
   summarise(column_name1 = mean(measure),
@@ -1855,7 +1845,7 @@ object_name <- data %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 group_scores <- full_dat %>%
   group_by(Condition) %>%
   summarise(mean_score = mean(Corsi_Score),
@@ -1874,7 +1864,7 @@ Finally, we can also visualise the difference in score between groups.
 * Add this code to code chunk 8 to create a boxplot of the scores in each group.
 
 
-```r
+``` r
 ggplot(full_dat, aes(x = Condition, y = Corsi_Score)) +
   geom_boxplot() +
   scale_y_continuous(name = "Corsi block score",
@@ -1889,7 +1879,7 @@ We can also create histograms for each condition.
 * `nrow` specifies we want the faceted plots to be spread over three rows. This makes it easier to compare the distributions than if they were side-by-side (try changing this to 1 to see the difference).
 
 
-```r
+``` r
 ggplot(full_dat, aes(x = Corsi_Score)) +
   geom_histogram(binwidth = 1) +
   facet_wrap(~Condition, nrow = 3) +
@@ -1964,7 +1954,7 @@ The final step might be a bit tricky to do from memory as you've only done it on
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 library(package_name)
 object_name1 <- read_csv("file_name1.csv")
 object_name2 <- read_csv("file_name1.csv")
@@ -1979,7 +1969,7 @@ object_name3 <- inner_join(x = table1, y = table2, by = "common_columns")
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 library(tidyverse)
 demographic_data <- read_csv("demographic_data.csv")
 score_data <- read_csv("score_data.csv")
@@ -1999,7 +1989,7 @@ Often you will have more variables (columns) than you need. For the analysis we'
 You can create a new dataset with just the columns you want using the `select()` function. You can either specify the columns you want to keep:
 
 
-```r
+``` r
 full_dat %>%
   select(Participant, Condition, Corsi_Score)
 ```
@@ -2007,7 +1997,7 @@ full_dat %>%
 Or you could specify which columns you want to drop using `-variable`:
 
 
-```r
+``` r
 full_dat %>%
   select(-Gender, -Age)
 ```
@@ -2020,7 +2010,7 @@ Which method you use will depend on how many variables you have, sometimes it's 
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 object_name <- dataset %>%
   select(column1, column2, column3)
 ```
@@ -2032,7 +2022,7 @@ object_name <- dataset %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 analysis_data <- full_dat %>%
   select(Participant, Condition, Age, Corsi_Score)
 ```
@@ -2047,7 +2037,7 @@ Whilst `select()` is used to pick and choose columns, `filter()` is used to pick
 `filter()` is very powerful and can be used in a number of ways. For example, you can use it to select rows where one of the variables equals an exact value. If this value is text, it should be in quotation marks (e.g., `"man"`) but if it's a number it doesn't need to be. You do have to use the double equal sign in both though:
 
 
-```r
+``` r
 # only keep data from men
 full_dat %>%
   filter(Gender == "Man")
@@ -2060,7 +2050,7 @@ full_dat %>%
 You can also use it to keep a range of values. For numerical values, you can do this by specifying criteria like more than or less than. 
 
 
-```r
+``` r
 # only keep data from ppts whose Age is more than 18
 full_dat %>%
   filter(Age > 18)
@@ -2073,7 +2063,7 @@ full_dat %>%
 You can also specify a range of values using some slightly weird notation `%in%` which will keep any row where the value equals one of the ones you specify. Whenever you have to enter multiple values to a single argument, you need to wrap them in `c()` which stands for **combine**. A common error is to forget to use `c()` when you've got multiple values - make a note of this!
 
 
-```r
+``` r
 # keep ppts whose Age equals 18, 25, or 30
 full_dat %>%
   filter(Age %in% c(18,25,30))
@@ -2086,7 +2076,7 @@ full_dat %>%
 Finally, you can also combine multiple criteria using `&` (AND) or `|` (OR):
 
 
-```r
+``` r
 # keep data from men over 30
 full_dat %>%
   filter(Age > 30 & Gender == "Man")
@@ -2109,7 +2099,7 @@ Previous research (e.g., [Hester at el., 2004](https://www.hesterlab.org/wp-cont
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 object_name <- dataset %>%
   filter(variable >= 20 & variable <= 30)
 ```
@@ -2121,7 +2111,7 @@ object_name <- dataset %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 age_control <- analysis_data %>%
   filter(Age >= 20 & Age <= 30)
 ```
@@ -2143,7 +2133,7 @@ Now we have reduced the dataset down to just the variables and observations we'r
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 object_name <- dataset %>%
   group_by(grouping_variable) %>%
   summarise(column_name = mean(measurement),
@@ -2158,7 +2148,7 @@ object_name <- dataset %>%
 
 
 
-```r
+``` r
 group_stats <- age_control %>%
   group_by(Condition) %>%
   summarise(mean_score = mean(Corsi_Score),
@@ -2181,7 +2171,7 @@ We also want to create a boxplot of the scores in each group.
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 ggplot(data, aes(x = grouping_variable, y = measurement)) +
   geom_boxplot()
 ```
@@ -2193,7 +2183,7 @@ ggplot(data, aes(x = grouping_variable, y = measurement)) +
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 ggplot(age_control, aes(x = Condition, y = Corsi_Score)) +
   geom_boxplot()
 ```
@@ -2212,7 +2202,7 @@ Is the hypothesis that sleep deprivation will negatively affect spatial working 
 `ggplot()` gives you a huge amount of control over how your plots look. First, we can add colour by adding `fill` to the mapping. `fill` also takes the value `Condition` because we want a different colour for each level of condition.
 
 
-```r
+``` r
 ggplot(age_control, aes(x = Condition, 
                         y = Corsi_Score, 
                         fill = Condition)) +
@@ -2224,7 +2214,7 @@ ggplot(age_control, aes(x = Condition,
 By default, any time you add in colour as a variable, `ggplot()` will produce a legend guide to tell you what the colours means. Sometimes this is necessary because you can't read the plot without knowing what the colours mean, but in this case, we already know what the colours mean because it's on the x-axis so all this legend is doing is taking up space. We can remove it by adding a layer and a call to `guides()`.
 
 
-```r
+``` r
 ggplot(age_control, aes(x = Condition, 
                         y = Corsi_Score, 
                         fill = Condition)) +
@@ -2240,7 +2230,7 @@ For reasons that are unclear, the default colours in `ggplot()` are extremely un
 * Sometimes when you add in colour, it can make the black lines harder to read. One approach to this problem is to reduce the transparency of the colour fill by using the argument `alpha` which will take a value of 0 (completely transparent) to 1 (fully opaque). Try changing this value to see which value works best (sometimes it is trial-and-error):
 
 
-```r
+``` r
 ggplot(age_control, aes(x = Condition, 
                         y = Corsi_Score, 
                         fill = Condition)) +
@@ -2273,7 +2263,7 @@ A lot of the time, whether a variable is discrete or continuous is easy enough t
 In R, **factors** are a type of variable that represents categorical data with distinct levels or categories. It is similar to a discrete variable because both involve distinct values or categories. By default, R will order any factors alpha-numerically. Sometimes this is what you want but sometimes you'd prefer a different order, for example if we make a bar chart of the counts of how many participants of each gender there are it will look like this:
 
 
-```r
+``` r
 ggplot(demographic_data, aes(x = Gender)) +
   geom_bar() 
 ```
@@ -2285,7 +2275,7 @@ But you may prefer to reorder the factor levels using `mutate()` and `factor()`.
 Because we're overwriting the variables in an existing object rather than creating new ones, this code can seem a bit confusing but you can read it as "start with the dataset demographic data and then, overwrite the column Gender with Gender as a reordered factor and arrange the levels in the order woman, man, non-binary and save it all in the original object". Because we're passing multiple values to `levels` we to use `c()` to combine them all.
 
 
-```r
+``` r
 demographic_data <- demographic_data %>%
   mutate(Gender = factor(Gender, 
                          levels = c("Woman", "Man", "Non-Binary")))
@@ -2294,7 +2284,7 @@ demographic_data <- demographic_data %>%
 If you run the plot code again, you'll see it has updated the order:
 
 
-```r
+``` r
 ggplot(demographic_data, aes(x = Gender)) +
   geom_bar() 
 ```
@@ -2307,7 +2297,7 @@ ggplot(demographic_data, aes(x = Gender)) +
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 dataset <- dataset %>%
   mutate(variable_to_reorder = factor(variable_to_reorder, 
                                       levels = c("condition1",  "condition2", "condition3")))
@@ -2321,7 +2311,7 @@ dataset <- dataset %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 # relevel the factor
 age_control <- age_control %>%
   mutate(Condition = factor(Condition, 
@@ -2458,7 +2448,7 @@ Now, we need to load the tidyverse and the data files so that we can use them.
 
 
 
-```r
+``` r
 library(tidyverse)
 demographic_data <- read_csv("demographic_data.csv")
 questionnaire_data <- read_csv("questionnaire_data.csv")
@@ -2489,7 +2479,7 @@ We need to list both `participant` and `level` in the `by` argument so that R kn
 * In code chunk 2, add and run the below code to join the datasets.Try removing the `c()` to see what happens to the table.
 
 
-```r
+``` r
 full_data <- inner_join(x = demographic_data, # table 1
                         y = questionnaire_data, # table 2
                         by = c("participant", "level")) # all common columns
@@ -2532,7 +2522,7 @@ Integers and doubles are both numeric.
 If you try and use the data that's in `gender` as it is, it can cause some problems. For example, if you tried to plot a boxplot of the scores by gender, you'd get this mess because as far as R is concerned, you haven't given it a grouping variable, you've given it two continuous variables
 
 
-```r
+``` r
 ggplot(full_data, aes(x = gender, y = belongingness)) +
   geom_boxplot()
 ```
@@ -2551,7 +2541,7 @@ Instead, we need to convert that data to a factor, using the `mutate()` and `fac
 * Add and run the below code to code chunk 3. 
 
 
-```r
+``` r
 full_data <- full_data %>%
   mutate(gender_coded = factor(gender, 
                         levels = c(2,1, 3),
@@ -2564,7 +2554,7 @@ full_data <- full_data %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 ggplot(full_data, aes(x = gender_coded, y = belongingness)) +
   geom_boxplot()
 ```
@@ -2587,7 +2577,7 @@ As usual, let's get some demographic info about our participants. In code chunk 
 
 
 
-```r
+``` r
 data %>%
   count(group)
 ```
@@ -2601,7 +2591,7 @@ data %>%
 
 
 
-```r
+``` r
 full_data %>%
   count(gender_coded)
 
@@ -2655,7 +2645,7 @@ Our analysis will focus on gender differences in belonging for first year studen
 
 
 
-```r
+``` r
 object_name <- dataset %>%
   filter(variable = "value")
 ```
@@ -2670,7 +2660,7 @@ object_name <- dataset %>%
 
 
 
-```r
+``` r
 first_year_data <- full_data %>%
   filter(level == "First year")
 ```
@@ -2685,7 +2675,7 @@ We can also drop the numeric gender column and level as we don't need them anymo
 * The `:` notation means that it will select all columns from `belonginess` to `self-confidence` so we don't have to type them all out.
 
 
-```r
+``` r
 first_year_data <- first_year_data %>%
   select(participant, 
          "gender" = gender_coded,
@@ -2700,7 +2690,7 @@ Finally, see if you can string both the `filter()` and `select()` code together 
 
 
 
-```r
+``` r
 first_year_data <- starting_dataset %>%
   first_function %>%
   second_function
@@ -2715,7 +2705,7 @@ first_year_data <- starting_dataset %>%
 
 
 
-```r
+``` r
 first_year_data <- full_data %>%
   filter(level == "First year")%>%
   select(participant, 
@@ -2737,7 +2727,7 @@ For the final activity, let's make some plots and show you some additional optio
 To visualise two continuous variables we can use a scatterplot by calling `geom_point()`. To use `geom_point()` you need to specify an `x` and a `y` variable.
 
 
-```r
+``` r
 ggplot(first_year_data, aes(x = belongingness, y = engagement)) +
   geom_point()
 ```
@@ -2747,7 +2737,7 @@ ggplot(first_year_data, aes(x = belongingness, y = engagement)) +
 To add a line of best fit, add a layer that calls `geom_smooth()` (instinctively you might expect to need `geom_line()`, this does something very different and will make your plot look mad, try it). You can specify different methods of drawing the line, for now, we'll choose `method = "lm"` which stands for "linear model" which basically means draw a straight line.
 
 
-```r
+``` r
 ggplot(first_year_data, aes(x = belongingness, y = engagement)) +
   geom_point() +
   geom_smooth(method = "lm")
@@ -2780,7 +2770,7 @@ We can also add in a grouping variable to our scatterplot code which will draw d
 * To use colour-blind friendly colours, you add on `scale_colour_viridis_d()` - `colour` because it's mapped to `colour` and `d` because it's a discrete variable (gender is categorical).
 
 
-```r
+``` r
 ggplot(first_year_data, aes(x = belongingness, 
                             y = engagement,
                             colour = gender)) +
@@ -2802,7 +2792,7 @@ In addition to adding colour, you can also apply a theme to the entire plot whic
 * The below code adds on `theme_minimal()` but try removing this line and then typing `theme_` to see all the options that are available with the auto-complete. Try a few and see which one your favourite is.
 
 
-```r
+``` r
 ggplot(first_year_data, aes(x = belongingness, 
                             y = engagement,
                             colour = gender)) +
@@ -2817,7 +2807,7 @@ ggplot(first_year_data, aes(x = belongingness,
 There's a couple of ways that you can edit axis labels and breaks. If you just want to edit the overall axis labels, the easiest way is to use the `labs()` function:
 
 
-```r
+``` r
 ggplot(first_year_data, aes(x = belongingness, 
                             y = engagement,
                             colour = gender)) +
@@ -2844,7 +2834,7 @@ However, if you want to make more fine-grained changes you may need to use the `
 * `breaks` changes the breaks of the axis, i.e., the numbers that are presented. We ask it for a sequence (`seq`) of all the numbers from ` to 7.
 
 
-```r
+``` r
 ggplot(first_year_data, aes(x = belongingness, 
                             y = engagement,
                             colour = gender)) +
@@ -2879,7 +2869,7 @@ In the above example we made a scatterplot to visualise the relationship between
 
 
 
-```r
+``` r
 # belonging and self-confidence
 ggplot(first_year_data, aes(x = belongingness, 
                             y = self_confidence,
@@ -2904,7 +2894,7 @@ ggplot(first_year_data, aes(x = belongingness,
 
 <img src="07-belong_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;" />
 
-```r
+``` r
 # engagement and self-confidence
 ggplot(first_year_data, aes(x = engagement, 
                             y = self_confidence,
@@ -2999,7 +2989,7 @@ Don't use ChatGPT or other AI tools for this chapter because you won't learn any
 2. Then run the following code which will clear all objects you have created:
 
 
-```r
+``` r
 rm(list = ls())
 ```
 
@@ -3010,7 +3000,7 @@ Then, read this article on the [Top 10 Errors in R and How to Fix Them](https://
 With this code, we want to use the function `read_csv()` from the `tidyverse` package to load the data into two objects `demographic_data` and `questionnaire_data`. This code will produce an error and won't run.
 
 
-```r
+``` r
 demographic_data <- read_csv("demographic_data.csv")
 questionnaire_data <- read_csv("questionnaire_data.csv")
 ```
@@ -3031,7 +3021,7 @@ In order to use a function, you must load the package it is in first
 With this code, we want to join the two objects `demographic_data` and `questionnaire_data` together and save them in an object named `full_dat`. `full_dat` should have 1000 rows and 7 variables. This code will run, but it won't produce what you want. 
 
 
-```r
+``` r
 full_dat <- inner_join(x = demographic_data,
                        y = questionnaire_data, 
                        by = "participant", "level")
@@ -3052,7 +3042,7 @@ If you want to pass multiple values to an argument, you need to `c`ombine them o
 Next, we want to filter the questionnaire data to only include first-year students:
 
 
-```r
+``` r
 first_year <- full_dat %>%
   filter(level = "First year")
 ```
@@ -3072,7 +3062,7 @@ This is one of those rare times when reading the error message will give you a c
 Then, we want to recode gender as a factor and count the number of participants in each gender group. This code will run, but it will introduce an error into your data.
 
 
-```r
+``` r
 first_year <- first_year %>%
   mutate(gender_coded = factor(gender, levels = c(1,2,3),
                          labels = c("Man", "Woman", "Non-binary")))
@@ -3097,7 +3087,7 @@ Look at the order of the levels and labels and think about what 1, 2, and 3 are 
 This code should use the function `select()` to select the columns `participant`, `gender_coded`, `age`, the three questionnaire score columns, and also rename `gender_coded` as `gender`. 
 
 
-```r
+``` r
 first_year <- first_year %>%
   selct(Participant, 
          "gender" = gender_coded,
@@ -3123,7 +3113,7 @@ Typos (either mispelled word or incorrect use of capital letters) are the most c
 This code should use `group_by()` and `summarise()` to calculate the mean scores on each belonging sub-scale by gender and save it in an object named `scores_gender`. The final table should have 4 columns (gender, belong, engagement, and confidence) and three rows (one for each gender). This code will run, but it won't produce what it is supposed to.
 
 
-```r
+``` r
 scores_gender <- first_year %>%
   group_by(participant, gender) %>%
   summarise(belong = mean(belongingness),
@@ -3146,7 +3136,7 @@ If you're trying to calculate summary statistics by group, you only need to add 
 Now we want to make a boxplot that shows belonging scores by gender using `ggplot()`. This code will either give you an error of `incomplete expression` or it may not throw an error, but it also won't fully run and you'll need to put your cursor in the console and press escape to get out of it. 
 
 
-```r
+``` r
 ggplot(first_year, aes(x = gender, y = belongingness) +
   geom_violin() +
   geom_boxplot(width = .2) 
@@ -3169,7 +3159,7 @@ Finally, we want to make a grouped scatterplot that shows the relationship betwe
 This code will run and produce a scatterplot, but it isn't what we want. 
 
 
-```r
+``` r
 ggplot(first_year, aes(x = belongingness, y = engagement, fill = gender)) +
   geom_point() +
   geom_smooth(method = "lm") +
@@ -3232,14 +3222,14 @@ For the next set of chapters we're going to use data from the most popular model
 <br>
 
 1. The trait 'Agreeableness' in the Big Five personality model refers to:
-<div class='webex-radiogroup' id='radio_WWHIOMVHRJ'><label><input type="radio" autocomplete="off" name="radio_WWHIOMVHRJ" value=""></input> <span>The tendency to be organized, careful, and disciplined</span></label><label><input type="radio" autocomplete="off" name="radio_WWHIOMVHRJ" value="answer"></input> <span>The tendency to be compassionate, cooperative, and warm towards others</span></label><label><input type="radio" autocomplete="off" name="radio_WWHIOMVHRJ" value=""></input> <span>The tendency to be outgoing, energetic, and sociable</span></label><label><input type="radio" autocomplete="off" name="radio_WWHIOMVHRJ" value=""></input> <span>The tendency to experience mood swings, anxiety, and irritability.</span></label></div>
+<div class='webex-radiogroup' id='radio_PSSFEPETGY'><label><input type="radio" autocomplete="off" name="radio_PSSFEPETGY" value=""></input> <span>The tendency to be organized, careful, and disciplined</span></label><label><input type="radio" autocomplete="off" name="radio_PSSFEPETGY" value="answer"></input> <span>The tendency to be compassionate, cooperative, and warm towards others</span></label><label><input type="radio" autocomplete="off" name="radio_PSSFEPETGY" value=""></input> <span>The tendency to be outgoing, energetic, and sociable</span></label><label><input type="radio" autocomplete="off" name="radio_PSSFEPETGY" value=""></input> <span>The tendency to experience mood swings, anxiety, and irritability.</span></label></div>
 
 
 <br>
 
 2. In the context of the Big Five Personality model, which trait might be associated with a person who is diligent, efficient, and follows a schedule?
 
-<div class='webex-radiogroup' id='radio_IBZEMJNQSS'><label><input type="radio" autocomplete="off" name="radio_IBZEMJNQSS" value=""></input> <span>Neuroticism</span></label><label><input type="radio" autocomplete="off" name="radio_IBZEMJNQSS" value="answer"></input> <span>Conscientiousness</span></label><label><input type="radio" autocomplete="off" name="radio_IBZEMJNQSS" value=""></input> <span>Extraversion</span></label><label><input type="radio" autocomplete="off" name="radio_IBZEMJNQSS" value=""></input> <span>Agreeableness</span></label></div>
+<div class='webex-radiogroup' id='radio_QWZHIGHAMI'><label><input type="radio" autocomplete="off" name="radio_QWZHIGHAMI" value=""></input> <span>Neuroticism</span></label><label><input type="radio" autocomplete="off" name="radio_QWZHIGHAMI" value="answer"></input> <span>Conscientiousness</span></label><label><input type="radio" autocomplete="off" name="radio_QWZHIGHAMI" value=""></input> <span>Extraversion</span></label><label><input type="radio" autocomplete="off" name="radio_QWZHIGHAMI" value=""></input> <span>Agreeableness</span></label></div>
 
 
 <br>
@@ -3253,7 +3243,7 @@ For the next set of chapters we're going to use data from the most popular model
 <br>
 
 5. Which of these traits in the Big Five Personality model is most closely associated with creativity and a preference for novelty?
-<div class='webex-radiogroup' id='radio_QHMFWKGMOD'><label><input type="radio" autocomplete="off" name="radio_QHMFWKGMOD" value=""></input> <span>Extraversion</span></label><label><input type="radio" autocomplete="off" name="radio_QHMFWKGMOD" value=""></input> <span>Conscientiousness</span></label><label><input type="radio" autocomplete="off" name="radio_QHMFWKGMOD" value=""></input> <span>Neuroticism</span></label><label><input type="radio" autocomplete="off" name="radio_QHMFWKGMOD" value="answer"></input> <span>Openness to Experience</span></label></div>
+<div class='webex-radiogroup' id='radio_OSHVTNHXQM'><label><input type="radio" autocomplete="off" name="radio_OSHVTNHXQM" value=""></input> <span>Extraversion</span></label><label><input type="radio" autocomplete="off" name="radio_OSHVTNHXQM" value=""></input> <span>Conscientiousness</span></label><label><input type="radio" autocomplete="off" name="radio_OSHVTNHXQM" value=""></input> <span>Neuroticism</span></label><label><input type="radio" autocomplete="off" name="radio_OSHVTNHXQM" value="answer"></input> <span>Openness to Experience</span></label></div>
 
 
 
@@ -3333,7 +3323,7 @@ Whilst coding isn't about memorisation and we certainly don't expect you to be a
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 library(package_name)
 object_name <- read_csv("file_name.csv")
 ```
@@ -3345,7 +3335,7 @@ object_name <- read_csv("file_name.csv")
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 library(tidyverse)
 big5 <- read_csv("big5_data.csv")
 scoring <- read_csv("scoring.csv")
@@ -3462,7 +3452,7 @@ Similarly, `answer` is the response the participant gave to that item. In `scori
 This is the code that transform the data from wide-form to long-form using the function `pivot_longer()`. We're going to go through how to do this in the next chapter which you'll also work through in the lab. For now, see if you can figure out what each bit of the code is doing and try and write it out in words.
 
 
-```r
+``` r
 big5_long <- big5 %>%
   pivot_longer(cols = Q4_1:Q4_60, 
                names_to = "item", 
@@ -3580,7 +3570,7 @@ In code chunk 1, write and run the code that:
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 library(package_name)
 object_name <- read_csv("file_name.csv")
 ```
@@ -3592,7 +3582,7 @@ object_name <- read_csv("file_name.csv")
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 library(tidyverse)
 big5 <- read_csv("big5_data.csv")
 scoring <- read_csv("scoring.csv")
@@ -3645,7 +3635,7 @@ The function we use for this is `pivot_longer()` and we briefly described it and
 
 
 
-```r
+``` r
 object_name <- data %>%
   pivot_longer(cols = first_column:last_column, 
                names_to = "column_name", 
@@ -3656,7 +3646,7 @@ object_name <- data %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 big5_long <- big5 %>%
   pivot_longer(cols = Q4_1:Q4_60, 
                names_to = "item", 
@@ -3673,7 +3663,7 @@ First, let's join the new `big5_long` with `codebook` - create a new code chunk 
 This can be read as "start with big5_long and then join it to codebook using the variable `item` to match the columns".
 
 
-```r
+``` r
 join1 <- big5_long %>%
   inner_join(codebook, 
              by = "item")
@@ -3717,7 +3707,7 @@ When you join the two, the new dataset will have all of the unique columns. `joi
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 join2 <- starting_data%>%
   inner_join(object_to_join, by = c("common_column1", "common_column2"))`
 ```
@@ -3729,7 +3719,7 @@ join2 <- starting_data%>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 join2 <- join1%>%
   inner_join(scoring, by = c("response", "direction"))
 ```
@@ -3748,7 +3738,7 @@ The above two joins are a really good example of where pipes come in very useful
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 object_name <- starting_data %>%
   inner_join1() %>%
   inner_join2()
@@ -3761,7 +3751,7 @@ object_name <- starting_data %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 full_dat <- big5_long%>%
   inner_join(codebook, by = "item") %>%
   inner_join(scoring, by = c("response", "direction"))
@@ -3779,7 +3769,7 @@ First, let's look at the mean scores for each trait (openness, conscientiousness
 `full_dat` contains the raw scores to each item, so a first step, we want to create a new object that calculates the mean score for each participant (`ResponseId`) for each `trait`. We can do this by using functions we have used before: `group_by()` and `summarise()`. Because we want scores by two variables (each participant and each trait), `group_by()` has two variables passed to it:
 
 
-```r
+``` r
 trait_scores <- full_dat%>%
   group_by(ResponseId, trait) %>%
   summarise(ppt_mean = mean(score),
@@ -3826,7 +3816,7 @@ Now, make a boxplot of the scores for each trait. See if you can do this from me
 
 
 
-```r
+``` r
 ggplot(data = trait_scores, aes(x = trait, y = ppt_mean)) +
   geom_boxplot()
 ```
@@ -3844,7 +3834,7 @@ ggplot(data = trait_scores, aes(x = trait, y = ppt_mean)) +
 This code introduces a lot of visual tweaks - try deleting each line of code or changing the values to figure out what each bit does.
 
 
-```r
+``` r
 ggplot(data = trait_scores, aes(x = trait, y = ppt_mean, fill = trait)) +
   geom_boxplot(alpha = .7) +
   guides(fill = "none") +
@@ -3873,7 +3863,7 @@ Which trait has the highest median score? <select class='webex-select'><option v
 You can also create a table of the mean scores for each trait, collapsing across participant by removing `ResponseId` from `group_by()`:
 
 
-```r
+``` r
 trait_means <- trait_scores %>%
   group_by(trait) %>%
   summarise(trait_mean = mean(ppt_mean),
@@ -3905,7 +3895,7 @@ Each personality trait is made up of a number of different facets. For example, 
 
 
 
-```r
+``` r
 object_name <- starting_data %>%
   filter(trait == "value")
 ```
@@ -3917,7 +3907,7 @@ object_name <- starting_data %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 extra_data <- full_dat %>%
   filter(trait == "extraversion")
 ```
@@ -3931,7 +3921,7 @@ Then create an object named `facet_scores` and calculate the mean facet scores f
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 facet_scores <- extra_data %>%
   group_by(ResponseId, facet)%>%
   summarise(ppt_mean = mean(score),
@@ -3958,7 +3948,7 @@ Finally, create a table that has the mean facet scores for each facet of extrave
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 facet_means <- facet_scores %>%
   group_by(facet) %>%
   summarise(facet_mean = mean(ppt_mean),
@@ -3973,7 +3963,7 @@ facet_means <- facet_scores %>%
 The resulting table should look like this:
 
 
-```r
+``` r
 facet_means
 ```
 
@@ -4081,7 +4071,7 @@ In code chunk 1, write and run the code that:
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 library(package_name)
 object_name <- read_csv("file_name.csv")
 ```
@@ -4093,7 +4083,7 @@ object_name <- read_csv("file_name.csv")
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 library(tidyverse)
 demo_data <- read_csv("demographic_data.csv")
 q_data <- read_csv("questionnaire_data.csv")
@@ -4133,7 +4123,7 @@ A useful next step with data processing is to fix any data types as it can preve
 First, let's do a conversion you've already done - we'll use `factor()` to convert `treatment` to a factor and update the labels. We'll store this in a new object named `demo_cleaned` but we will just overwrite the existing variable treatment rather than creating a new one.
 
 
-```r
+``` r
 demo_cleaned <- demo_data %>%
   mutate(treatment = factor(treatment, # the variable you're converting
                             levels = c(1,2), # original values
@@ -4145,7 +4135,7 @@ If you now run `summary(demo_cleaned)`, you'll see that `treatment` is now coded
 `gender` is also a categorical variable that we might want to include in our analysis but it requires a slightly different, and simpler, approach because the values are already stored as text, R just doesn't yet know that these represent discrete categories. Instead of using `factor()` and updating the `levels` and `labels`, we can just use `as.factor()`, which just overwrites whatever is in that column as a factor.
 
 
-```r
+``` r
 demo_cleaned <- demo_data %>%
   mutate(treatment = factor(treatment, 
                             levels = c(1,2), 
@@ -4156,7 +4146,7 @@ demo_cleaned <- demo_data %>%
 There are also similar functions for other data types. Although it won't really cause us any problems, we can convert `participant_ID`. It's currently stored as a numeric variable (because the IDs are just numbers) but really it's a character variable (it's just the same as a name).
 
 
-```r
+``` r
 demo_cleaned <- demo_data %>%
   mutate(treatment = factor(treatment, 
                             levels = c(1,2), 
@@ -4172,7 +4162,7 @@ demo_cleaned <- demo_data %>%
 
 
 
-```r
+``` r
 q_cleaned <- q_data %>%
   mutate(participant_ID = as.character(participant_ID))
 ```
@@ -4185,7 +4175,7 @@ q_cleaned <- q_data %>%
 We can now do our first join and join together the demographic and questionnaire data so we've got a single wide-form dataset. In this code we create an object named `dat_wide` that joins together `demo_cleaned` and `q_cleaned`.
 
 
-```r
+``` r
 dat_wide <- inner_join(x = demo_cleaned, y = q_cleaned, by = "participant_ID") 
 ```
 
@@ -4203,7 +4193,7 @@ Once we've done that, we need to reshape it into long-form using `pivot_longer()
 
 
 
-```r
+``` r
 object_name <- starting_data %>%
   pivot_longer(cols = first_var:last_var, 
                names_to = "name", 
@@ -4219,7 +4209,7 @@ object_name <- starting_data %>%
 
 
 
-```r
+``` r
 dat_long <- dat_wide %>%
   pivot_longer(cols = bounce_back_quickly:long_time_over_setbacks, 
                names_to = "item", 
@@ -4239,7 +4229,7 @@ Finally, now that we've got it all in long-form, we can join on `scoring`.
 
 
 
-```r
+``` r
 dat <- inner_join(x = object1, y = object2, by = c("commoncol1", "commoncol2"))
 ```
 
@@ -4250,7 +4240,7 @@ dat <- inner_join(x = object1, y = object2, by = c("commoncol1", "commoncol2"))
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 dat <- inner_join(x = dat_long, y = scoring, by = c("item", "response"))
 ```
 
@@ -4266,7 +4256,7 @@ Now we've got everything together we can calculate the mean scores for each part
 * When you use `group_by()`, it's always safest to include `ungroup()` at the end at it prevents future operations you do on that dataset accidentally being grouped by variables you didn't intend.
 
 
-```r
+``` r
 dat_scores <- dat %>%
   group_by(participant_ID, age, gender, treatment) %>%
   summarise(resilience_score = mean(score, na.rm = TRUE)) %>%
@@ -4281,7 +4271,7 @@ dat_scores <- dat %>%
 Now that we've got the mean scores, we can look at group differences.For example, scores for different genders:
 
 
-```r
+``` r
 dat_scores %>%
   group_by(gender) %>%
   summarise(group_score = mean(resilience_score, na.rm = TRUE)) %>%
@@ -4301,7 +4291,7 @@ dat_scores %>%
 Or for the treatment conditions:
 
 
-```r
+``` r
 dat_scores %>%
   group_by(treatment) %>%
   summarise(group_score = mean(resilience_score, na.rm = TRUE))%>%
@@ -4329,7 +4319,7 @@ A faceted histogram.
 
 A boxplot with raw data points, and the mean with error bars representing standard error.
 
-I haven't come close to teaching you how to make this one but if you want to stretch yourself, see if you can figure it out and send me (Emily) a DM with your code. I would start with the boxplot, then try and flip it, then add in the data raw data points and the axis labels. The colours and the mean + SE will cause you the most trouble. Happy Googling :)
+I haven't come close to teaching you how to make this one but if you want to stretch yourself, see if you can figure it out and send me (Matt) a DM with your code. I would start with the boxplot, then try and flip it, then add in the data raw data points and the axis labels. The colours and the mean + SE will cause you the most trouble. Happy Googling :)
 
 <img src="11-resilience1_files/figure-html/unnamed-chunk-18-1.png" width="100%" style="display: block; margin: auto;" />
 
@@ -4365,7 +4355,7 @@ There is a walkthrough video of this chapter available via [Zoom](https://uofgla
 * Create a new code chunk and then copy, paste, and run the below code. You don't need to edit anything, this will get you to the point you were at in Activity 7 in Resilience 1. Once you've run the code, click on `dat_wide` to view it and take a minute to familiarise yourself with the variables and structure of the dataset.
 
 
-```r
+``` r
 library(tidyverse)
 demo_data <- read_csv("demographic_data.csv")
 q_data <- read_csv("questionnaire_data.csv")
@@ -4393,7 +4383,7 @@ dat_wide <- inner_join(x = demo_cleaned, y = q_cleaned, by = "participant_ID")
 As noted in Resilience 1, there is a little bit of missing data in this dataset. There's a few ways to identify missing data. The first method you have already encountered, you can run `summary()` on the object and any variables with missing data will have a count of `NA's`.
 
 
-```r
+``` r
 summary(dat_wide)
 ```
 
@@ -4404,7 +4394,7 @@ But you can also do this using `tidyverse` functions. The reason this is potenti
 * The . in `is.na()` acts as a placeholder for each column in turn. 
 
 
-```r
+``` r
 missing_data <- dat_wide %>%
   summarise_all(~sum(is.na(.)))
 ```
@@ -4418,7 +4408,7 @@ Now we've identified which columns have missing values, we can deal with it usin
 The first option is to do the nuclear version and drop any line of data if there is a single missing data point so that we only have complete cases. Because our data is in wide-form, this would mean that we drop all the data from an entire participant if they are missing data in any of the variables. 
 
 
-```r
+``` r
 dat_complete <- dat_wide %>%
   drop_na()
 ```
@@ -4432,7 +4422,7 @@ dat_complete <- dat_wide %>%
 You can figure this out by looking in the environment pane and seeing how many observations `dat_complete` has. You could also do it with code:
 
 
-```r
+``` r
 dat_complete %>%
   count()
 ```
@@ -4474,7 +4464,7 @@ Our study is going to look at whether resilience scores change depending on the 
 Instead of running `drop_na()` on the entire dataset, we can specify which columns to include or ignore. This code works the same way as `select()` in that you can either say which columns you want it to run the code on, or you say which columns to ignore. In this case, it's easier to say which ones to ignore.
 
 
-```r
+``` r
 dat_final <- dat_wide %>%
   drop_na(-participant_ID, -gender, -age)
 ```
@@ -4486,7 +4476,7 @@ This then means only the resilience and treatment columns are included in the ca
 Now we've got rid of the missing data, we can transform the object to long-form and score it. Copy and paste the below code (this was explained in the last chapter, we've provided it for you so we can jump ahead to more interesting things).
 
 
-```r
+``` r
 dat_long <- dat_final %>%
   pivot_longer(cols = bounce_back_quickly:long_time_over_setbacks, 
                names_to = "item", 
@@ -4513,7 +4503,7 @@ We can create a new column using `mutate()`.
 * We just want to add columns to the existing object which is why we are still using `dat_scores` rather than creating a new object.
 
 
-```r
+``` r
 dat_scores <- dat_scores %>%
   mutate(age_corrected = age + 1)
 ```
@@ -4527,7 +4517,7 @@ For example, we can create a new categorical variable that assigns participants 
 * `.default` isn't always necessary but it controls what value is entered if a value doesn't meet any of the conditions. In this case, it will return the text "Missing" for all the NA values in age.
 
 
-```r
+``` r
 dat_scores <- dat_scores %>%
   mutate(age_category = case_when(age_corrected <= 30 ~ "Younger",
                                   age_corrected > 30 ~ "Older"))
@@ -4541,7 +4531,7 @@ The new variable `age_category` will be created as a `character` variable but we
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 dat_scores <- dat_scores %>%
   mutate(age_category = case_when(age_corrected <= 30 ~ "Younger",
                                   age_corrected > 30 ~ "Older", 
@@ -4556,7 +4546,7 @@ dat_scores <- dat_scores %>%
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 dat_scores <- dat_scores %>%
   mutate(age_category = case_when(age_corrected <= 30 ~ "Younger",
                                   age_corrected > 30 ~ "Older", 
@@ -4579,7 +4569,7 @@ Now it's a factor, using your method of choice, count how many participants are 
 
 
 
-```r
+``` r
 summary() 
 
 # or
@@ -4596,7 +4586,7 @@ count()
 
 
 
-```r
+``` r
 summary(dat_scores)
 
 dat_scores %>%
@@ -4653,7 +4643,7 @@ The software we used to store the data really has gone wrong and we've also disc
 
 
 
-```r
+``` r
 dat_scores <- dat_scores %>%
   mutate(new_variable = case_when(old_variable == "old_value" ~ "new_value",
                                   old_variable == "old_value" ~ "new_value",
@@ -4669,7 +4659,7 @@ dat_scores <- dat_scores %>%
 
 
 
-```r
+``` r
 dat_scores <- dat_scores %>%
   mutate(gender_corrected = case_when(gender == "man" ~ "woman",
                                       gender == "woman" ~ "man",
@@ -4705,7 +4695,7 @@ Write code to calculate the following (remember to use the corrected variables):
 These are all the functions you need to achieve the above
 
 
-```r
+``` r
 count()
 summarise()
 mean
@@ -4726,7 +4716,7 @@ is.na()
 If you have looked at the solutions without trying it for yourself, just remember that it's your own learning that will suffer and Level 2 is going to be an unpleasant shock to the system if you've been taking shortcuts throughout Level 1....
 
 
-```r
+``` r
 # total ppts
 dat_scores %>%
   count()
@@ -4763,7 +4753,7 @@ dat_scores %>%
 These are all the functions you need to achieve the above
 
 
-```r
+``` r
 summarise()
 group_by()
 mean
@@ -4790,7 +4780,7 @@ facet_wrap()
 If you have looked at the solutions without trying it for yourself, just remember that it's your own learning that will suffer and Level 2 is going to be an unpleasant shock to the system if you've been taking shortcuts throughout Level 1....
 
 
-```r
+``` r
 # overall resilience score
 dat_scores %>%
   summarise(mean_score = mean(resilience_score),
@@ -4869,7 +4859,7 @@ $$p = \frac{number \  of  \ ways \ the \ event \ could \  arise}{number \ of \ p
 For example, what is the probability of randomly drawing your name out of a hat of 12 names where one name is definitely yours?
 
 
-```r
+``` r
 1/12
 ```
 
@@ -4899,10 +4889,10 @@ How you tackle probability depends on the type of data/variables you are working
 
 What types of data are the below measurements?
 
-* Time taken to run a marathon (in seconds): <select class='webex-select'><option value='blank'></option><option value=''>interval</option><option value=''>categorical</option><option value=''>ordinal</option><option value='answer'>ratio</option></select>
-* Finishing position in marathon (e.g. 1st, 2nd, 3rd): <select class='webex-select'><option value='blank'></option><option value='answer'>ordinal</option><option value=''>ratio</option><option value=''>categorical</option><option value=''>interval</option></select>
-* Which Sesame Street character a runner was dressed as: <select class='webex-select'><option value='blank'></option><option value=''>interval</option><option value=''>ordinal</option><option value=''>ratio</option><option value='answer'>categorical</option></select>
-* Temperature of a runner dressed in a cookie monster outfit (in degrees Celsius): <select class='webex-select'><option value='blank'></option><option value=''>categorical</option><option value='answer'>interval</option><option value=''>ordinal</option><option value=''>ratio</option></select>
+* Time taken to run a marathon (in seconds): <select class='webex-select'><option value='blank'></option><option value=''>categorical</option><option value=''>interval</option><option value='answer'>ratio</option><option value=''>ordinal</option></select>
+* Finishing position in marathon (e.g. 1st, 2nd, 3rd): <select class='webex-select'><option value='blank'></option><option value='answer'>ordinal</option><option value=''>interval</option><option value=''>categorical</option><option value=''>ratio</option></select>
+* Which Sesame Street character a runner was dressed as: <select class='webex-select'><option value='blank'></option><option value='answer'>categorical</option><option value=''>interval</option><option value=''>ordinal</option><option value=''>ratio</option></select>
+* Temperature of a runner dressed in a cookie monster outfit (in degrees Celsius): <select class='webex-select'><option value='blank'></option><option value=''>categorical</option><option value=''>ordinal</option><option value='answer'>interval</option><option value=''>ratio</option></select>
 
 ## Probability distributions
 
@@ -4937,7 +4927,7 @@ Let’s say we flip a coin 10 times. Assuming the coin is fair (probability of h
 
 
 
-```r
+``` r
 heads10000 <- replicate(n = 10000, expr = sample(0:1, 10, TRUE) %>% sum())
 
 data10000 <- tibble(heads = heads10000) %>%   # convert to a tibble
@@ -4983,9 +4973,9 @@ As with any probabilities, real-world data will come close to the normal distrib
 
 Complete the sentences so that they are correct.
 
-* In a normal distribution, the mean, median, and mode <select class='webex-select'><option value='blank'></option><option value='answer'>are all equal</option><option value=''>are always different</option><option value=''>sum to zero</option></select>.
+* In a normal distribution, the mean, median, and mode <select class='webex-select'><option value='blank'></option><option value=''>are always different</option><option value=''>sum to zero</option><option value='answer'>are all equal</option></select>.
 * In a normal distribution, the further away from the mean an observation is <select class='webex-select'><option value='blank'></option><option value=''>the higher its probability of occuring</option><option value='answer'>the lower its probability of occuring</option></select>.
-* Whereas the binomial distribution is based on situations in which there are two possible outcomes, the normal distribution is based on situations in which the data <select class='webex-select'><option value='blank'></option><option value=''>is a categorical variable</option><option value='answer'>is a continuous variable</option><option value=''>has three possible values</option></select>.
+* Whereas the binomial distribution is based on situations in which there are two possible outcomes, the normal distribution is based on situations in which the data <select class='webex-select'><option value='blank'></option><option value='answer'>is a continuous variable</option><option value=''>has three possible values</option><option value=''>is a categorical variable</option></select>.
 
 ## Activity 4: Distribution test
 
@@ -5042,7 +5032,7 @@ The `dbinom()` (density) function has three arguments:
 Copy, paste and run the below code in a new code chunk:
 
 
-```r
+``` r
 dbinom(x = 5, size = 10, prob = 0.5)
 ```
 
@@ -5060,7 +5050,7 @@ This time we use `pbinom()` as we want to know the **cumulative probability** of
 Copy, paste and run the below code in a new code chunk:
 
 
-```r
+``` r
 pbinom(q = 2, size = 10, prob = 0.5)
 ```
 
@@ -5074,7 +5064,7 @@ Let's try one more scenario with a cut-off point to make sure you have understoo
 We can use the same function as in the previous example, however, there's an extra argument if we want to get the correct answer. Let's try running the code we used above but change `q = 2` to `q = 7`.
 
 
-```r
+``` r
 pbinom(q = 7, size = 10, prob = .5) 
 ```
 
@@ -5094,7 +5084,7 @@ To get the right answer, we have to add `lower.tail = FALSE` as we are intereste
 Copy, paste and run the below code in a new code chunk:
 
 
-```r
+``` r
 pbinom(q = 6, size = 10, prob = .5, lower.tail = FALSE) 
 ```
 
@@ -5112,7 +5102,7 @@ We know from looking at the binomial distribution above that sometimes even when
 In other words, you ask it for the minimum number of successes (e.g. heads) to maintain an overall probability of .05, in 10 flips, when the probability of a success on any one flip is .5.
 
 
-```r
+``` r
 qbinom(p = .05, size = 10, prob = .5)
 ```
 
@@ -5131,7 +5121,7 @@ However, ten trials is probably far too few if you want to accuse the magician o
 * What would your cut-off be if you ran 10,000 trials? <input class='webex-solveme nospaces' size='4' data-answer='["4918"]'/>
 
 
-```r
+``` r
 qbinom(p = .05, size = c(100, 1000, 10000), prob = .5)
 ```
 
@@ -5176,7 +5166,7 @@ The below figure is a simulation of this data - you can see the code used to run
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 men <- rnorm(n = 100000, mean = 176.2, sd = 6.748)
 women <- rnorm(n = 100000, mean = 163.8, sd = 6.931)
 
@@ -5209,7 +5199,7 @@ In this chapter we will use this information to calculate the probability of obs
 * `lower.tail` works as above and depends on whether you are interested in the upper or lower tail
 
 
-```r
+``` r
 pnorm(q = NULL, mean = NULL, sd = NULL, lower.tail = NULL)
 ```
 
@@ -5239,7 +5229,7 @@ In the previous examples we calculated the probability of a particular outcome. 
 `qnorm()` is very similar to `pnorm()` with one exception, rather than specifying `q` our known observation or quantile, instead we have to specify `p`, our known probability.
 
 
-```r
+``` r
 qnorm(p = NULL, mean = NULL, sd = NULL, lower.tail = NULL)
 ```
 
@@ -5261,7 +5251,7 @@ And that's it! The key concepts to take away from this chapter are that differen
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 .25
 ```
 
@@ -5274,7 +5264,7 @@ And that's it! The key concepts to take away from this chapter are that differen
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 .06
 ```
 
@@ -5287,7 +5277,7 @@ And that's it! The key concepts to take away from this chapter are that differen
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 .17
 ```
 
@@ -5301,7 +5291,7 @@ And that's it! The key concepts to take away from this chapter are that differen
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 42
 474
 4918
@@ -5316,7 +5306,7 @@ And that's it! The key concepts to take away from this chapter are that differen
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 pnorm(q = 176.2, mean = 163.8, sd = 6.931, lower.tail = FALSE)
 ```
 
@@ -5329,7 +5319,7 @@ pnorm(q = 176.2, mean = 163.8, sd = 6.931, lower.tail = FALSE)
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 pnorm(q = 181.12, mean = 176.2, sd = 6.748, lower.tail = FALSE)
 ```
 
@@ -5342,7 +5332,7 @@ pnorm(q = 181.12, mean = 176.2, sd = 6.748, lower.tail = FALSE)
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 pnorm(q = 181.12, mean = 163.8, sd = 6.931, lower.tail = TRUE)
 ```
 
@@ -5355,7 +5345,7 @@ pnorm(q = 181.12, mean = 163.8, sd = 6.931, lower.tail = TRUE)
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 qnorm(p = .05, mean = 176.2, sd = 6.748, lower.tail = FALSE)
 ```
 
@@ -5395,7 +5385,7 @@ Let’s start by introducing the `sample()` function, which samples elements (da
 * Copy, paste, and run the below code in a new code chunk to simulate flipping a coin 4 times (and load the `tidyverse`). 
 
 
-```r
+``` r
 # Notice that because our event labels are strings (text), 
 # we need to enter them into the function in "quotes" 
 library(tidyverse)
@@ -5403,7 +5393,7 @@ sample(x = c("HEADS", "TAILS"), size = 4, replace = TRUE)
 ```
 
 ```
-## [1] "TAILS" "TAILS" "HEADS" "HEADS"
+## [1] "HEADS" "TAILS" "TAILS" "HEADS"
 ```
 
 How many heads did you get? Don't worry if it's different to our example. Run the code again. How many heads did you get this time? How many do you get on each turn if you run the code five more times? 
@@ -5416,12 +5406,12 @@ So that we can add up the number of heads and tails more easily, let's simulate 
 * 0:1 means all numbers from 0 to 1 in steps of 1. So basically, 0 and 1. If you wanted to simulate rolling a die, you would write `1:6` which would give you all the whole numbers from 1 to 6.  
 
 
-```r
+``` r
 sample(x = 0:1, size = 4, replace = TRUE)
 ```
 
 ```
-## [1] 1 1 1 1
+## [1] 0 1 0 0
 ```
 
 ## Activity 3: `sum()`
@@ -5431,7 +5421,7 @@ Now that we're using ones and zeroes we can count the number of heads by summing
 * Copy, paste and run the code below in a new code chunk.
 
 
-```r
+``` r
 # This code pipes the output of sample() into sum() which counts up the number of heads/1s.
 
 sample(x = 0:1, size = 4, replace = TRUE) %>% sum()
@@ -5453,12 +5443,12 @@ Let’s repeat the experiment a whole bunch more times. We can have R do this ov
 Copy, paste and run the below code into a new code chunk to run the sample function and sum up the outcomes 20 times.
 
 
-```r
+``` r
 replicate(n = 20, expr = sample(0:1, 4, TRUE) %>% sum())
 ```
 
 ```
-##  [1] 2 3 2 2 3 3 1 3 0 2 2 2 1 2 3 3 4 3 2 2
+##  [1] 1 4 2 1 4 1 2 2 1 4 2 3 2 3 0 2 0 2 1 1
 ```
 
 
@@ -5472,14 +5462,14 @@ We are going to run our coin flip experiment again but this time we are going to
 * Copy, paste, and run the below code to run the simulation and store the result in an object `heads50** using the code below:
 
 
-```r
+``` r
 heads50 <- replicate(50, sample(0:1, 4, TRUE) %>% sum())   
 heads50
 ```
 
 ```
-##  [1] 2 1 4 2 0 1 1 2 2 2 3 1 2 3 2 3 2 2 1 3 3 1 2 3 2 1 2 2 2 1 2 1 1 3 3 2 2 1
-## [39] 3 3 3 0 4 3 3 2 1 0 2 3
+##  [1] 2 1 3 3 2 2 0 0 4 3 2 2 3 3 1 1 0 1 4 3 1 2 2 2 1 2 3 2 2 4 1 1 0 3 0 1 1 1
+## [39] 2 1 3 4 3 2 3 3 1 1 2 2
 ```
 
 ## Activity 6: probability
@@ -5487,7 +5477,7 @@ heads50
 We can estimate the probability of each of the outcomes (0, 1, 2, 3, 4 heads after 4 coin tosses) by counting them up and dividing by the number of experiments. We will do this by putting the results of the replications in a tibble() and then using count().
 
 
-```r
+``` r
 data50 <- tibble(heads = heads50) %>%   # convert to a table
                 group_by(heads) %>%   # group by number of possibilities (0,1,2,3,4)
                 summarise(n = n(), # count occurances of each possibility,
@@ -5497,11 +5487,11 @@ data50 <- tibble(heads = heads50) %>%   # convert to a table
 
 | heads|  n|    p|
 |-----:|--:|----:|
-|     0|  3| 0.06|
-|     1| 12| 0.24|
-|     2| 19| 0.38|
-|     3| 14| 0.28|
-|     4|  2| 0.04|
+|     0|  5| 0.10|
+|     1| 14| 0.28|
+|     2| 15| 0.30|
+|     3| 12| 0.24|
+|     4|  4| 0.08|
 
 Your numbers may be slightly different to the ones presented in this book - remember that by default, each time you run a simulation, you will get a different random sample.
 
@@ -5510,7 +5500,7 @@ Your numbers may be slightly different to the ones presented in this book - reme
 We can then plot a histogram of the outcomes using `geom_bar()`.
 
 
-```r
+``` r
 # Note: stat = "identity" tells  ggplot to use the values of the y-axis variable (p) as the height of the bars in our histogram (as opposed to counting the number of occurances of those values)
 
 ggplot(data50, aes(x = heads,y = p)) + 
@@ -5539,14 +5529,14 @@ Unfortunately sometimes this calculation will estimate that the probability of a
 Let's repeat the Monte Carlo simulation, but with 10,000 trials instead of just 50. All we need to do is change `n` from 50 to 10000. 
 
 
-```r
+``` r
 heads10K <- replicate(n = 10000, expr = sample(0:1, 4, TRUE) %>% sum())   
 ```
 
 Again, we'll put the outcome into a table using `tibble` and calculate counts and probabilities of each outcome using `group_by()` and `summarise()`. Remember to try reading your code in full sentences to help you understand what multiple lines of code connected by pipes are doing. How would you read the below code?
 
 
-```r
+``` r
 data10K <- tibble(heads = heads10K) %>%   
                 group_by(heads) %>%           
                 summarise(n = n(), p=n/10000) 
@@ -5555,7 +5545,7 @@ data10K <- tibble(heads = heads10K) %>%
 Finally, we can visualise this as we did earlier.
 
 
-```r
+``` r
 ggplot(data10K, aes(heads,p)) + 
   geom_bar(stat = "identity", fill = "purple") + 
   labs(x = "Number of Heads", y = "Probability of Heads in 4 flips (p)") +
@@ -5571,7 +5561,7 @@ Using Monte Carlo simulation, we estimate that the probability of getting exactl
 
 For instance, what is the probability of getting two or more heads in four throws? This is easy: the outcomes meeting the criterion are 2, 3, or 4 heads. We can just add these probabilities together like so:
 
-```r
+``` r
 data10K %>%
   filter(heads >= 2) %>%
   summarise(p2 = sum(p))
@@ -5581,7 +5571,7 @@ data10K %>%
 
 |     p2|
 |------:|
-| 0.6898|
+| 0.6946|
 
 </div>
 
@@ -5600,27 +5590,27 @@ We can also use R to simulate continuous data that follow a normal distribution 
 Copy, paste and run the below code in a new code chunk. This will randomly generate 50 numbers that collectively have a mean of 10 and a SD of 2 and then store it in the object `normal`.
 
 
-```r
+``` r
 normal <- rnorm(n = 50, mean = 10, sd = 2)
 ```
 
 You can check that the data you have generated are as you expected by calculating the mean and SD of this new variable - you shouldn't expect the values to be exactly 10 and 2 (remember, it's randomly generated), but they should be reasonably close.
 
 
-```r
+``` r
 mean(normal)
 sd(normal)
 ```
 
 ```
-## [1] 10.17469
-## [1] 2.019631
+## [1] 10.01906
+## [1] 1.919515
 ```
 
 Finally, you can visualise your data with a density plot. Try changing the number of data points generated by `rnorm()` from 50 to 500 to 5000 and then see how the shape of the distribution changes.
 
 
-```r
+``` r
 tibble(normal = normal) %>% #turn the variable normal into a table and then
   ggplot(aes(normal)) + # create a density plot
   geom_density(fill = "red") +
@@ -5640,35 +5630,35 @@ Finally, we can put all of this together to simulate a full dataset. Let's imagi
 * First, let's create a variable that has all of our subject IDs. We're just going to assign our participants numerical codes.
 
 
-```r
+``` r
 subject_id <- 1:120 # create a variable called subject_id that has the numbers 1 to 120 in it
 ```
 
 Then we're going to create a column for gender using a new but simple function `rep` which stands for "repeat". The below code will create a variable that repeats "man" 40 times, then "women" 40 times, then "non-binary" 40 times.
 
 
-```r
+``` r
 gender <- rep(x = c("man", "woman", "nonbinary"), each = 40)
 ```
 
 Next, let's simulate them all rolling a die once using `sample()`.
 
 
-```r
+``` r
 rolls <- sample(x = 1:6, size = 120, replace = TRUE)
 ```
 
 Then, let's simulate their IQ scores. IQ scores are standardised so that overall, the population has an average IQ of 100 and a SD of 15 so we can use this information to simulate the data with `rnorm()`.
 
 
-```r
+``` r
 iq <- rnorm(n = 120, mean = 100, sd = 15)
 ```
 
 Finally, we can stitch all these variables together into a table.
 
 
-```r
+``` r
 sim_data <- tibble(subject_id, gender, rolls, iq)
 ```
 
@@ -5677,7 +5667,7 @@ Now that we've got our simulated data we could write code to analyse it even bef
 For example, you could create a plot of IQ scores for each dice roll (remember these are not real data...)
 
 
-```r
+``` r
 sim_data %>%
   mutate(rolls = as.factor(rolls)) %>%
   ggplot(aes(x = rolls, y = iq, fill = rolls)) +
@@ -5713,7 +5703,7 @@ We suggest that you problem-solve the code as a group, however, make sure that y
 To help get you on your way, we've done a bit of the initial wrangling for you. Download the data files into your working directory, create a new Markdown, then run all the below code without changing anything. I would also encourage you to open up the Excel files to see what's in them as it will help your understanding of the analysis.
 
 
-```r
+``` r
 library(tidyverse)
 
 # list columns to keep text values from
@@ -5890,7 +5880,7 @@ See [webexercises](https://psyteachr.github.io/webexercises/) for more details a
 
 * Type an integer: <input class='webex-solveme nospaces regex' size='1' data-answer='["^[0-9]{1}$"]'/>
 * I am going to learn a lot: <select class='webex-select'><option value='blank'></option><option value='answer'>TRUE</option><option value='x'>FALSE</option></select>
-* What is a p-value? <div class='webex-radiogroup' id='radio_BVLUULBUNP'><label><input type="radio" autocomplete="off" name="radio_BVLUULBUNP" value="x"></input> <span>the probability that the null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_BVLUULBUNP" value="answer"></input> <span>the probability of the observed (or more extreme) data, under the assumption that the null-hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_BVLUULBUNP" value="x"></input> <span>the probability of making an error in your conclusion</span></label></div>
+* What is a p-value? <div class='webex-radiogroup' id='radio_NARYCOPPQI'><label><input type="radio" autocomplete="off" name="radio_NARYCOPPQI" value="x"></input> <span>the probability that the null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_NARYCOPPQI" value="answer"></input> <span>the probability of the observed (or more extreme) data, under the assumption that the null-hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_NARYCOPPQI" value="x"></input> <span>the probability of making an error in your conclusion</span></label></div>
 
 
 <div class='webex-solution'><button>Hidden Text</button>
@@ -5900,7 +5890,7 @@ You found some hidden text!
 
 <div class='webex-solution'><button>Hidden Code</button>
 
-```r
+``` r
 print("You found some hidden code!")
 ```
 
@@ -5932,7 +5922,7 @@ Try it yourself.
 ## Code Chunks
 
 
-```r
+``` r
 # code chunks
 paste("Applied", "Data", "Skills", 1, sep = " ")
 ```
@@ -5944,7 +5934,7 @@ paste("Applied", "Data", "Skills", 1, sep = " ")
 
 <div class='verbatim'><pre class='sourceCode r'><code class='sourceCode R'>&#96;&#96;&#96;{r setup, message = FALSE}</code></pre>
 
-```r
+``` r
 # code chunks with visible r headers
 library(tidyverse)
 ```
@@ -5988,7 +5978,7 @@ If you get an error message that says something like `namespace package 1.1.0 is
 If this is happening to you, run the following code in the console. This will uninstall any packages you have installed and default to the ones on the server so everything will work again:
 
 
-```r
+``` r
 lapply(dir("~/.Rp/packages", full.names = TRUE), unlink, TRUE, TRUE)
 ```
 

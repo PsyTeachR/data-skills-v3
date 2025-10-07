@@ -17,7 +17,7 @@ $$p = \frac{number \  of  \ ways \ the \ event \ could \  arise}{number \ of \ p
 For example, what is the probability of randomly drawing your name out of a hat of 12 names where one name is definitely yours?
 
 
-```r
+``` r
 1/12
 ```
 
@@ -47,10 +47,10 @@ How you tackle probability depends on the type of data/variables you are working
 
 What types of data are the below measurements?
 
-* Time taken to run a marathon (in seconds): <select class='webex-select'><option value='blank'></option><option value=''>interval</option><option value=''>categorical</option><option value=''>ordinal</option><option value='answer'>ratio</option></select>
-* Finishing position in marathon (e.g. 1st, 2nd, 3rd): <select class='webex-select'><option value='blank'></option><option value='answer'>ordinal</option><option value=''>ratio</option><option value=''>categorical</option><option value=''>interval</option></select>
-* Which Sesame Street character a runner was dressed as: <select class='webex-select'><option value='blank'></option><option value=''>interval</option><option value=''>ordinal</option><option value=''>ratio</option><option value='answer'>categorical</option></select>
-* Temperature of a runner dressed in a cookie monster outfit (in degrees Celsius): <select class='webex-select'><option value='blank'></option><option value=''>categorical</option><option value='answer'>interval</option><option value=''>ordinal</option><option value=''>ratio</option></select>
+* Time taken to run a marathon (in seconds): <select class='webex-select'><option value='blank'></option><option value=''>categorical</option><option value=''>interval</option><option value='answer'>ratio</option><option value=''>ordinal</option></select>
+* Finishing position in marathon (e.g. 1st, 2nd, 3rd): <select class='webex-select'><option value='blank'></option><option value='answer'>ordinal</option><option value=''>interval</option><option value=''>categorical</option><option value=''>ratio</option></select>
+* Which Sesame Street character a runner was dressed as: <select class='webex-select'><option value='blank'></option><option value='answer'>categorical</option><option value=''>interval</option><option value=''>ordinal</option><option value=''>ratio</option></select>
+* Temperature of a runner dressed in a cookie monster outfit (in degrees Celsius): <select class='webex-select'><option value='blank'></option><option value=''>categorical</option><option value=''>ordinal</option><option value='answer'>interval</option><option value=''>ratio</option></select>
 
 ## Probability distributions
 
@@ -85,7 +85,7 @@ Let’s say we flip a coin 10 times. Assuming the coin is fair (probability of h
 
 
 
-```r
+``` r
 heads10000 <- replicate(n = 10000, expr = sample(0:1, 10, TRUE) %>% sum())
 
 data10000 <- tibble(heads = heads10000) %>%   # convert to a tibble
@@ -131,9 +131,9 @@ As with any probabilities, real-world data will come close to the normal distrib
 
 Complete the sentences so that they are correct.
 
-* In a normal distribution, the mean, median, and mode <select class='webex-select'><option value='blank'></option><option value='answer'>are all equal</option><option value=''>are always different</option><option value=''>sum to zero</option></select>.
+* In a normal distribution, the mean, median, and mode <select class='webex-select'><option value='blank'></option><option value=''>are always different</option><option value=''>sum to zero</option><option value='answer'>are all equal</option></select>.
 * In a normal distribution, the further away from the mean an observation is <select class='webex-select'><option value='blank'></option><option value=''>the higher its probability of occuring</option><option value='answer'>the lower its probability of occuring</option></select>.
-* Whereas the binomial distribution is based on situations in which there are two possible outcomes, the normal distribution is based on situations in which the data <select class='webex-select'><option value='blank'></option><option value=''>is a categorical variable</option><option value='answer'>is a continuous variable</option><option value=''>has three possible values</option></select>.
+* Whereas the binomial distribution is based on situations in which there are two possible outcomes, the normal distribution is based on situations in which the data <select class='webex-select'><option value='blank'></option><option value='answer'>is a continuous variable</option><option value=''>has three possible values</option><option value=''>is a categorical variable</option></select>.
 
 ## Activity 4: Distribution test
 

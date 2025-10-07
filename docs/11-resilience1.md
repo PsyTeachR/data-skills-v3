@@ -85,7 +85,7 @@ In code chunk 1, write and run the code that:
 <div class='webex-solution'><button>Hint</button>
 
 
-```r
+``` r
 library(package_name)
 object_name <- read_csv("file_name.csv")
 ```
@@ -97,7 +97,7 @@ object_name <- read_csv("file_name.csv")
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 library(tidyverse)
 demo_data <- read_csv("demographic_data.csv")
 q_data <- read_csv("questionnaire_data.csv")
@@ -137,7 +137,7 @@ A useful next step with data processing is to fix any data types as it can preve
 First, let's do a conversion you've already done - we'll use `factor()` to convert `treatment` to a factor and update the labels. We'll store this in a new object named `demo_cleaned` but we will just overwrite the existing variable treatment rather than creating a new one.
 
 
-```r
+``` r
 demo_cleaned <- demo_data %>%
   mutate(treatment = factor(treatment, # the variable you're converting
                             levels = c(1,2), # original values
@@ -149,7 +149,7 @@ If you now run `summary(demo_cleaned)`, you'll see that `treatment` is now coded
 `gender` is also a categorical variable that we might want to include in our analysis but it requires a slightly different, and simpler, approach because the values are already stored as text, R just doesn't yet know that these represent discrete categories. Instead of using `factor()` and updating the `levels` and `labels`, we can just use `as.factor()`, which just overwrites whatever is in that column as a factor.
 
 
-```r
+``` r
 demo_cleaned <- demo_data %>%
   mutate(treatment = factor(treatment, 
                             levels = c(1,2), 
@@ -160,7 +160,7 @@ demo_cleaned <- demo_data %>%
 There are also similar functions for other data types. Although it won't really cause us any problems, we can convert `participant_ID`. It's currently stored as a numeric variable (because the IDs are just numbers) but really it's a character variable (it's just the same as a name).
 
 
-```r
+``` r
 demo_cleaned <- demo_data %>%
   mutate(treatment = factor(treatment, 
                             levels = c(1,2), 
@@ -176,7 +176,7 @@ demo_cleaned <- demo_data %>%
 
 
 
-```r
+``` r
 q_cleaned <- q_data %>%
   mutate(participant_ID = as.character(participant_ID))
 ```
@@ -189,7 +189,7 @@ q_cleaned <- q_data %>%
 We can now do our first join and join together the demographic and questionnaire data so we've got a single wide-form dataset. In this code we create an object named `dat_wide` that joins together `demo_cleaned` and `q_cleaned`.
 
 
-```r
+``` r
 dat_wide <- inner_join(x = demo_cleaned, y = q_cleaned, by = "participant_ID") 
 ```
 
@@ -207,7 +207,7 @@ Once we've done that, we need to reshape it into long-form using `pivot_longer()
 
 
 
-```r
+``` r
 object_name <- starting_data %>%
   pivot_longer(cols = first_var:last_var, 
                names_to = "name", 
@@ -223,7 +223,7 @@ object_name <- starting_data %>%
 
 
 
-```r
+``` r
 dat_long <- dat_wide %>%
   pivot_longer(cols = bounce_back_quickly:long_time_over_setbacks, 
                names_to = "item", 
@@ -243,7 +243,7 @@ Finally, now that we've got it all in long-form, we can join on `scoring`.
 
 
 
-```r
+``` r
 dat <- inner_join(x = object1, y = object2, by = c("commoncol1", "commoncol2"))
 ```
 
@@ -254,7 +254,7 @@ dat <- inner_join(x = object1, y = object2, by = c("commoncol1", "commoncol2"))
 <div class='webex-solution'><button>Solution</button>
 
 
-```r
+``` r
 dat <- inner_join(x = dat_long, y = scoring, by = c("item", "response"))
 ```
 
@@ -270,7 +270,7 @@ Now we've got everything together we can calculate the mean scores for each part
 * When you use `group_by()`, it's always safest to include `ungroup()` at the end at it prevents future operations you do on that dataset accidentally being grouped by variables you didn't intend.
 
 
-```r
+``` r
 dat_scores <- dat %>%
   group_by(participant_ID, age, gender, treatment) %>%
   summarise(resilience_score = mean(score, na.rm = TRUE)) %>%
@@ -285,7 +285,7 @@ dat_scores <- dat %>%
 Now that we've got the mean scores, we can look at group differences.For example, scores for different genders:
 
 
-```r
+``` r
 dat_scores %>%
   group_by(gender) %>%
   summarise(group_score = mean(resilience_score, na.rm = TRUE)) %>%
@@ -305,7 +305,7 @@ dat_scores %>%
 Or for the treatment conditions:
 
 
-```r
+``` r
 dat_scores %>%
   group_by(treatment) %>%
   summarise(group_score = mean(resilience_score, na.rm = TRUE))%>%
@@ -333,7 +333,7 @@ A faceted histogram.
 
 A boxplot with raw data points, and the mean with error bars representing standard error.
 
-I haven't come close to teaching you how to make this one but if you want to stretch yourself, see if you can figure it out and send me (Emily) a DM with your code. I would start with the boxplot, then try and flip it, then add in the data raw data points and the axis labels. The colours and the mean + SE will cause you the most trouble. Happy Googling :)
+I haven't come close to teaching you how to make this one but if you want to stretch yourself, see if you can figure it out and send me (Matt) a DM with your code. I would start with the boxplot, then try and flip it, then add in the data raw data points and the axis labels. The colours and the mean + SE will cause you the most trouble. Happy Googling :)
 
 <img src="11-resilience1_files/figure-html/unnamed-chunk-18-1.png" width="100%" style="display: block; margin: auto;" />
 

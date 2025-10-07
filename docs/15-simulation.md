@@ -27,7 +27,7 @@ Let’s start by introducing the `sample()` function, which samples elements (da
 * Copy, paste, and run the below code in a new code chunk to simulate flipping a coin 4 times (and load the `tidyverse`). 
 
 
-```r
+``` r
 # Notice that because our event labels are strings (text), 
 # we need to enter them into the function in "quotes" 
 library(tidyverse)
@@ -35,7 +35,7 @@ sample(x = c("HEADS", "TAILS"), size = 4, replace = TRUE)
 ```
 
 ```
-## [1] "TAILS" "TAILS" "HEADS" "HEADS"
+## [1] "HEADS" "TAILS" "TAILS" "HEADS"
 ```
 
 How many heads did you get? Don't worry if it's different to our example. Run the code again. How many heads did you get this time? How many do you get on each turn if you run the code five more times? 
@@ -48,12 +48,12 @@ So that we can add up the number of heads and tails more easily, let's simulate 
 * 0:1 means all numbers from 0 to 1 in steps of 1. So basically, 0 and 1. If you wanted to simulate rolling a die, you would write `1:6` which would give you all the whole numbers from 1 to 6.  
 
 
-```r
+``` r
 sample(x = 0:1, size = 4, replace = TRUE)
 ```
 
 ```
-## [1] 1 1 1 1
+## [1] 0 1 0 0
 ```
 
 ## Activity 3: `sum()`
@@ -63,7 +63,7 @@ Now that we're using ones and zeroes we can count the number of heads by summing
 * Copy, paste and run the code below in a new code chunk.
 
 
-```r
+``` r
 # This code pipes the output of sample() into sum() which counts up the number of heads/1s.
 
 sample(x = 0:1, size = 4, replace = TRUE) %>% sum()
@@ -85,12 +85,12 @@ Let’s repeat the experiment a whole bunch more times. We can have R do this ov
 Copy, paste and run the below code into a new code chunk to run the sample function and sum up the outcomes 20 times.
 
 
-```r
+``` r
 replicate(n = 20, expr = sample(0:1, 4, TRUE) %>% sum())
 ```
 
 ```
-##  [1] 2 3 2 2 3 3 1 3 0 2 2 2 1 2 3 3 4 3 2 2
+##  [1] 1 4 2 1 4 1 2 2 1 4 2 3 2 3 0 2 0 2 1 1
 ```
 
 
@@ -104,14 +104,14 @@ We are going to run our coin flip experiment again but this time we are going to
 * Copy, paste, and run the below code to run the simulation and store the result in an object `heads50** using the code below:
 
 
-```r
+``` r
 heads50 <- replicate(50, sample(0:1, 4, TRUE) %>% sum())   
 heads50
 ```
 
 ```
-##  [1] 2 1 4 2 0 1 1 2 2 2 3 1 2 3 2 3 2 2 1 3 3 1 2 3 2 1 2 2 2 1 2 1 1 3 3 2 2 1
-## [39] 3 3 3 0 4 3 3 2 1 0 2 3
+##  [1] 2 1 3 3 2 2 0 0 4 3 2 2 3 3 1 1 0 1 4 3 1 2 2 2 1 2 3 2 2 4 1 1 0 3 0 1 1 1
+## [39] 2 1 3 4 3 2 3 3 1 1 2 2
 ```
 
 ## Activity 6: probability
@@ -119,7 +119,7 @@ heads50
 We can estimate the probability of each of the outcomes (0, 1, 2, 3, 4 heads after 4 coin tosses) by counting them up and dividing by the number of experiments. We will do this by putting the results of the replications in a tibble() and then using count().
 
 
-```r
+``` r
 data50 <- tibble(heads = heads50) %>%   # convert to a table
                 group_by(heads) %>%   # group by number of possibilities (0,1,2,3,4)
                 summarise(n = n(), # count occurances of each possibility,
@@ -129,11 +129,11 @@ data50 <- tibble(heads = heads50) %>%   # convert to a table
 
 | heads|  n|    p|
 |-----:|--:|----:|
-|     0|  3| 0.06|
-|     1| 12| 0.24|
-|     2| 19| 0.38|
-|     3| 14| 0.28|
-|     4|  2| 0.04|
+|     0|  5| 0.10|
+|     1| 14| 0.28|
+|     2| 15| 0.30|
+|     3| 12| 0.24|
+|     4|  4| 0.08|
 
 Your numbers may be slightly different to the ones presented in this book - remember that by default, each time you run a simulation, you will get a different random sample.
 
@@ -142,7 +142,7 @@ Your numbers may be slightly different to the ones presented in this book - reme
 We can then plot a histogram of the outcomes using `geom_bar()`.
 
 
-```r
+``` r
 # Note: stat = "identity" tells  ggplot to use the values of the y-axis variable (p) as the height of the bars in our histogram (as opposed to counting the number of occurances of those values)
 
 ggplot(data50, aes(x = heads,y = p)) + 
@@ -171,14 +171,14 @@ Unfortunately sometimes this calculation will estimate that the probability of a
 Let's repeat the Monte Carlo simulation, but with 10,000 trials instead of just 50. All we need to do is change `n` from 50 to 10000. 
 
 
-```r
+``` r
 heads10K <- replicate(n = 10000, expr = sample(0:1, 4, TRUE) %>% sum())   
 ```
 
 Again, we'll put the outcome into a table using `tibble` and calculate counts and probabilities of each outcome using `group_by()` and `summarise()`. Remember to try reading your code in full sentences to help you understand what multiple lines of code connected by pipes are doing. How would you read the below code?
 
 
-```r
+``` r
 data10K <- tibble(heads = heads10K) %>%   
                 group_by(heads) %>%           
                 summarise(n = n(), p=n/10000) 
@@ -187,7 +187,7 @@ data10K <- tibble(heads = heads10K) %>%
 Finally, we can visualise this as we did earlier.
 
 
-```r
+``` r
 ggplot(data10K, aes(heads,p)) + 
   geom_bar(stat = "identity", fill = "purple") + 
   labs(x = "Number of Heads", y = "Probability of Heads in 4 flips (p)") +
@@ -203,7 +203,7 @@ Using Monte Carlo simulation, we estimate that the probability of getting exactl
 
 For instance, what is the probability of getting two or more heads in four throws? This is easy: the outcomes meeting the criterion are 2, 3, or 4 heads. We can just add these probabilities together like so:
 
-```r
+``` r
 data10K %>%
   filter(heads >= 2) %>%
   summarise(p2 = sum(p))
@@ -213,7 +213,7 @@ data10K %>%
 
 |     p2|
 |------:|
-| 0.6898|
+| 0.6946|
 
 </div>
 
@@ -232,27 +232,27 @@ We can also use R to simulate continuous data that follow a normal distribution 
 Copy, paste and run the below code in a new code chunk. This will randomly generate 50 numbers that collectively have a mean of 10 and a SD of 2 and then store it in the object `normal`.
 
 
-```r
+``` r
 normal <- rnorm(n = 50, mean = 10, sd = 2)
 ```
 
 You can check that the data you have generated are as you expected by calculating the mean and SD of this new variable - you shouldn't expect the values to be exactly 10 and 2 (remember, it's randomly generated), but they should be reasonably close.
 
 
-```r
+``` r
 mean(normal)
 sd(normal)
 ```
 
 ```
-## [1] 10.17469
-## [1] 2.019631
+## [1] 10.01906
+## [1] 1.919515
 ```
 
 Finally, you can visualise your data with a density plot. Try changing the number of data points generated by `rnorm()` from 50 to 500 to 5000 and then see how the shape of the distribution changes.
 
 
-```r
+``` r
 tibble(normal = normal) %>% #turn the variable normal into a table and then
   ggplot(aes(normal)) + # create a density plot
   geom_density(fill = "red") +
@@ -272,35 +272,35 @@ Finally, we can put all of this together to simulate a full dataset. Let's imagi
 * First, let's create a variable that has all of our subject IDs. We're just going to assign our participants numerical codes.
 
 
-```r
+``` r
 subject_id <- 1:120 # create a variable called subject_id that has the numbers 1 to 120 in it
 ```
 
 Then we're going to create a column for gender using a new but simple function `rep` which stands for "repeat". The below code will create a variable that repeats "man" 40 times, then "women" 40 times, then "non-binary" 40 times.
 
 
-```r
+``` r
 gender <- rep(x = c("man", "woman", "nonbinary"), each = 40)
 ```
 
 Next, let's simulate them all rolling a die once using `sample()`.
 
 
-```r
+``` r
 rolls <- sample(x = 1:6, size = 120, replace = TRUE)
 ```
 
 Then, let's simulate their IQ scores. IQ scores are standardised so that overall, the population has an average IQ of 100 and a SD of 15 so we can use this information to simulate the data with `rnorm()`.
 
 
-```r
+``` r
 iq <- rnorm(n = 120, mean = 100, sd = 15)
 ```
 
 Finally, we can stitch all these variables together into a table.
 
 
-```r
+``` r
 sim_data <- tibble(subject_id, gender, rolls, iq)
 ```
 
@@ -309,7 +309,7 @@ Now that we've got our simulated data we could write code to analyse it even bef
 For example, you could create a plot of IQ scores for each dice roll (remember these are not real data...)
 
 
-```r
+``` r
 sim_data %>%
   mutate(rolls = as.factor(rolls)) %>%
   ggplot(aes(x = rolls, y = iq, fill = rolls)) +

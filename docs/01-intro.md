@@ -27,7 +27,7 @@ R is a programming language that you will write code in. RStudio is an Integrate
 
 Your first task is to install R and RStudio and we have prepared [a guide for how to do this](https://psyteachr.github.io/RSetGo/) on Windows and Macs. Please note that you cannot install R on a Chromebook or a tablet, only a full laptop or desktop computer. If you do not have a laptop or desktop, you can use any of the [University computers](https://www.gla.ac.uk/myglasgow/it/studentclusters/) and there is also a [laptop loan scheme](https://www.gla.ac.uk/myglasgow/registry/finance/funds/laptoploan/). We also have a guide on how to use R on a university computer.
 
-If you need help with the installation, or if you'd just feel more confident doing it with someone else in the room, there will be GTA support sessions in week 1 and 2 specifically to help with installation. You can also attend office hours (Emily Nordmann and Rebecca Lai in particular are happy to help with this).
+If you need help with the installation, or if you'd just feel more confident doing it with someone else in the room, there will be GTA support sessions in week 1 and 2 specifically to help with installation. You can also attend office hours with any member of the Level 1 team.
 
 
 ::: {.warning data-latex=""}
@@ -138,8 +138,8 @@ A large part of your coding will involve creating and manipulating objects. Obje
 Run the following code in the console, but change the values of `name`, `age` and `birthday` to your own details (`birthday` should be the date of your next birthday, year-month-day). Press enter after you type each line.
 
 
-```r
-name <- "Emily"
+``` r
+name <- "Patsy"
 age <- 39
 today <- Sys.Date()
 birthday <- as.Date("2025-07-11")
@@ -161,7 +161,7 @@ To print the contents of an object, type the object's name in the console and pr
 To clear objects from the environment you can remove them individually:
 
 
-```r
+``` r
 rm(name)
 ```
 
@@ -225,11 +225,11 @@ Now we're going to add in the code we used earlier to our R Markdown document so
 * Remember that text values and dates need to be contained in quotation marks but numerical values do not. Missing and/or unnecessary quotation marks are a common cause of code not working - remember this!
 
 
-```r
-name <- "Emily" 
+``` r
+name <- "Patsy" 
 age <- 39
 today <- Sys.Date()
-birthday <- as.Date("2025-07-11")
+birthday <- as.Date("2026-07-11")
 ```
 
 ### Running code {#sec-run-code}
@@ -257,7 +257,7 @@ An incredibly useful feature of R Markdown is that R can insert values into your
 * First, copy and paste this text exactly (do not change anything) to the **white space** underneath your code chunk.
 
 
-```r
+``` r
 My name is `r name` and I am `r age` years old. It is `r birthday - today` days until my birthday.
 ```
 
@@ -265,7 +265,7 @@ My name is `r name` and I am `r age` years old. It is `r birthday - today` days 
 
 As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created. 
 
-**My name is Emily and I am 39 years old. It is 116 days until my birthday.**
+**My name is Patsy and I am 39 years old. It is 277 days until my birthday.**
 
 We're not going to use this function too often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers. R Markdown is an incredibly powerful and flexible format - this book was written using it! 
 
