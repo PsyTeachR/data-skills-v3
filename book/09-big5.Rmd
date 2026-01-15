@@ -136,7 +136,7 @@ big5 <- read_csv("big5_data.csv")
 scoring <- read_csv("scoring.csv")
 codebook <- read_csv("code_book.csv")
 ```
-` r unhide()`
+`r unhide()`
 
 
 

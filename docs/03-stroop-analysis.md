@@ -440,7 +440,7 @@ ggplot(dat, aes(x = reaction_time, fill = condition)) +
 ```
 
 ```
-## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+## `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 ```
 
 <img src="03-stroop-analysis_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;" />

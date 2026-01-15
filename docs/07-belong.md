@@ -187,6 +187,11 @@ ggplot(full_data, aes(x = gender, y = belongingness)) +
 ```
 
 ```
+## Warning: Orientation is not uniquely specified when both the x and y aesthetics are
+## continuous. Picking default orientation 'x'.
+```
+
+```
 ## Warning: Continuous x aesthetic
 ## ℹ did you forget `aes(group = ...)`?
 ```
