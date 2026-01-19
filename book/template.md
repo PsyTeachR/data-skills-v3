@@ -2,7 +2,7 @@
 title: "Data Skills" # edit
 #subtitle: "optional" 
 author: "Emily Nordmann" # edit
-date: "2026-01-15"
+date: "2026-01-19"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
@@ -332,7 +332,7 @@ My name is `r name` and I am `r age` years old. It is `r birthday - today` days 
 
 As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created. 
 
-**My name is Patsy and I am 39 years old. It is 177 days until my birthday.**
+**My name is Patsy and I am 39 years old. It is 173 days until my birthday.**
 
 We're not going to use this function too often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers. R Markdown is an incredibly powerful and flexible format - this book was written using it! 
 
@@ -3227,14 +3227,14 @@ For the next set of chapters we're going to use data from the most popular model
 <br>
 
 1. The trait 'Agreeableness' in the Big Five personality model refers to:
-<div class='webex-radiogroup' id='radio_ZNSKNOCLBK'><label><input type="radio" autocomplete="off" name="radio_ZNSKNOCLBK" value=""></input> <span>The tendency to be organized, careful, and disciplined</span></label><label><input type="radio" autocomplete="off" name="radio_ZNSKNOCLBK" value="answer"></input> <span>The tendency to be compassionate, cooperative, and warm towards others</span></label><label><input type="radio" autocomplete="off" name="radio_ZNSKNOCLBK" value=""></input> <span>The tendency to be outgoing, energetic, and sociable</span></label><label><input type="radio" autocomplete="off" name="radio_ZNSKNOCLBK" value=""></input> <span>The tendency to experience mood swings, anxiety, and irritability.</span></label></div>
+<div class='webex-radiogroup' id='radio_ANORBNTBSG'><label><input type="radio" autocomplete="off" name="radio_ANORBNTBSG" value=""></input> <span>The tendency to be organized, careful, and disciplined</span></label><label><input type="radio" autocomplete="off" name="radio_ANORBNTBSG" value="answer"></input> <span>The tendency to be compassionate, cooperative, and warm towards others</span></label><label><input type="radio" autocomplete="off" name="radio_ANORBNTBSG" value=""></input> <span>The tendency to be outgoing, energetic, and sociable</span></label><label><input type="radio" autocomplete="off" name="radio_ANORBNTBSG" value=""></input> <span>The tendency to experience mood swings, anxiety, and irritability.</span></label></div>
 
 
 <br>
 
 2. In the context of the Big Five Personality model, which trait might be associated with a person who is diligent, efficient, and follows a schedule?
 
-<div class='webex-radiogroup' id='radio_ZWSGBEKRBY'><label><input type="radio" autocomplete="off" name="radio_ZWSGBEKRBY" value=""></input> <span>Neuroticism</span></label><label><input type="radio" autocomplete="off" name="radio_ZWSGBEKRBY" value="answer"></input> <span>Conscientiousness</span></label><label><input type="radio" autocomplete="off" name="radio_ZWSGBEKRBY" value=""></input> <span>Extraversion</span></label><label><input type="radio" autocomplete="off" name="radio_ZWSGBEKRBY" value=""></input> <span>Agreeableness</span></label></div>
+<div class='webex-radiogroup' id='radio_UFADUKDTFX'><label><input type="radio" autocomplete="off" name="radio_UFADUKDTFX" value=""></input> <span>Neuroticism</span></label><label><input type="radio" autocomplete="off" name="radio_UFADUKDTFX" value="answer"></input> <span>Conscientiousness</span></label><label><input type="radio" autocomplete="off" name="radio_UFADUKDTFX" value=""></input> <span>Extraversion</span></label><label><input type="radio" autocomplete="off" name="radio_UFADUKDTFX" value=""></input> <span>Agreeableness</span></label></div>
 
 
 <br>
@@ -3248,7 +3248,7 @@ For the next set of chapters we're going to use data from the most popular model
 <br>
 
 5. Which of these traits in the Big Five Personality model is most closely associated with creativity and a preference for novelty?
-<div class='webex-radiogroup' id='radio_ZWCEAGJAGC'><label><input type="radio" autocomplete="off" name="radio_ZWCEAGJAGC" value=""></input> <span>Extraversion</span></label><label><input type="radio" autocomplete="off" name="radio_ZWCEAGJAGC" value=""></input> <span>Conscientiousness</span></label><label><input type="radio" autocomplete="off" name="radio_ZWCEAGJAGC" value=""></input> <span>Neuroticism</span></label><label><input type="radio" autocomplete="off" name="radio_ZWCEAGJAGC" value="answer"></input> <span>Openness to Experience</span></label></div>
+<div class='webex-radiogroup' id='radio_OPEJWGFQGT'><label><input type="radio" autocomplete="off" name="radio_OPEJWGFQGT" value=""></input> <span>Extraversion</span></label><label><input type="radio" autocomplete="off" name="radio_OPEJWGFQGT" value=""></input> <span>Conscientiousness</span></label><label><input type="radio" autocomplete="off" name="radio_OPEJWGFQGT" value=""></input> <span>Neuroticism</span></label><label><input type="radio" autocomplete="off" name="radio_OPEJWGFQGT" value="answer"></input> <span>Openness to Experience</span></label></div>
 
 
 
@@ -3555,7 +3555,7 @@ By the end of this chapter you should be able to:
 
 ## Walkthrough video {#sec-walkthrough-big5}
 
-There is a walkthrough video of this chapter available via [Zoom]https://uofglasgow.zoom.us/rec/share/eFUjETr2Ee9ldYHDwFRIFhVhj1FcX5mTOdG8J0lCorMSnE8hX3jEefRCGu1Cg5Dc.cW6cCCA_5jTQ_zbx). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+There is a walkthrough video of this chapter available via [Zoom](https://uofglasgow.zoom.us/rec/share/eFUjETr2Ee9ldYHDwFRIFhVhj1FcX5mTOdG8J0lCorMSnE8hX3jEefRCGu1Cg5Dc.cW6cCCA_5jTQ_zbx). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## Activity 1: Set-up {#sec-setup-big5}
 
@@ -3659,6 +3659,8 @@ big5_long <- big5 %>%
                names_to = "item", 
                values_to = "response") 
 ```
+
+</div>
 
 
 ## Activity 4: `inner_join()`
@@ -4896,10 +4898,10 @@ How you tackle probability depends on the type of data/variables you are working
 
 What types of data are the below measurements?
 
-* Time taken to run a marathon (in seconds): <select class='webex-select'><option value='blank'></option><option value=''>categorical</option><option value=''>ordinal</option><option value=''>interval</option><option value='answer'>ratio</option></select>
-* Finishing position in marathon (e.g. 1st, 2nd, 3rd): <select class='webex-select'><option value='blank'></option><option value=''>categorical</option><option value=''>ratio</option><option value='answer'>ordinal</option><option value=''>interval</option></select>
-* Which Sesame Street character a runner was dressed as: <select class='webex-select'><option value='blank'></option><option value=''>ordinal</option><option value=''>interval</option><option value=''>ratio</option><option value='answer'>categorical</option></select>
-* Temperature of a runner dressed in a cookie monster outfit (in degrees Celsius): <select class='webex-select'><option value='blank'></option><option value='answer'>interval</option><option value=''>ratio</option><option value=''>ordinal</option><option value=''>categorical</option></select>
+* Time taken to run a marathon (in seconds): <select class='webex-select'><option value='blank'></option><option value=''>categorical</option><option value=''>interval</option><option value=''>ordinal</option><option value='answer'>ratio</option></select>
+* Finishing position in marathon (e.g. 1st, 2nd, 3rd): <select class='webex-select'><option value='blank'></option><option value=''>interval</option><option value=''>categorical</option><option value='answer'>ordinal</option><option value=''>ratio</option></select>
+* Which Sesame Street character a runner was dressed as: <select class='webex-select'><option value='blank'></option><option value='answer'>categorical</option><option value=''>interval</option><option value=''>ordinal</option><option value=''>ratio</option></select>
+* Temperature of a runner dressed in a cookie monster outfit (in degrees Celsius): <select class='webex-select'><option value='blank'></option><option value=''>ratio</option><option value=''>categorical</option><option value=''>ordinal</option><option value='answer'>interval</option></select>
 
 ## Probability distributions
 
@@ -4980,9 +4982,9 @@ As with any probabilities, real-world data will come close to the normal distrib
 
 Complete the sentences so that they are correct.
 
-* In a normal distribution, the mean, median, and mode <select class='webex-select'><option value='blank'></option><option value=''>are always different</option><option value=''>sum to zero</option><option value='answer'>are all equal</option></select>.
-* In a normal distribution, the further away from the mean an observation is <select class='webex-select'><option value='blank'></option><option value='answer'>the lower its probability of occuring</option><option value=''>the higher its probability of occuring</option></select>.
-* Whereas the binomial distribution is based on situations in which there are two possible outcomes, the normal distribution is based on situations in which the data <select class='webex-select'><option value='blank'></option><option value=''>is a categorical variable</option><option value='answer'>is a continuous variable</option><option value=''>has three possible values</option></select>.
+* In a normal distribution, the mean, median, and mode <select class='webex-select'><option value='blank'></option><option value=''>are always different</option><option value='answer'>are all equal</option><option value=''>sum to zero</option></select>.
+* In a normal distribution, the further away from the mean an observation is <select class='webex-select'><option value='blank'></option><option value=''>the higher its probability of occuring</option><option value='answer'>the lower its probability of occuring</option></select>.
+* Whereas the binomial distribution is based on situations in which there are two possible outcomes, the normal distribution is based on situations in which the data <select class='webex-select'><option value='blank'></option><option value=''>has three possible values</option><option value='answer'>is a continuous variable</option><option value=''>is a categorical variable</option></select>.
 
 ## Activity 4: Distribution test
 
@@ -5400,7 +5402,7 @@ sample(x = c("HEADS", "TAILS"), size = 4, replace = TRUE)
 ```
 
 ```
-## [1] "TAILS" "TAILS" "TAILS" "HEADS"
+## [1] "TAILS" "TAILS" "TAILS" "TAILS"
 ```
 
 How many heads did you get? Don't worry if it's different to our example. Run the code again. How many heads did you get this time? How many do you get on each turn if you run the code five more times? 
@@ -5418,7 +5420,7 @@ sample(x = 0:1, size = 4, replace = TRUE)
 ```
 
 ```
-## [1] 1 0 0 0
+## [1] 1 0 1 0
 ```
 
 ## Activity 3: `sum()`
@@ -5435,7 +5437,7 @@ sample(x = 0:1, size = 4, replace = TRUE) %>% sum()
 ```
 
 ```
-## [1] 3
+## [1] 2
 ```
  
 Run this function multiple times (you can use the green markdown play arrow at the top right of the code chunk to make this easy). In our simulation of five sets of four flips we got 1, 3, 2, 2, and 3 heads. So in only one out of the five simulations did we get exactly one heads, i.e., a proportion of .2 or 20% of the time.
@@ -5455,7 +5457,7 @@ replicate(n = 20, expr = sample(0:1, 4, TRUE) %>% sum())
 ```
 
 ```
-##  [1] 2 3 4 2 3 3 2 3 1 3 3 0 3 1 3 3 1 3 1 1
+##  [1] 2 1 1 3 2 3 2 2 2 2 3 2 3 3 0 2 2 0 2 2
 ```
 
 
@@ -5475,8 +5477,8 @@ heads50
 ```
 
 ```
-##  [1] 2 4 2 2 1 2 1 2 2 3 1 0 1 3 0 0 1 2 2 2 2 4 1 2 1 2 1 2 1 1 1 1 3 2 1 2 3 2
-## [39] 0 2 2 1 2 2 2 2 2 2 3 2
+##  [1] 2 3 2 2 4 0 3 4 3 1 1 2 2 2 4 3 3 3 1 2 3 2 1 1 2 2 2 2 1 2 2 2 2 2 2 3 2 1
+## [39] 2 2 2 3 2 1 1 1 2 1 2 3
 ```
 
 ## Activity 6: probability
@@ -5494,11 +5496,11 @@ data50 <- tibble(heads = heads50) %>%   # convert to a table
 
 | heads|  n|    p|
 |-----:|--:|----:|
-|     0|  4| 0.08|
-|     1| 14| 0.28|
+|     0|  1| 0.02|
+|     1| 11| 0.22|
 |     2| 25| 0.50|
-|     3|  5| 0.10|
-|     4|  2| 0.04|
+|     3| 10| 0.20|
+|     4|  3| 0.06|
 
 Your numbers may be slightly different to the ones presented in this book - remember that by default, each time you run a simulation, you will get a different random sample.
 
@@ -5578,7 +5580,7 @@ data10K %>%
 
 |     p2|
 |------:|
-| 0.6909|
+| 0.6808|
 
 </div>
 
@@ -5610,8 +5612,8 @@ sd(normal)
 ```
 
 ```
-## [1] 9.383667
-## [1] 2.167298
+## [1] 9.975325
+## [1] 1.87351
 ```
 
 Finally, you can visualise your data with a density plot. Try changing the number of data points generated by `rnorm()` from 50 to 500 to 5000 and then see how the shape of the distribution changes.
@@ -5887,7 +5889,7 @@ See [webexercises](https://psyteachr.github.io/webexercises/) for more details a
 
 * Type an integer: <input class='webex-solveme nospaces regex' size='1' data-answer='["^[0-9]{1}$"]'/>
 * I am going to learn a lot: <select class='webex-select'><option value='blank'></option><option value='answer'>TRUE</option><option value='x'>FALSE</option></select>
-* What is a p-value? <div class='webex-radiogroup' id='radio_CTVZIDKGEG'><label><input type="radio" autocomplete="off" name="radio_CTVZIDKGEG" value="x"></input> <span>the probability that the null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_CTVZIDKGEG" value="answer"></input> <span>the probability of the observed (or more extreme) data, under the assumption that the null-hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_CTVZIDKGEG" value="x"></input> <span>the probability of making an error in your conclusion</span></label></div>
+* What is a p-value? <div class='webex-radiogroup' id='radio_KYEYEUHRSN'><label><input type="radio" autocomplete="off" name="radio_KYEYEUHRSN" value="x"></input> <span>the probability that the null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_KYEYEUHRSN" value="answer"></input> <span>the probability of the observed (or more extreme) data, under the assumption that the null-hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_KYEYEUHRSN" value="x"></input> <span>the probability of making an error in your conclusion</span></label></div>
 
 
 <div class='webex-solution'><button>Hidden Text</button>

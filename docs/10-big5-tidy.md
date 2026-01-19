@@ -14,7 +14,7 @@ By the end of this chapter you should be able to:
 
 ## Walkthrough video {#sec-walkthrough-big5}
 
-There is a walkthrough video of this chapter available via [Zoom]https://uofglasgow.zoom.us/rec/share/eFUjETr2Ee9ldYHDwFRIFhVhj1FcX5mTOdG8J0lCorMSnE8hX3jEefRCGu1Cg5Dc.cW6cCCA_5jTQ_zbx). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+There is a walkthrough video of this chapter available via [Zoom](https://uofglasgow.zoom.us/rec/share/eFUjETr2Ee9ldYHDwFRIFhVhj1FcX5mTOdG8J0lCorMSnE8hX3jEefRCGu1Cg5Dc.cW6cCCA_5jTQ_zbx). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## Activity 1: Set-up {#sec-setup-big5}
 
@@ -118,6 +118,8 @@ big5_long <- big5 %>%
                names_to = "item", 
                values_to = "response") 
 ```
+
+</div>
 
 
 ## Activity 4: `inner_join()`
